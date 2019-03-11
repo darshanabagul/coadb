@@ -5,13 +5,7 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="ftr-soc">
-							<?php 
-				    		$args = array(
-				    				'theme-location' => 'social'
-				    		);
-				    	?>
-				    	<?php wp_nav_menu( $args ); ?>
-							<a href="#"><i class="fa fa-facebook-f"></i></a>
+				    		<a href="#"><i class="fa fa-facebook-f"></i></a>
 							<a href="#"><i class="fa fa-twitter"></i></a>
 							<a href="#"><i class="fa fa-google-plus"></i></a>
 							<a href="#"><i class="fa fa-instagram"></i></a>
