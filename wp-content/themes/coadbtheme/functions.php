@@ -46,27 +46,38 @@ add_action('widgets_init', 'coadb_theme_widgets_init');
 ===========================================
 */
 
+function cptui_register_my_cpts_surnames() {
+	/**
+	 * Post Type: Surnames.
+	 */
+	$labels = array(
+		"name" => __( "Surnames", "custom-post-type-ui" ),
+		"singular_name" => __( "Surname", "custom-post-type-ui" ),
+		"menu_name" => _x('Surname', 'admin menu'),
+		"name_admin_bar" => _x('Surname', 'admin bar'),
+		"add_new" => _x('Add New', 'add new'),
+		"add_new_item" => __('Add New Surname'),
+		"new_item" => __('New Surname'),
+		"edit_item" => __('Edit Surname'),
+		"view_item" => __('View Surname'),
+		"all_items" => __('All Surname'),
+		"search_items" => __('Search Surname'),
+		"not_found" => __('No Surname found.'),
+	);
 
-
-
-function coadb_theme_widgets_init()
-{
-	register_sidebar(array(
-		'name' => 'Level Up New Widget Area',
-		'id' => 'level up new widget area',
-		'before_widgets' => '<aside>',
-		'after_widgets' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>'
-	));
+	$args = array(
+		"supports" => array( "title", "editor", "thumbnail", "comments", "author", "excerpt" ),
+		'labels' => $labels,
+		'public' => true,
+		'query_var' => true,
+		"rewrite" => array( "slug" => "surnames", "with_front" => true ),
+		'has_archive' => false,
+		'hierarchical' => false
+	);
+	register_post_type( "surnames", $args );
 }
-add_action('widgets_init', 'coadb_theme_widgets_init');
 
-/*
-===========================================
-		Activate custom settings
-===========================================
-*/
+add_action( 'init', 'cptui_register_my_cpts_surnames' );
 
 
 
@@ -76,6 +87,5 @@ add_action('widgets_init', 'coadb_theme_widgets_init');
 ===========================================
 */
 //require get_template_directory() . '/inc/walker.php';
-
 
 ?>
