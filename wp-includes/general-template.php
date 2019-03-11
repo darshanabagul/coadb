@@ -37,6 +37,7 @@ function get_header( $name = null ) {
 	}
 
 	$templates[] = 'header.php';
+	$templates[] = 'sub.php';
 
 	locate_template( $templates, true );
 }

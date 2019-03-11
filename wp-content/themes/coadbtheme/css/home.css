@@ -1,6 +1,13 @@
 body{
      font-family: "RobotoSlab-Regular";
 }
+a:focus, a:hover{
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
  .header{
      width: 100%;
      position: absolute;
@@ -20,7 +27,7 @@ body{
  .header-call-to-action-btn{
      margin-top: 20px 
 }
- .primary-login-btn{
+ .primary-btn{
      background-color: #c49634;
      color: #fff;
      padding: 10px 20px;
@@ -31,106 +38,61 @@ body{
  .m-lr-15{
      margin: 0 10px;
 }
- .main-banner .carousel-control .fa-angle-left, .main-banner .carousel-control .fa-angle-right{
-     width: 36px;
-     height: 36px;
-     margin-top: -10px;
-     font-size: 30px;
+.main-banner .banner-search-inner{
+    padding: 100px 0;
 }
- .main-banner .carousel-control .fa{
-     background-color: #979797;
-     border-radius: 20px;
-     padding: 1px;
+.main-banner .banner-carousel-inner{
+    padding: 50px 0;
 }
- .main-banner .carousel-control{
-     width: 4%;
-     z-index: 1;
+.banner-carousel-inner img{
+    margin: auto;
 }
- .main-banner .carousel-control .fa-angle-right, .main-banner .carousel-control .ifa-angle-left {
-     right: 50%;
-     margin-right: -10px;
-}
- .main-banner .carousel-control .fa-angle-left, .main-banner .carousel-control .fa-angle-right{
-     position: absolute;
-     top: 50%;
-     z-index: 5;
-     display: inline-block;
-     margin-top: -10px;
-}
-.main-banner .carousel-control .fa-angle-left{
-    margin-left: -12px;
-}
- .main-banner .carousel-control.left, .main-banner .carousel-control.right{
-     background-image: -webkit-linear-gradient(left,transparent 0,transparent 100%);
-     background-image: -o-linear-gradient(left,transparent 0,transparent 100%);
-     background-image: linear-gradient(to right,transparent 0,transparent 100%);
-}
-/*.banner-main-text{
-     position: absolute;
-     top: 25%;
-     color: #000;
-     width: 64%;
-}
-*/
- .bannr-overlay{
-     position: absolute;
-     top: 26%;
-     width: 100%;
-}
- .search-result-wrap{
-     text-align: center;
-}
- .search_for_your_surname{
-     font-size: 44px;
-     font-family: "Vidaloka-Regular";
-     color: rgb(68, 68, 68);
-     line-height: 1.2;
-}
- .search_for_your_surname span{
+.banner-search-inner h2 {
+        font-size: 44px;
+        color: #444;
+        font-weight: 400;
+        line-height:1.2;
+        margin: 0 0 40px;
+        font-family: "Vidaloka-Regular";
+        text-align: left;
+    }
+.banner-search-inner h2 span{
      color: #345a9c;
 }
- .search-wrap input[type=text] {
-     padding: 16px;
-     font-size: 17px;
-     border: 1px solid #345a9c;
-     float: left;
-     width: 74%;
-     border-radius: 4px 0 0 4px;
-     background: #f1f1f1;
-}
- .search-wrap button {
-     padding: 10px 20px;
-     background: #345a9c;
-     color: white;
-     font-size: 17px;
-     border: 1px solid #345a9c;
-     border-left: none;
-     border-radius: 0 4px 4px 0;
-     cursor: pointer;
-}
- .search-wrap button:hover {
-     background: #0b7dda;
-}
- .navbar{
+.navbar{
      margin-top: -3%;
      z-index: 999;
 }
- .sticky {
+.sticky {
      position: fixed;
      top: 0;
      width: 100%;
      margin-top: 0;
+     border-radius: 0;
+    background-color: rgb(52, 90, 156);
+    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
+    transition:all 0.5s;
 }
- .sticky + .content {
-     padding-top: 200px;
-}
-.cd-side-nav{
+.main-banner .cd-side-nav{
    display: none;
+}
+.cd-side-nav li.active a{
+    color: #c49634 !important;
+    background-color: transparent !important;
 }
  .custom-nav{
      border-radius: 5px;
      background-color: rgb(52, 90, 156);
      box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
+}
+.sticky .custom-nav li {
+    margin: 10px 0;
+}
+.sticky .custom-nav{
+   border-radius: 0;
+     background-color: rgb(52, 90, 156);
+     box-shadow: none;
+     transition:all 0.5s;
 }
  .custom-nav .navbar-nav{
      float: none;
@@ -170,7 +132,7 @@ body{
  .lp-first-section img{
      margin: auto;
 }
- .content .space{
+.content .space{
      padding: 50px 0;
 }
  .wrap-table{
@@ -304,7 +266,7 @@ body{
      text-align: center;
 }
  .footer-main .ftr-soc a {
-     background: #c7d1da;
+     background: #3a4c5e;
      color: #1f486c;
      margin: 0 7px;
      display: inline-table;
@@ -312,6 +274,7 @@ body{
      text-align: center;
      width: 46px;
      height: 46px;
+     border: 2px solid #c7d1da;
      -webkit-border-radius: 50px;
      -moz-border-radius: 50px;
      -o-border-radius: 50px;
@@ -326,9 +289,15 @@ body{
      vertical-align: middle;
      display: table-cell;
      font-size: 26px;
+    color: #c7d1da;
 }
  .footer-main .ftr-soc a:hover {
-     background: #fff;
+     background: #3a4c5e;
+    text-decoration: none;
+    border: 2px solid #fff;
+}
+.footer-main .ftr-soc a:hover .fa{
+    color: #fff;
 }
  .footer-main .ftr-logo {
      margin: 0 auto 70px;
@@ -340,11 +309,12 @@ body{
      padding: 20px 0;
 }
  .copyright-cont {
-     text-align: center;
-     font-size: 14px;
-     color: #fff;
-     font-weight: 400;
-     letter-spacing: .5px;
+    text-align: center;
+    font-size: 14px;
+    color: #ddd;
+    font-weight: 400;
+    letter-spacing: .5px;
+    font-family: Montserrat-Regular;
 }
  .copyright-link {
      text-align: right;
@@ -364,9 +334,557 @@ body{
  .copyright-link a:hover {
      color: #c7d1da;
 }
+
+
+
+.home-page-banner {
+    background: url(../images/home-bg.png) no-repeat center;
+    background-size: cover;
+    padding: 50px 0 45px;
+}
+.banner-inner {
+    padding: 0;
+}
+
+/*
+inner page Header
+*/
+.inner-page-nav .navbar-header .logo img{
+    width: 58%;
+    margin-top: 10px;
+}
+.inner-page-nav .navbar-header .logo-text{
+    font-size: 10px;
+    font-family: "Vidaloka-Regular";
+    color: rgb(109, 109, 110);
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 5px 0;
+}
+.page-wrap{
+     padding-top: 90px;
+}
+/*
+
+surname_detail_gallery_info CSS
+
+*/
+.page-wrap .space{
+    padding: 50px 0;
+}
+/* Search Page CSS Here */
+.search-dtls-main {
+    background: url(../images/bg.png) no-repeat center;
+    background-size: cover;
+    padding: 50px 0 45px;
+}
+.search-inner {
+    padding: 0;
+}
+.search-inner h1 {
+    font-size: 44px;
+    color: #444;
+    font-weight: 400;
+    line-height:1.2;
+    margin: 15px 0 40px;
+    font-family: "Vidaloka-Regular";
+    text-align: center;
+}
+.search-inner h1 span {color: #0057a2;}
+.search-inner h6 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 300;
+    line-height: 30px;
+    margin: 0 0 20px;
+    text-align: center;
+}
+.search-inner .input-group .form-control {
+    background: #fff;
+    height: 60px;
+    padding: 6px 22px;
+    border: 1px solid #345a9c;
+    color: #787878;
+    font-size: 16px;
+    -webkit-box-shadow: 0px 0px 19px 0px rgba(147,162,173,1);
+    -moz-box-shadow: 0px 0px 19px 0px rgba(147,162,173,1);
+    box-shadow: 0px 0px 19px 0px rgba(147,162,173,1);
+    -webkit-border-radius: 50px 0 0 50px;
+    -moz-border-radius: 50px 0 0 50px;
+    -o-border-radius: 50px 0 0 50px;
+    -ms-border-radius: 50px 0 0 50px;
+    border-radius: 4px 0 0 4px;
+}
+.search-inner .input-group .input-group-btn button {
+    background: #345a9c;
+    height: 60px;
+    padding: 6px 22px;
+    color: #787878;
+    font-size: 16px;
+    border: 0 none;
+    -webkit-box-shadow: 0px 0px 19px 0px rgba(147,162,173,1);
+    -moz-box-shadow: 0px 0px 19px 0px rgba(147,162,173,1);
+    box-shadow: 0px 0px 19px 0px rgba(147,162,173,1);
+    -webkit-border-radius: 0 50px 50px 0;
+    -moz-border-radius: 0 50px 50px 0;
+    -o-border-radius: 0 50px 50px 0;
+    -ms-border-radius: 0 50px 50px 0;
+    border-radius: 0 4px 4px 0;
+}
+.search-inner .input-group .input-group-btn button .fa {
+    color: #fff;
+    font-size: 35px;
+}
+.tab-wrap{
+    background-color: rgb(52, 90, 156);
+    -webkit-box-shadow:0px 15px 15px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow:0px 15px 15px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
+}
+.tab-wrap:last-child{
+  border-radius: 0 5px 5px 0;
+}
+.tab-wrap:first-child {
+    border-radius: 5px 0px 0 5px;
+}
+.tab-section .my-tab{
+    padding: 4px 0;
+    text-align: center;
+}
+.tab-section{
+    margin-top: -3%;
+}
+.tab-section .my-tab a:hover{
+    text-decoration: none;
+}
+.tab-section .my-tab a{
+    background-color: transparent;
+    font-size: 20px;
+    font-family: "Vidaloka-Regular";
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+.tab-section .tab-wrap:not(:last-child) .my-tab{
+    border-right: 1px solid #fff;
+}
+.tab-section .my-tab.active a{
+    color: #c49634;
+}
+.tab-section .my-tab.active:after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    left: 0;
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: #345a9c transparent;
+    display: block;
+    width: 0;
+}
+.img-container {
+    position: relative;
+    margin-bottom: 30px;
+
+}
+.img-container:hover{
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  height: auto;
+  margin: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.img-controls {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.img-select{
+color: #444;
+}
+.mfp-close{
+    cursor: pointer !important;
+}
+.img-container:hover .image {
+  opacity: 0.2;
+}
+
+.img-container:hover .img-controls {
+  opacity: 1;
+}
+
+.pagination-main {margin: 0;}
+.pagination-main .pagination {margin: 40px 0;}
+.pagination-main .pagination>li>a {
+    font-weight: 600;
+    border: 1px solid #428bca;
+    margin-left: 6px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+}
+.pagination-main .pagination>li:first-child>a, .pagination>li:last-child>a {
+    border: 1px solid #fff; 
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    color: #c49634;
+    background-color: transparent;
+}
+.pagination-main .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+    border: 1px solid #428bca; 
+    background: #428bca; 
+    color: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+}
+.pagination-main .pagination>li.active>a{
+    color: #c49634;
+}
+.information-section{
+    background-color: #e9eef1;
+}
+.information-section .information-wrap{
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.information-section .information-wrap h3{
+    font-size: 24px;
+    color: #345a9c;
+    font-family: "Vidaloka-Regular";
+    padding: 0 0 10px;
+}
+.information-section .information-wrap p{
+    font-family: "RobotoSlab-Regular";
+    color: #444;
+    font-size: 14px;
+}
+.space.share-with-section
+{
+    padding: 62px 0;
+}
+.share-with-section{
+    background-image: url("../images/sharebg.png");
+    background-color: #335898;
+    height: 200px;
+    background-position: initial;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.share-with-section h3{
+    font-size: 28px;
+    color: #fff;
+    font-family: "Vidaloka-Regular";
+    text-align: right;
+    margin:20px 0;
+}
+.share-btn-wrap{
+    margin: 10px 0;
+}
+.share-btn-wrap .primary-btn {
+    background-color: #c49634;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 40px;
+    margin: 0px 10px;
+}
+.share-btn-wrap .fa{
+        font-size: 26px;
+}
+.custom-input .group { 
+  position:relative; 
+  margin-bottom:10px; 
+}
+.custom-input input, .custom-input textarea{
+    font-size: 18px;
+    padding: 24px 15px 10px;
+    border-radius: 10px;
+    border: none;
+    border: 1px solid #ddd;
+    width: 100%;
+    resize: none;
+}
+.custom-input input:focus, .custom-input textarea:focus{ 
+  outline:none; 
+  border: 1px solid #345a9c;
+}
+.custom-input label{
+  color:#787878; 
+  font-size:14px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left: 16px;
+  top: 18px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.custom-input input:focus ~ label, .custom-input input:valid ~ label, .custom-input textarea:focus ~ label, 
+.custom-input textarea:valid ~ label {
+    top: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #345a9c;
+}
+.custom-input input.present ~ label{
+   top: 6px;
+   font-size: 12px;
+   font-weight: 600;
+   color: #345a9c;
+}
+
+.comment-wrap{
+    background-color: #e9eef1;
+    padding: 20px;
+    border-radius: 4px;
+}
+.comment-wrap h3{
+    font-size: 28px;
+    color: #345a9c;
+    font-family: "Vidaloka-Regular";
+    margin:20px 0;
+    text-align: center;
+}
+.leave-a-comment-section .btn-box{
+    margin: 20px 0;
+}
+.leave-a-comment-section .link-wrap p{
+    font-size: 18px;
+    color: #999;
+    margin: 0 0 20px;
+}
+.leave-a-comment-section .link-wrap p a{
+    color: #659bfe;
+}
+.references-section-white{
+    background-color: #fff;
+}
+.references-section-sky{
+    background-color: #e9eef1;
+}
+.references-section h3{
+    font-size: 28px;
+    color: #345a9c;
+    text-align: center;
+    margin: 30px 0 20px;
+    font-family: "Vidaloka-Regular";
+}
+.references-section ol {
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  padding-left: 40px;
+}
+.references-section ol li {
+     margin: 0 0 10px 0;
+    counter-increment: my-awesome-counter;
+    position: relative;
+}
+.references-section ol li::before {
+    content: counter(my-awesome-counter);
+    color: #fff;
+    font-size: 1.5rem;
+    position: absolute;
+    --size: 24px;
+    left: calc(-1 * var(--size) - 10px);
+    line-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+    background: #345a9c;
+    border-radius: 2px;
+    text-align: center;
+}
+.references-section ol li a{
+    font-size: 18px;
+    color: #444;
+}
+.references-section ol li a:hover{
+    color: #345a9c;
+    text-decoration: none;
+}
+
+/*lerning center*/
+.same-box-wrap{
+    margin-top: -3%;
+}
+.space.same-box-wrap{
+    padding: 100px 0;
+}
+.information-wrap p a{
+    color: #c49634;
+}
+.glossary-gallery img{
+  margin: auto;
+}
+.view-more{
+    margin-top: 50px;
+}
+.view-more .btn{
+    background-color: #fff;
+    color: #c49634;
+    padding: 15px;
+    outline: none;
+}
+
+.bt-b{
+    border-bottom: 1px solid #345a9c;
+    margin: 0 0 20px;
+}
+.mtb-0{
+    margin: 0;
+}
+.pd-tb-15{
+    padding: 15px 0;
+}
+.nav-is-visible .navbar-nav{
+    margin: 0;
+}
+
+
+/* 
+
+8 March which_one_is_mine
+
+*/
+.box {
+   display: flex;
+   align-items:center;
+}
+.service-section h3{
+    font-size: 20px;
+    color: #345a9c;
+    font-family: "Vidaloka-Regular";
+}
+.service-section p{
+    font-size: 14px;
+    color: #444;
+    font-family: "RobotoSlab-Regualr";
+}
+.service-section p a{
+    color: #c49634;
+}
+/*Radio*/
+.check-option{
+    background-color: #dddddd;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.option-active{
+   background-color: #345a9c;
+}
+.option-active .custom-radio-container{
+   color: #c49634;
+}
+/* The container */
+.custom-radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 16px;
+  color: #444;
+  font-family: RobotoSlab-Light;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.custom-radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.custom-radio-container .checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #b5b5b5;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-radio-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.custom-radio-container input:checked ~ .checkmark {
+  background-color: #c49634;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.custom-radio-container .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.custom-radio-container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+.which_one_is_mine_page h2{
+    color: #345a9c;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 15px 0 40px;
+    font-family: "Vidaloka-Regular";
+    text-align: center;
+}
+.hint{
+    color: #a7a7a7;
+}
+.bg-white{
+    background-color: #fff;
+}
+.bg-sky{
+    background-color: #e9eef1;
+}
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
 }
+
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
      .home-logo-text {
@@ -385,24 +903,39 @@ body{
           font-size: 22px;
      }
 }
+
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 991px) {
      .home-logo-text {
           font-size: 18px;
      }
-     .bannr-overlay {
-        top: 36%;
-     }
-     .banner-main-text{
-          margin-left: 8%;
-     }
-     .search_for_your_surname {
-         font-size: 26px;
-     }
+     .banner-search-inner h2 {
+        font-size: 36px;
+        color: #444;
+        font-weight: 400;
+        line-height:1.2;
+        margin: 0 0 40px;
+        font-family: "Vidaloka-Regular";
+        text-align: left;
+    }
+    .search-inner h1 {
+       font-size: 40px;
+    }
+    .tab-section .my-tab a {
+        font-size: 14px;
+    }
      .custom-nav li a {
           font-size: 16px;
      }
+
+    /*
+        surname_detail_gallery_info CSS
+    */
+    .share-btn-wrap .primary-btn  {
+       padding: 10px 15px;
+    }
 }
+
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
   .cd-side-nav{
@@ -512,7 +1045,7 @@ body{
          text-transform: uppercase;
      }
      .nav-is-visible .nav{padding-top: 30px;}
-     .nav-is-visible .primary-login-btn {
+     .nav-is-visible .primary-btn {
          background-color: #c49634;
          color: #fff;
          padding: 10px 20px;
@@ -521,9 +1054,44 @@ body{
          text-align: center;
          margin: 10px;
      }
-     .sticky + .content {
-         padding-top: 0;
-     }
+     .search-inner h1 {
+       font-size: 32px;
+    }
+    .search-inner .input-group .form-control{
+        font-size: 12px;
+    }
+
+    .main-banner .banner-search-inner {
+      padding: 60px 0 20px;
+    }
+    .search-inner .input-group .form-control, .search-inner .input-group .input-group-btn button{
+        height: 46px;
+    }
+    .search-inner .input-group .input-group-btn button .fa {
+       font-size: 20px;
+    }
+    .backoverlay{
+        margin-top: 20px;
+    }
+
+    /* 
+
+    8 March which_one_is_mine
+
+    */
+    .box {
+        display: block;
+        align-items: center;
+    }
+    .which_one_is_mine_page h2 {
+       font-size: 26px;
+    }
+    .service-section h3 {
+        text-align: center;
+    }
+    .custom-input input:focus ~ label, .custom-input input:valid ~ label, .custom-input textarea:focus ~ label, .custom-input textarea:valid ~ label {
+        font-size: 8px;
+    }
 }
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
@@ -533,27 +1101,16 @@ body{
      .home-logo-text {
           font-size: 14px;
      }
-     .bannr-overlay {
-         position: absolute;
-         top: 76%;
-     }
-     .search_for_your_surname {
-          font-size: 20px;
-     }
-     .search-wrap input[type=text] {
-          padding: 20px;
-          font-size: 11px;
-          width: 72%;
-     }
-     .main-banner .carousel-control .fa-angle-left {
-          margin-left:0;
-     }
-     .main-banner .carousel-control .fa-angle-right{
-          margin-right: 0;
-     }
-     .sticky + .content {
-         padding-top: 0;
-     }
+     .banner-search-inner h2 {
+        font-size: 26px;
+        margin: 0 0 20px;
+        text-align: center;
+
+    }
+    .main-banner .banner-carousel-inner {
+        padding: 0;
+    }
+
      .lp-first-section h2 {
           font-size: 20px;
      }
@@ -584,5 +1141,33 @@ body{
      .copyright-cont{
           font-size: 12px;
      }
+    /*
+        surname_detail_gallery_info CSS
+    */
+    .tab-section .tab-wrap:not(:last-child) .my-tab {
+      border-right: 0 solid transparent;
+    } 
+    .tab-wrap, .tab-wrap:first-child, .tab-wrap:last-child{
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+
+    .space.share-with-section {
+        padding: 28px 0;
+    }
+    .share-btn-wrap {
+        text-align: center;
+    }
+    .share-with-section h3 {
+        text-align: center;
+    }
+    .share-btn-wrap .fa {
+        font-size: 22px;
+    }
+    .share-btn-wrap .primary-btn {
+        font-size: 14px;
+        padding: 10px 4px;
+        margin: 0px 2px;
+    }
 }
     

@@ -1,32 +1,29 @@
-<?php get_header(); ?>
+<?php  get_header(); ?>
 
-			<!-- Main content Start Here -->
+<!-- Main content Start Here -->
 		<div class="content">
-
 			<!-- first section Starts Here -->
 			<section class="space lp-first-section">
 				<div class="container">
 				 	<div class="row">
 					 	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					
-					 		<div id="carousel1" class="carousel slide carousel-fade" data-ride="carousel">
-					      <div class="carousel-inner">
-					        <div class="active item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/webb-withcrest-9.png" alt="1 slide" class="img-responsive"></div>
-					        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/webb-withcrest-9.png" alt="2 slide" class="img-responsive"></div>
-					        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/webb-withcrest-9.png" alt="3 slide" class="img-responsive"></div>
-					      </div>
-					    </div>
-			 	    </div>
-			 	    <div class="col-xs-12 col-sm-8 col-md-7 col-lg-7">
-			 	    	 		<div class="wrap-table">
-					 			 <div class="box-cell">
-					 			 		<h2 >Coats of Arms, Surname History, Genealogy. Find your family’s surname today.</h2>
-			 	    	<button class="btn secondary-btn">View Surname Database</button>
-					 			 </div>
-					 		</div>
-			 	    
-			 	    </div>
-			    </div>
+							<div id="carousel1" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+						      <div class="carousel-inner">
+						        <div class="active item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/webb-withcrest-9.png" alt="1 slide" class="img-responsive"></div>
+						        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/g4.png" alt="3 slide" class="img-responsive"></div>
+						        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/g5.png" alt="3 slide" class="img-responsive"></div>
+						      </div>
+						    </div>
+			 	    	</div>
+				 	    <div class="col-xs-12 col-sm-8 col-md-7 col-lg-7">
+				 	    	<div class="wrap-table">
+						 	<div class="box-cell">
+						 		<h2 >Coats of Arms, Surname History, Genealogy. Find your family’s surname today.</h2>
+				 	    	<button class="btn secondary-btn">View Surname Database</button>
+						 	</div>
+						 	</div>
+				 	    </div>
+			   		</div>
 				 </div>
 			</section>
 			<!-- first section end Here -->
@@ -61,57 +58,54 @@
 					</div>
 				 	<div class="row">
 					 	<div class="col-lg-offset-2 col-lg-8 ">
-				      <div>
-      					<ul class="nav nav-tabs">
-								    <li class="active">
-								    	<a data-toggle="tab" href="#find-tab">
-								    		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tab1.png" class="icon-img" alt="Find Your Coat of Arms" title="Find Your Coat of Arms">
-								    		<span>Find Your Coat of Arms</span>
-								    	</a>
-								    </li>
-								    <li class="">
-								    	<a data-toggle="tab" href="#merchandise-tab">
-								    		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tab2.png" class="icon-img" alt="Merchandise" title="Merchandise">
-								    		<span>Merchandise</span>
-								    	</a>
-								    </li>
-								    <li class="">
-								    	<a data-toggle="tab" href="#genealogy-tab">
-								    		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tab3.png" class="icon-img" alt="Genealogy Reports" title="Genealogy Reports">
-								    		<span>Genealogy Reports</span>
-								    	</a>
-								    </li>
-								  </ul>
-								  <div class="tab-content my-tab-wrap">
-								    <div id="find-tab" class="tab-pane fade in active">
-								     <p>Our database contains 4000+ surnames and 30,000+ coats of arms – with new surnames, coats of arms and family histories being added daily. All you need to do is enter your surname in the search box at the top of this page to begin your journey of discovery. It’s free of charge. What’s unique about COADB is that instead of listing only ‘the most popular’ coats of arms for your surname, our team of international researchers and artists ensures that every listing is complete and accurate.</p>
-								     <div class="tab-bottom">
-								     	 <button class="btn information-btn">Find Your Coat of Arms</button>
-								     </div>
-								     
-								    </div>
-								    <div id="merchandise-tab" class="tab-pane fade">
-								      <p>Our database contains 4000+ surnames and 30,000+ coats of arms – with new surnames, coats of arms and family histories being added daily. All you need to do is enter your surname in the search box at the top of this page to begin your journey of discovery. It’s free of charge. What’s unique about COADB is that instead of listing only ‘the most popular’ coats of arms for your surname, our team of international researchers and artists ensures that every listing is complete and accurate.</p>
-								      <div class="tab-bottom">
-								     	 <button class="btn information-btn">Find Your Coat of Arms</button>
-								     </div>
-								    </div>
-								    <div id="genealogy-tab" class="tab-pane fade">
-								      <p>Our database contains 4000+ surnames and 30,000+ coats of arms – with new surnames, coats of arms and family histories being added daily. All you need to do is enter your surname in the search box at the top of this page to begin your journey of discovery. It’s free of charge. What’s unique about COADB is that instead of listing only ‘the most popular’ coats of arms for your surname, our team of international researchers and artists ensures that every listing is complete and accurate.</p>
-								      <div class="tab-bottom">
-								     	 <button class="btn information-btn">Find Your Coat of Arms</button>
-								     </div>
-								    </div>
-								  </div>
-	  	      	</div>
-	  	      </div>
-	  	    </div>
-	  	  </div>
+				      	<div>
+	      					<ul class="nav nav-tabs">
+							    <li class="active">
+							    	<a data-toggle="tab" href="#find-tab">
+							    		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tab1.png" class="icon-img" alt="Find Your Coat of Arms" title="Find Your Coat of Arms">
+							    		<span class="hidden-xs">Find Your Coat of Arms</span>
+							    	</a>
+							    </li>
+							    <li class="">
+							    	<a data-toggle="tab" href="#merchandise-tab">
+							    		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tab2.png" class="icon-img" alt="Merchandise" title="Merchandise">
+							    		<span class="hidden-xs">Merchandise</span>
+							    	</a>
+							    </li>
+							    <li class="">
+							    	<a data-toggle="tab" href="#genealogy-tab">
+							    		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tab3.png" class="icon-img" alt="Genealogy Reports" title="Genealogy Reports">
+							    		<span class="hidden-xs">Genealogy Reports</span>
+							    	</a>
+							    </li>
+							</ul>
+							<div class="tab-content my-tab-wrap">
+							    <div id="find-tab" class="tab-pane fade in active">
+							     <p>Our database contains 4000+ surnames and 30,000+ coats of arms – with new surnames, coats of arms and family histories being added daily. All you need to do is enter your surname in the search box at the top of this page to begin your journey of discovery. It’s free of charge. What’s unique about COADB is that instead of listing only ‘the most popular’ coats of arms for your surname, our team of international researchers and artists ensures that every listing is complete and accurate.</p>
+							     <div class="tab-bottom">
+							     	 <button class="btn primary-btn">Find Your Coat of Arms</button>
+							     </div>
+							    </div>
+							    <div id="merchandise-tab" class="tab-pane fade">
+							      <p>Our database contains 4000+ surnames and 30,000+ coats of arms – with new surnames, coats of arms and family histories being added daily. All you need to do is enter your surname in the search box at the top of this page to begin your journey of discovery. It’s free of charge. What’s unique about COADB is that instead of listing only ‘the most popular’ coats of arms for your surname, our team of international researchers and artists ensures that every listing is complete and accurate.</p>
+							      <div class="tab-bottom">
+							     	 <button class="btn primary-btn">Find Your Coat of Arms</button>
+							     </div>
+							    </div>
+							    <div id="genealogy-tab" class="tab-pane fade">
+							      <p>Our database contains 4000+ surnames and 30,000+ coats of arms – with new surnames, coats of arms and family histories being added daily. All you need to do is enter your surname in the search box at the top of this page to begin your journey of discovery. It’s free of charge. What’s unique about COADB is that instead of listing only ‘the most popular’ coats of arms for your surname, our team of international researchers and artists ensures that every listing is complete and accurate.</p>
+							      <div class="tab-bottom">
+							     	 <button class="btn primary-btn">Find Your Coat of Arms</button>
+							     </div>
+							    </div>
+							</div>
+	  	      			</div>
+	  	      			</div>
+	  	    		</div>
+	  	  		</div>
 			</section>
 			<!-- three section End Here -->
-
 	  </div>
 	  <!-- Main content End Here -->
-
 
 <?php get_footer(); ?>
