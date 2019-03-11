@@ -79,6 +79,43 @@ function cptui_register_my_cpts_surnames() {
 
 add_action( 'init', 'cptui_register_my_cpts_surnames' );
 
+function find_coat_of_arms() {
+	global $wp;
+	$current_slug = add_query_arg( array(), $wp->request );
+    $link_array = explode('/',$current_slug);
+    $page = end($link_array);
+    //$path = get_template_directory_uri() .'/processed_images/dolan/';
+    
+    $uploads = wp_upload_dir();
+    if ($dir = opendir($uploads['basedir'].'/processed_images')) {
+		$folders = array();
+		while (false !== ($file = readdir($dir))) {
+			if ($file != "." && $file != "..") {
+				$folders[] = $file; 
+			}
+		}
+		closedir($dir);
+	}
+	if (!empty($folders)) {
+		$images = array();
+		$all_images = array();
+		if (in_array($page, $folders)) {
+			if ($dir = opendir($uploads['basedir'].'/processed_images/'.$page)) {
+				while (false !== ($file = readdir($dir))) {
+					if ($file != "." && $file != "..") {
+						$images[] = $page.'/'.$file; 						
+					}
+				}
+				closedir($dir);
+			}
+		}
+	}
+
+	if (!empty($images)) {
+    	$coat_of_arms['images'] = array_chunk($images, 6);
+	}
+    return $coat_of_arms;
+}
 
 
 /*
