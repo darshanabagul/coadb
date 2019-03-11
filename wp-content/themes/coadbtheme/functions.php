@@ -46,28 +46,76 @@ add_action('widgets_init', 'coadb_theme_widgets_init');
 ===========================================
 */
 
+function cptui_register_my_cpts_surnames() {
+	/**
+	 * Post Type: Surnames.
+	 */
+	$labels = array(
+		"name" => __( "Surnames", "custom-post-type-ui" ),
+		"singular_name" => __( "Surname", "custom-post-type-ui" ),
+		"menu_name" => _x('Surname', 'admin menu'),
+		"name_admin_bar" => _x('Surname', 'admin bar'),
+		"add_new" => _x('Add New', 'add new'),
+		"add_new_item" => __('Add New Surname'),
+		"new_item" => __('New Surname'),
+		"edit_item" => __('Edit Surname'),
+		"view_item" => __('View Surname'),
+		"all_items" => __('All Surname'),
+		"search_items" => __('Search Surname'),
+		"not_found" => __('No Surname found.'),
+	);
 
-
-
-function coadb_theme_widgets_init()
-{
-	register_sidebar(array(
-		'name' => 'Level Up New Widget Area',
-		'id' => 'level up new widget area',
-		'before_widgets' => '<aside>',
-		'after_widgets' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>'
-	));
+	$args = array(
+		"supports" => array( "title", "editor", "thumbnail", "comments", "author", "excerpt" ),
+		'labels' => $labels,
+		'public' => true,
+		'query_var' => true,
+		"rewrite" => array( "slug" => "surnames", "with_front" => true ),
+		'has_archive' => false,
+		'hierarchical' => false
+	);
+	register_post_type( "surnames", $args );
 }
-add_action('widgets_init', 'coadb_theme_widgets_init');
 
-/*
-===========================================
-		Activate custom settings
-===========================================
-*/
+add_action( 'init', 'cptui_register_my_cpts_surnames' );
 
+function find_coat_of_arms() {
+	global $wp;
+	$current_slug = add_query_arg( array(), $wp->request );
+    $link_array = explode('/',$current_slug);
+    $page = end($link_array);
+    //$path = get_template_directory_uri() .'/processed_images/dolan/';
+    
+    $uploads = wp_upload_dir();
+    if ($dir = opendir($uploads['basedir'].'/processed_images')) {
+		$folders = array();
+		while (false !== ($file = readdir($dir))) {
+			if ($file != "." && $file != "..") {
+				$folders[] = $file; 
+			}
+		}
+		closedir($dir);
+	}
+	if (!empty($folders)) {
+		$images = array();
+		$all_images = array();
+		if (in_array($page, $folders)) {
+			if ($dir = opendir($uploads['basedir'].'/processed_images/'.$page)) {
+				while (false !== ($file = readdir($dir))) {
+					if ($file != "." && $file != "..") {
+						$images[] = $page.'/'.$file; 						
+					}
+				}
+				closedir($dir);
+			}
+		}
+	}
+
+	if (!empty($images)) {
+    	$coat_of_arms['images'] = array_chunk($images, 6);
+	}
+    return $coat_of_arms;
+}
 
 
 /*
@@ -76,6 +124,5 @@ add_action('widgets_init', 'coadb_theme_widgets_init');
 ===========================================
 */
 //require get_template_directory() . '/inc/walker.php';
-
 
 ?>
