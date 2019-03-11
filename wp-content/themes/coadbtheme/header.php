@@ -30,11 +30,13 @@
     		<div class="cd-side-nav">
     			<div class="cd-nav-trigger-mob"><a href="javascript:void(0);" class="cd-nav-trigger"><span></span></a></div>
 				  <ul class="nav">
-				  		<li><a href=""><?php wp_nav_menu(); ?></a></li>
-						<li><a href="">Merch</a></li>
-						<li><a href="">About</a></li>
-						<li><a href="">CONTACT</a></li>
-						<li><a href="">Learning Center</a></li>
+				  		<?php 
+				    		$args = array(
+				    				'theme-location' => 'primary',
+				    				'menu_class' => 'nav'
+				    		);
+				    	?>
+				    	<?php wp_nav_menu( $args ); ?>
 				    <li><a href="" class="m-lr-15"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/heart.png"></a></li>
 	    			<li><a href="" class="m-lr-15"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/shopping-cart.png"></a></li>
 	    			<li><a href="" class="primary-login-btn">Log In</a></li>
@@ -89,13 +91,14 @@
 		<nav class="navbar hidden-xs" id="myHeader">
 		  <div class="container custom-nav">
 		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav">
-		      	<!--<li><a href="#"><?php wp_nav_menu(array('theme_location'=>'primary')); ?></a></li>-->
-		        <li class="active"><a href="#">Merch</a></li>
-		        <li><a href="#">About</a></li>
-		        <li><a href="#">CONTACT</a></li> 
-		        <li><a href="#">Learning Center</a></li> 
-		      </ul>
+		    	<?php 
+		    		$args = array(
+		    				'theme-location' => 'primary',
+		    				'menu_class' => 'nav navbar-nav',
+		    				'menu_item' => 'mymenu'
+		    		);
+		    	?>
+		    	<?php wp_nav_menu( $args ); ?>
 		    </div>
 		  </div>
 		</nav>
