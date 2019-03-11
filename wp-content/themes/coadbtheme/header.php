@@ -29,6 +29,7 @@
     		</div>
     		<div class="cd-side-nav">
     			<div class="cd-nav-trigger-mob"><a href="javascript:void(0);" class="cd-nav-trigger"><span></span></a></div>
+
 	    			<?php 
 			    		$args = array(
 			    				'theme_location' => 'home',
@@ -37,6 +38,11 @@
 			    		);
 			    	?>
 			    	<?php wp_nav_menu( $args ); ?>
+				  <ul class="nav">
+				    <li><a href="" class="m-lr-15"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/heart.png"></a></li>
+	    			<li><a href="" class="m-lr-15"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/shopping-cart.png"></a></li>
+	    			<li><a href="" class="primary-login-btn">Log In</a></li>
+				  </ul>
 				</div>
 			</div>
 		    <div class="home-page-banner">

@@ -48,6 +48,28 @@ add_action('widgets_init', 'coadb_theme_widgets_init');
 
 
 
+
+function coadb_theme_widgets_init()
+{
+	register_sidebar(array(
+		'name' => 'Level Up New Widget Area',
+		'id' => 'level up new widget area',
+		'before_widgets' => '<aside>',
+		'after_widgets' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>'
+	));
+}
+add_action('widgets_init', 'coadb_theme_widgets_init');
+
+/*
+===========================================
+		Activate custom settings
+===========================================
+*/
+
+
+
 /*
 ===========================================
 			Include Walker File
