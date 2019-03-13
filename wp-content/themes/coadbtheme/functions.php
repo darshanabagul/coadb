@@ -4,14 +4,15 @@ function coadb_script_enquire()
 {
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array());
 	wp_enqueue_style('font', get_template_directory_uri() . '/css/font.css', array(),'all');
-	wp_enqueue_style('customestyle', get_template_directory_uri() . '/css/home.css', array(),'all');
+	wp_enqueue_style('customestyle', get_template_directory_uri() . '/css/home.css', array());
 	wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array());
 	wp_enqueue_style('inner-layout', get_template_directory_uri() . '/css/inner-layout.css', array());
+	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array());
 	wp_enqueue_style('load-fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array());
-
-	wp_enqueue_script('customjs', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.0.0', true);	
-	wp_enqueue_script('bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true);	
-	wp_enqueue_script('wowjs', get_template_directory_uri() . '/js/wow.min.js', array(), '1.0.0', true);	
+	
+	wp_enqueue_script('customjs', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.3.1', true);	
+	wp_enqueue_script('bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.7', true);	
+	wp_enqueue_script('wowjs', get_template_directory_uri() . '/js/wow.min.js', array(), '1.1.3', true);
 }
 add_action('wp_enqueue_scripts', 'coadb_script_enquire');
 
@@ -112,12 +113,34 @@ function find_coat_of_arms() {
 	}
 
 	if (!empty($images)) {
-    	$coat_of_arms['images'] = array_chunk($images, 6);
+    	$coat_of_arms['images'] = array_chunk($images, 12);
 	}
-    return $coat_of_arms;
+	return $coat_of_arms;
 }
 
+function get_all_surnames() {
+	$surnames= query_posts(array(
+	   'post_type' => 'surnames',
+	   'orderby'=> 'title', 
+	   'order' => 'ASC'
+	));
+	$result = array();
+	foreach ($surnames as $item) {
+	    $firstLetter = substr($item->surname, 0, 1);
+	    $result[$firstLetter][] = $item;
+	}
+	//array_multisort($result, SORT_DESC, $surnames);  //sort array according to alphabetically
+	return $result;
+}
 
+function wpb_move_comment_field_to_bottom( $fields ) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+	return $fields;
+}
+ 
+add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
 /*
 ===========================================
 			Include Walker File

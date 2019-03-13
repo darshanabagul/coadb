@@ -39,30 +39,29 @@
 		<!-- Footer Ends Here -->
 	<?php wp_footer(); ?>
 	 <script>
-			window.onscroll = function() {myFunction()};
-			var header = document.getElementById("myHeader");
-			var sticky = header.offsetTop;
-			function myFunction() {
-			  if (window.pageYOffset > sticky) {
-			    header.classList.add("sticky");
-			  } else {
-			    header.classList.remove("sticky");
-			  }
-			}
-			$('.carousel1').carousel();
+		window.onscroll = function() {myFunction()};
+		var header = document.getElementById("myHeader");
+		var sticky = header.offsetTop;
+		function myFunction() {
+		  if (window.pageYOffset > sticky) {
+		    header.classList.add("sticky");
+		  } else {
+		    header.classList.remove("sticky");
+		  }
+		}
+		$('.carousel1').carousel();
 
-			$(document).ready(function(){
-			  // Nav
-			  var sidebar = $('.cd-side-nav'),
-				sidebarTrigger = $('.cd-nav-trigger');
-				sidebarTrigger.on('click', function(event){
-					event.preventDefault();
-					$([sidebar, sidebarTrigger]).toggleClass('nav-is-visible');
-				});
+		$(document).ready(function(){
+		  // Nav
+		  var sidebar = $('.cd-side-nav'),
+			sidebarTrigger = $('.cd-nav-trigger');
+			sidebarTrigger.on('click', function(event){
+				event.preventDefault();
+				$([sidebar, sidebarTrigger]).toggleClass('nav-is-visible');
 			});
-			$(".navbar-nav li").first().addClass("active");
-		</script>
-
+		});
+		$(".navbar-nav li").first().addClass("active");
+	</script>
 </footer>
 </body>
 </html>
