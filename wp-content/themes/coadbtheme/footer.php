@@ -13,13 +13,16 @@
 						<div class="ftr-link">
 							<?php 
 					    		$args = array(
-					    			'theme_location' => 'footer'
+					    			'theme_location' => 'footer',        
+					    			'menu' => 'main-menu',
+							        'container' => 'a', // parent container 
+							        'container_id' => 'my_nav', //parent container ID
+							        'depth' => 1,
+							        'items_wrap' => '%3$s', // removes ul
+							    	'walker' => new Description_Walker // custom walker to replace li with div
 					    		);
 					    	?>
 				    		<?php wp_nav_menu( $args ); ?>
-							<a href="#">Terms of Service</a>
-							<a href="#">Privacy Policy</a>
-							<a href="#">Return Policy</a>
 						</div>
 					</div>
 				</div>
