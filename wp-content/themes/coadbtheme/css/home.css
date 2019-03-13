@@ -1,3 +1,7 @@
+
+/*  
+Common Css
+*/
 body{
      font-family: "RobotoSlab-Regular";
 }
@@ -8,13 +12,75 @@ a:focus, a:hover{
   -ms-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
- .header{
+.m-lr-15{
+    
+    margin: 0 10px;
+}
+
+.inner-page-nav a, .header a{
+   text-transform: uppercase;
+}
+.m-0{
+    margin: 0;
+}
+.pd-tb-15{
+    padding: 15px 0;
+}
+.content .space{
+    padding: 50px 0;
+}
+.box-cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+.hint{
+    color: #a7a7a7;
+}
+.bg-white{
+    background-color: #fff;
+}
+.bg-sky{
+    background-color: #e9eef1;
+}
+.md-whiteframe-2dp {
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+}
+
+/*
+ Button Css
+*/
+.primary-btn{
+    background-color: #c49634;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    margin-left: 10px;
+}
+.secondary-btn{
+     background-color: #345a9c;
+     color: #fff;
+     border-radius: 5px;
+     font-size: 18px;
+     padding: 15px 20px;
+     border-bottom: 4px solid #c49634;
+}
+.secondary-btn:hover{
+    color: #c49634;
+    border-bottom: 4px solid #3d589f;
+}
+
+
+/*
+Home page
+*/
+.header{
      width: 100%;
      position: absolute;
      z-index: 9;
 }
- .home-logo{
-     margin-top: 10px 
+.home-logo{
+    margin-top: 10px 
 }
  .home-logo-text{
      font-size: 18px;
@@ -27,17 +93,9 @@ a:focus, a:hover{
  .header-call-to-action-btn{
      margin-top: 20px 
 }
- .primary-btn{
-     background-color: #c49634;
-     color: #fff;
-     padding: 10px 20px;
-     border-radius: 4px;
-     border: none;
-     margin-left: 10px;
-}
- .m-lr-15{
-     margin: 0 10px;
-}
+
+ 
+
 .main-banner .banner-search-inner{
     padding: 100px 0;
 }
@@ -48,14 +106,14 @@ a:focus, a:hover{
     margin: auto;
 }
 .banner-search-inner h2 {
-        font-size: 44px;
-        color: #444;
-        font-weight: 400;
-        line-height:1.2;
-        margin: 0 0 40px;
-        font-family: "Vidaloka-Regular";
-        text-align: left;
-    }
+    font-size: 44px;
+    color: #444;
+    font-weight: 400;
+    line-height:1.2;
+    margin: 0 0 40px;
+    font-family: "Vidaloka-Regular";
+    text-align: left;
+}
 .banner-search-inner h2 span{
      color: #345a9c;
 }
@@ -71,7 +129,11 @@ a:focus, a:hover{
      border-radius: 0;
     background-color: rgb(52, 90, 156);
     box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
-    transition:all 0.5s;
+    transition: transform 300ms linear;
+}
+.sticky .custom-nav li a{
+    font-size: 16px;
+    padding: 10px 15px;
 }
 .main-banner .cd-side-nav{
    display: none;
@@ -92,7 +154,6 @@ a:focus, a:hover{
    border-radius: 0;
      background-color: rgb(52, 90, 156);
      box-shadow: none;
-     transition:all 0.5s;
 }
  .custom-nav .navbar-nav{
      float: none;
@@ -132,35 +193,19 @@ a:focus, a:hover{
  .lp-first-section img{
      margin: auto;
 }
-.content .space{
-     padding: 50px 0;
-}
- .wrap-table{
+
+.lp-first-section .wrap-table{
      display: table;
      height: 350px;
 }
- .box-cell{
-     display: table-cell;
-     vertical-align: middle;
-}
+
  .lp-first-section h2{
      font-size: 44px;
      font-family: "Vidaloka-Regular";
      color: rgb(68, 68, 68);
      line-height: 1.2;
 }
- .secondary-btn{
-     background-color: #345a9c;
-     color: #fff;
-     border-radius: 5px;
-     font-size: 18px;
-     padding: 15px 20px;
-     border-bottom: 4px solid #c49634;
-}
- .secondary-btn:hover{
-     color: #c49634;
-     border-bottom: 4px solid #3d589f;
-}
+
  .lp-second-section{
      background-color: #e9eef1;
 }
@@ -415,10 +460,10 @@ surname_detail_gallery_info CSS
     -ms-border-radius: 50px 0 0 50px;
     border-radius: 4px 0 0 4px;
 }
-.search-inner .input-group .input-group-btn button {
+.search-inner .input-group .input-group-btn a {
     background: #345a9c;
     height: 60px;
-    padding: 6px 22px;
+    padding: 10px 22px;
     color: #787878;
     font-size: 16px;
     border: 0 none;
@@ -431,7 +476,7 @@ surname_detail_gallery_info CSS
     -ms-border-radius: 0 50px 50px 0;
     border-radius: 0 4px 4px 0;
 }
-.search-inner .input-group .input-group-btn button .fa {
+.search-inner .input-group .input-group-btn a .fa {
     color: #fff;
     font-size: 35px;
 }
@@ -538,7 +583,7 @@ color: #444;
     -ms-border-radius: 2px;
     border-radius: 2px;
 }
-.pagination-main .pagination>li:first-child>a, .pagination>li:last-child>a {
+.pagination-main .pagination>li:first-child>a, .pagination-main .pagination>li:last-child>a, .pagination-main .pagination>li:first-child>a:hover, .pagination-main .pagination>li:last-child>a:hover, .pagination-main .pagination>li:first-child>a:focus, .pagination-main .pagination>li:last-child>a:focus {
     border: 1px solid #fff; 
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -725,6 +770,8 @@ color: #444;
     text-decoration: none;
 }
 
+
+
 /*lerning center*/
 .same-box-wrap{
     margin-top: -3%;
@@ -752,12 +799,7 @@ color: #444;
     border-bottom: 1px solid #345a9c;
     margin: 0 0 20px;
 }
-.mtb-0{
-    margin: 0;
-}
-.pd-tb-15{
-    padding: 15px 0;
-}
+
 .nav-is-visible .navbar-nav{
     margin: 0;
 }
@@ -768,9 +810,30 @@ color: #444;
 8 March which_one_is_mine
 
 */
+.sparta-sec{
+    background: url(../images/sparta.png) no-repeat center;
+    background-size: cover;
+    padding: 30px 0 30px; 
+}
+.sparta-sec h3{
+    font-size: 40px;
+    font-family: "Vidaloka-Regular";
+    color: #444;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+.sparta-sec p{
+    font-family: "RobotoSlab-Regular";
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 .box {
    display: flex;
    align-items:center;
+}
+.popup-video{
+    margin-bottom: 15px;
 }
 .service-section h3{
     font-size: 20px;
@@ -872,14 +935,129 @@ color: #444;
     font-family: "Vidaloka-Regular";
     text-align: center;
 }
-.hint{
-    color: #a7a7a7;
+
+/*card*/
+.card-stamp{
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+    background-color: #fafafa;
+    margin-bottom: 26px;
 }
-.bg-white{
-    background-color: #fff;
+.card-stamp .image-box img{
+    margin: auto;
+    height: 300px;
 }
-.bg-sky{
-    background-color: #e9eef1;
+.card-stamp .rating-box{
+    background-color: #dddddd;
+    text-align: center;
+    margin: 10px 0 0;
+    padding: 5px;
+}
+.card-stamp .rating-box .fa{ 
+    color: #787878;
+}
+.card-stamp .detail-box{
+    padding: 15px;
+}
+.card-stamp .detail-box .price{
+    font-family: "Vidaloka-Regular";
+    font-size: 30px;
+    color: #345a9c;
+}
+.card-stamp .detail-box .info{
+    font-size: 16px;
+    color: #444;
+}
+.detail-box .primary-btn{
+    margin: 0;
+    padding: 10px 40px;
+    font-family: "Vidaloka-Regular";
+}
+
+.clothing-items-section .card-stamp .image-box img{
+    height: 200px;
+}
+.clothing-items-section .card-stamp .rating-box{
+     margin: 0;
+}
+.vertical-filter{
+    margin-bottom: 20px;
+}
+.vertical-filter .filter-head{
+    background-color: #345a9c;
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 16px;
+    font-family: "Vidaloka-Regular";
+    border-radius: 4px 4px 0 0;
+}
+.item-list .list{
+    width: 60%;
+    margin: auto;
+}
+.vertical-filter input[type=radio] {
+    display: none;
+}
+.vertical-filter .btn-radio {
+    color: #444;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    padding: 10px 0;
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+.vertical-filter .btn-radio.active {
+    background: transparent;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+}
+.vertical-filter .btn-radio img{
+    margin: auto;
+    border: 2px solid transparent;
+    border-radius: 3px;
+}
+.top-right {
+    position: absolute;
+    top: 10px;
+    font-size: 12px;
+    right: 2px;
+    border-radius: 0 2px 0 2px;
+    padding: 4px 8px;
+    background-color: #bf9722;
+    color: #fff;
+}
+.vertical-filter .btn-radio.active img{
+    border: 2px solid #c49634;
+}
+.filter-pager{
+    background-color: #345a9c;
+}
+.filter-pager .btn{
+    background-color: transparent;
+}
+.filter-pager.down{
+    border-radius: 0 0 4px 4px;
+}
+.filter-pager.up{
+    border-radius: 4px 4px 0 0;
+}
+.filter-pager .fa{
+    color: #fff;
+}
+.filter-icon{
+    float: right;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 22px;
 }
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
@@ -934,6 +1112,7 @@ color: #444;
     .share-btn-wrap .primary-btn  {
        padding: 10px 15px;
     }
+
 }
 
 /* Landscape phones and portrait tablets */
@@ -1039,9 +1218,9 @@ color: #444;
       transform: translateX(4px) translateY(2px) rotate(-45deg);
     }
     .nav-is-visible a{
-         font-size: 16px;
+         font-size: 12px;
          font-family: "Vidaloka-Regular";
-         color: #3d589f;
+         color: #3d589f !important;
          text-transform: uppercase;
      }
      .nav-is-visible .nav{padding-top: 30px;}
@@ -1055,19 +1234,19 @@ color: #444;
          margin: 10px;
      }
      .search-inner h1 {
-       font-size: 32px;
+       font-size: 26px;
     }
     .search-inner .input-group .form-control{
         font-size: 12px;
     }
 
     .main-banner .banner-search-inner {
-      padding: 60px 0 20px;
+      padding: 80px 0 20px;
     }
-    .search-inner .input-group .form-control, .search-inner .input-group .input-group-btn button{
+    .search-inner .input-group .form-control, .search-inner .input-group .input-group-btn a{
         height: 46px;
     }
-    .search-inner .input-group .input-group-btn button .fa {
+    .search-inner .input-group .input-group-btn a .fa {
        font-size: 20px;
     }
     .backoverlay{
@@ -1079,6 +1258,9 @@ color: #444;
     8 March which_one_is_mine
 
     */
+    .space.same-box-wrap {
+      padding: 40px 0;
+    }
     .box {
         display: block;
         align-items: center;
@@ -1091,6 +1273,88 @@ color: #444;
     }
     .custom-input input:focus ~ label, .custom-input input:valid ~ label, .custom-input textarea:focus ~ label, .custom-input textarea:valid ~ label {
         font-size: 8px;
+    }
+
+     /*11 March*/
+     .content .space {
+        padding: 30px 0;
+    }
+    .lp-first-section .wrap-table{
+        height: auto;
+    }
+     .lp-first-section h2 {
+          font-size: 20px;
+     }
+     .lp-second-section h3 {
+          font-size: 20px;
+     }
+     
+     .lp-three-section h3 {
+          font-size: 20px;
+     }
+     .lp-first-section .item img, .home-page-banner .banner-carousel-inner img, .service-section img{
+        width: 60%;
+     }
+     .service-section img{
+        margin: auto;
+     }
+    .inner-page-nav .navbar-header .logo img {
+        width: 40%;
+    }
+    .cd-side-nav .primary-btn:hover{
+        background-color: #c49634;
+    }
+    .nav-is-visible .m-lr-15{
+        margin: 0;
+    }
+    .tab-section > .container > .row{
+        margin: 0;
+    }
+    .popup-gallery img{
+        width: 200px;
+    }
+    .share-with-section h3, .references-section h3, .sparta-sec h3{
+        font-size: 24px;
+    }
+    .sparta-sec p {
+        font-size: 16px;
+    }
+    .search-dtls-main {
+        padding: 50px 0 10px; 
+    }
+    .tab-section .my-tab a {
+       font-size: 12px;
+    }
+    .pd-tb-15 {
+       padding: 10px 0;
+    }
+    .tab-wrap, .tab-wrap:first-child, .tab-wrap:last-child{
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .leave-a-comment-section .link-wrap p {
+       font-size: 14px;
+    }
+    .references-section ol li a {
+       font-size: 12px;
+    }
+    .card-stamp .image-box img {
+        height: 250px;
+    }
+    .card-stamp .detail-box .price{
+        font-size: 22px;
+    }
+    .item-list .list {
+        width: 30%;
+        margin: auto;
+        display: inline-flex;
+    }
+    .top-right{
+        font-size: 8px;
+        padding: 4px 6px;
+    }
+    .home-page-banner {
+       padding: 50px 0 20px;
     }
 }
 /* Portrait phones and smaller */
@@ -1149,7 +1413,7 @@ color: #444;
     } 
     .tab-wrap, .tab-wrap:first-child, .tab-wrap:last-child{
       border-radius: 5px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .space.share-with-section {

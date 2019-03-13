@@ -2276,14 +2276,32 @@ function comment_form( $args = array(), $post_id = null ) {
 	$html_req = ( $req ? " required='required'" : '' );
 	$html5    = 'html5' === $args['format'];
 	$fields   = array(
-		'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-					 '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $html_req . ' /></p>',
-		'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-					 '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $html_req . ' /></p>',
-		'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website' ) . '</label> ' .
-					 '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>',
+		'author' => '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<div class="custom-input">
+							<div class="group">      
+								<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $html_req . '>
+								<label>Name</label>
+							</div>
+						</div>
+					</div>',
+		'email'  => '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<div class="custom-input">
+							<div class="group">
+							  <input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $html_req . '>
+							  <label>Email Address</label>
+							</div>
+						</div>
+					</div>',
+		'url'    => '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<div class="custom-input">
+							<div class="group">
+							  <input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200"' . $html_req . '>
+							  <label>Website</label>
+							</div>
+						</div>
+					</div>',
 	);
-
+	/*
 	if ( has_action( 'set_comment_cookies', 'wp_set_comment_cookies' ) && get_option( 'show_comments_cookies_opt_in' ) ) {
 		$consent           = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
 		$fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
@@ -2293,7 +2311,7 @@ function comment_form( $args = array(), $post_id = null ) {
 		if ( isset( $args['fields'] ) && ! isset( $args['fields']['cookies'] ) ) {
 			$args['fields']['cookies'] = $fields['cookies'];
 		}
-	}
+	}*/
 
 	$required_text = sprintf( ' ' . __( 'Required fields are marked %s' ), '<span class="required">*</span>' );
 
@@ -2307,7 +2325,14 @@ function comment_form( $args = array(), $post_id = null ) {
 	$fields   = apply_filters( 'comment_form_default_fields', $fields );
 	$defaults = array(
 		'fields'               => $fields,
-		'comment_field'        => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>',
+		'comment_field'        => '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+											<div class="custom-input">
+												<div class="group">      
+												  <textarea id="comment" name="comment" maxlength="65525" required="required"></textarea>
+												  <label>Comment</label>
+												</div>
+											</div>
+										</div>',
 		/** This filter is documented in wp-includes/link-template.php */
 		'must_log_in'          => '<p class="must-log-in">' . sprintf(
 			/* translators: %s: login URL */
@@ -2315,7 +2340,7 @@ function comment_form( $args = array(), $post_id = null ) {
 			wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
 		) . '</p>',
 		/** This filter is documented in wp-includes/link-template.php */
-		'logged_in_as'         => '<p class="logged-in-as">' . sprintf(
+		'logged_in_as'         => '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><p class="logged-in-as">' . sprintf(
 			/* translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL */
 									__( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>' ),
 			get_edit_user_link(),
@@ -2323,8 +2348,8 @@ function comment_form( $args = array(), $post_id = null ) {
 									esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.' ), $user_identity ) ),
 			$user_identity,
 			wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
-		) . '</p>',
-		'comment_notes_before' => '<p class="comment-notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span>' . ( $req ? $required_text : '' ) . '</p>',
+		) . '</p></div>',
+		//'comment_notes_before' => '<p class="comment-notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span>' . ( $req ? $required_text : '' ) . '</p>',
 		'comment_notes_after'  => '',
 		'action'               => site_url( '/wp-comments-post.php' ),
 		'id_form'              => 'commentform',
@@ -2332,16 +2357,18 @@ function comment_form( $args = array(), $post_id = null ) {
 		'class_form'           => 'comment-form',
 		'class_submit'         => 'submit',
 		'name_submit'          => 'submit',
-		'title_reply'          => __( 'Leave a Reply' ),
+		'title_reply'          => __( 'Leave A Comment' ),
 		'title_reply_to'       => __( 'Leave a Reply to %s' ),
 		'title_reply_before'   => '<h3 id="reply-title" class="comment-reply-title">',
 		'title_reply_after'    => '</h3>',
 		'cancel_reply_before'  => ' <small>',
 		'cancel_reply_after'   => '</small>',
-		'cancel_reply_link'    => __( 'Cancel reply' ),
-		'label_submit'         => __( 'Post Comment' ),
-		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
-		'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
+		'cancel_reply_link'    => __( 'Cancel Comment' ),
+		'label_submit'         => __( 'POST COMMENT' ),
+		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s btn secondary-btn" value="%4$s" />',
+		'submit_field'         => '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-box text-center">%1$s %2$s</div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 link-wrap">
+											<p>This site uses Akismet to reduce spam. <a href="">Learn how your comment data is processed.</a></p>
+										</div>',
 		'format'               => 'xhtml',
 	);
 
