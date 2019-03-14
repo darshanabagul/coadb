@@ -52,14 +52,7 @@
 							<div class="banner-search-inner search-inner">
 								<h2>Search for your surname & find your historic <span>Coat of Arms </span> below </h2>
 								<div class="">
-									<form class="">
-										<div class="input-group">
-											<input type="text" class="form-control" placeholder="Type your surname here">
-											<span class="input-group-btn">
-												<button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
-											</span>
-										</div>
-									</form>
+									<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
 								</div>
 							</div>
 						</div>

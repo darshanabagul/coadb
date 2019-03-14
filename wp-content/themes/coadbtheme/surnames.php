@@ -1,6 +1,6 @@
 <?php
 /*Template Name: Surnames*/
-get_header('two');
+get_header('sub');
 ?>
 <div class="page-wrap">
 	<?php get_header('search');?>
