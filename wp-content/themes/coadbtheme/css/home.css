@@ -794,7 +794,13 @@ color: #444;
     padding: 15px;
     outline: none;
 }
-
+.view-more .elm-wrapper .elm-button {
+    background-color: #fff;
+    color: #c49634;
+    padding: 15px;
+    border: none;
+    width: 100%;
+}
 .bt-b{
     border-bottom: 1px solid #345a9c;
     margin: 0 0 20px;

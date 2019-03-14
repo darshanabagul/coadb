@@ -1,5 +1,4 @@
 <?php  get_header(); ?>
-
 <!-- Main content Start Here -->
 		<div class="content">
 			<!-- first section Starts Here -->

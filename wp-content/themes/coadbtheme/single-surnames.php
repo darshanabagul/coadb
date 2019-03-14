@@ -1,5 +1,5 @@
 <?php
-get_header('two');
+get_header('sub');
 /* Start the Loop */
 ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet" />
@@ -117,7 +117,6 @@ get_header('two');
 		</div>
 	</section>
 	<!-- Share with section End Here -->
-	
     <!-- Reffrence section Starts Here -->
 	<section class="space references-section references-section-sky">
 		<div class="container">

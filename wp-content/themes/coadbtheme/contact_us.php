@@ -4,31 +4,7 @@ get_header('sub');
 ?>
 		 <!--Page Main content Start Here -->
 		<div class="page-wrap">
-			<!-- Banner Starts Here -->
-			<div class="contact-us-main" id="searchBar">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
-							<div class="search-inner">
-								<div class="row">
-									<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
-										<form>
-											<div class="input-group">
-												<input type="text" class="form-control" placeholder="Type your surname here">
-												<span class="input-group-btn">
-													<button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
-												</span>
-											</div>
-										</form>
-									</div>
-								</div>
-                                <h1>Contact Us</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Banner Ends Here -->
+			<?php get_header('search');?>
 			<!-- Leave A Comment section Starts Here --> 
 			<section class="space leave-a-comment-section">
 				<div class="container">

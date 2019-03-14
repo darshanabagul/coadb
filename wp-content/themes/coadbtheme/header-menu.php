@@ -12,7 +12,7 @@
 					    				'menu_class' => '',
 								        'depth' => 0,
 								        'items_wrap' => '%3$s', // removes ul
-								    	'walker' => new Learning_Description_Walker // custom walker to replace li with div
+								    	//'walker' => new Learning_Description_Walker // custom walker to replace li with div
 					    		);
 				    	?>
 				    	<?php wp_nav_menu( $args ); ?>
