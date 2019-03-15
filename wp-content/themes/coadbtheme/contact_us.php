@@ -14,7 +14,7 @@ get_header('sub');
                                 <h3>How can we help?</h3>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <?php echo do_shortcode( '[contact-form-7 id="235" title="Contact Us"]' ); ?>
+                                <?php echo do_shortcode( '[contact-form-7 id="22" title="Contact Us"]' ); ?>
                             </div>
                         </div>		
                     </div>
