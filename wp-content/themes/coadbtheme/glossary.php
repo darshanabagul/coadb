@@ -63,42 +63,19 @@ get_header('sub');
 			</div>
 		</div>
 	</section>
-	<section class="space references-section references-section-white">
-		<div class="container">
-		 	<div class="row">
-			 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			 		<h3>References</h3>
-			 	</div>
-			 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			 		<ol>
-					  <li> 
-					  	<a href="">Understanding Signs & Symbols – Heraldry, S. Oliver & G. Croton, Quantum, London, 2013, P53</a>
-					  </li>
-					  <li> 
-					  	<a href="">Understanding Signs & Symbols – Heraldry, S. Oliver & G. Croton, Quantum, London, 2013, P53 Understanding Signs & Symbols – Heraldry, S. Oliver & G. Croton, Quantum, London, 2013, P53</a>
-					  </li>
-					  <li> 
-					  	<a href="">Understanding Signs & Symbols – Heraldry, S. Oliver & G. Croton, Quantum, London, 2013, P53</a>
-					  </li>
-					  <li> 
-					  	<a href="">Understanding Signs & Symbols – Heraldry, S. Oliver & G. Croton, Quantum, London, 2013, P53</a>
-					  </li>
-					  <li> 
-					  	<a href="">Understanding Signs & Symbols – Heraldry, S. Oliver & G. Croton, Quantum, London, 2013, P53</a>
-					  </li>
-					  <li> 
-					  	<a href="">Understanding Signs & Symbols – Heraldry, S. Oliver & G. Croton, Quantum, London, 2013, P53</a>
-					  </li>
-					  <li> 
-					  	<a href="">Understanding Signs & Symbols – Heraldry, S. Oliver & G. Croton, Quantum, London, 2013, P53</a>
-					  </li>
-					  <li> 
-					  	<a href="">Understanding Signs & Symbols – Heraldry, S. Oliver & G. Croton, Quantum, London, 2013, P53</a>
-					  </li>
-					</ol>
-			 	</div>
-			</div>
-		</div>
-	</section>
+	<!-- Reffrence section Starts Here -->
+    <?php if ($footnotes = call_user_func(array('advanced_footnotes', 'get_refs'))); { ?>
+    	<?php if(!empty($footnotes)) { ?>
+			<section class="space references-section references-section-sky">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<?php $footnotes = call_user_func_array(array('advanced_footnotes', 'print_refs'), array(false, 'References')); echo $footnotes;?>
+						</div>
+					</div>
+				</div>
+			</section>
+		<?php } ?>
+	<?php } ?>
 </div>
 <?php get_footer();?>
