@@ -102,6 +102,83 @@
 		    	return false;
 		    });
 			})
+		$(document).ready(function(){
+			  // Nav
+			  var sidebar = $('.cd-side-nav'),
+				sidebarTrigger = $('.cd-nav-trigger');
+				sidebarTrigger.on('click', function(event){
+					event.preventDefault();
+					$([sidebar, sidebarTrigger]).toggleClass('nav-is-visible');
+				});
+
+				$(".filter-items").on("change", ".btn-radio", function(e){
+		    	e.preventDefault();
+		    	var elems = document.querySelectorAll(".btn-radio");
+				  [].forEach.call(elems, function(el) {
+				    el.classList.remove("active");
+				  });
+		    	$(this).closest('.btn-radio').toggleClass("active");
+		    	return false;
+		    });
+
+
+			})
+	$(document).ready(function(){
+        wh = $(window).width();
+        if (wh >= 767)
+        {
+          $(".my-vertical-filter").slick({
+					  dots: false,
+					  infinite: false,
+					  speed: 300,
+					  slidesToShow: 5,
+					  slidesToScroll: 5,
+					  vertical:true,
+					  responsive: [
+					    {
+					      breakpoint: 1024,
+					      settings: {
+					        slidesToShow: 5,
+					        slidesToScroll: 5,
+					        infinite: false,
+					        dots: false
+					      }
+					    }
+					  ]
+				  });
+        }
+        else
+        {
+         	$(".my-vertical-filter").slick({
+            dots: false,
+					  infinite: false,
+					  speed: 300,
+					  slidesToShow: 2,
+					  slidesToScroll: 2,
+					  swipe:true,
+					  touchMove:true,
+					  vertical:false,
+					  responsive: [
+					    {
+					      breakpoint: 600,
+					      settings: {
+					        slidesToShow: 2,
+					        slidesToScroll: 2,
+					        infinite: false
+					      }
+					    },
+					    {
+					      breakpoint: 480,
+					      settings: {
+					        slidesToShow: 1,
+					        slidesToScroll: 1,
+					        infinite: false
+					      }
+					    }
+					  ]
+					});
+			  }
+      });
 		</script>
 </footer>
 </body>

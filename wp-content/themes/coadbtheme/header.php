@@ -5,7 +5,6 @@
 	<?php wp_head(); ?>
 </head>
 <body>
-
 <!-- banner Starts Here -->
     <section class="main-banner">
     	<div class="header">
@@ -58,11 +57,13 @@
 						</div>
 						<div class="col-lg-5  col-md-5  col-sm-6 col-xs-12">
 							<div id="carousel" class="banner-carousel-inner carousel slide carousel-fade" data-ride="carousel" data-interval="2500">
-						      	<div class="carousel-inner">
-						        	<div class="active item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/t-shirt.png" alt="1 slide" class="img-responsive"></div>
-						        	<div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/t-shirt1.png" alt="2 slide" class="img-responsive"></div>
-						        </div>
-					    	</div>
+						      <div class="carousel-inner">
+						        <div class="active item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b1.png" alt="1 slide" title="1 slide" class="img-responsive"></div>
+						        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b2.png" alt="2 slide" title="2 slide" class="img-responsive"></div>
+						        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b3.png" alt="3 slide"  title="3 slide" class="img-responsive"></div>
+						        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b4.png" alt="4 slide"  title="4 slide" class="img-responsive"></div>
+						      </div>
+					   		</div>
 						</div>
 					</div>
 				</div>
