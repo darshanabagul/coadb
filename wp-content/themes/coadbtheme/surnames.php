@@ -22,7 +22,7 @@ get_header('sub');
 		                        <div id="collapse<?php echo $sk?>" class="panel-collapse collapse in">
 		                            <div class="panel-body">
 		                            	<?php foreach($surnames as $k=>$surname) { ?>
-		                                	<a href="<?php echo get_permalink($surname->ID)?>"><?php echo $surname->post_title;?></a>
+		                                	<a href="<?php echo get_permalink($surname->ID)?>"><?php echo $surname->surname;?></a>
 		                            	<?php } ?>
 		                            </div>
 		                        </div>
