@@ -18,7 +18,7 @@
 				 	    	<div class="wrap-table">
 						 	<div class="box-cell">
 						 		<h2 >Coats of Arms, Surname History, Genealogy. Find your family’s surname today.</h2>
-				 	    	<button class="btn secondary-btn">View Surname Database</button>
+				 	    		<a class="btn secondary-btn" href="<?php echo get_home_url();?>/surname-listing">View Surname Database</a>
 						 	</div>
 						 	</div>
 				 	    </div>
@@ -32,15 +32,15 @@
 				<div class="container">
 				 	<div class="row">
 					 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-					   <div class="about-info">
-					   	<p>Some time in the late 12th century when knighthood became prestigious, the concept of coat of arms was born – a heraldric emblem on a shield that celebrates the name and accomplishments of a person, a family or a country. Every coat of arms comes with a sense of royalty, honor and respect. It is a pride for a family to learn about its origins and armorial bearings. Thus arose the need to build a coat of arms library to help you search where you came from.</p>
-					   	<p>Welcome to COADB – world’s premier research and retail website for coats of arms (sometimes known as family crests) and all things related: heraldry, surname history and genealogy.</p>
-					   	<p>We are a small, family-owned and operated business based outside of Detroit, Michigan and we pride ourselves on our passion and personal service. If you have any questions, please get in touch. Thank you so much for visiting our site and sharing your journey with us.</p>
+					   	<div class="about-info">
+						   	<p>Some time in the late 12th century when knighthood became prestigious, the concept of coat of arms was born – a heraldric emblem on a shield that celebrates the name and accomplishments of a person, a family or a country. Every coat of arms comes with a sense of royalty, honor and respect. It is a pride for a family to learn about its origins and armorial bearings. Thus arose the need to build a coat of arms library to help you search where you came from.</p>
+						   	<p>Welcome to COADB – world’s premier research and retail website for coats of arms (sometimes known as family crests) and all things related: heraldry, surname history and genealogy.</p>
+						   	<p>We are a small, family-owned and operated business based outside of Detroit, Michigan and we pride ourselves on our passion and personal service. If you have any questions, please get in touch. Thank you so much for visiting our site and sharing your journey with us.</p>
 					   </div>
-					 		<h3><span>John R. Lehman</span>, Owner of coadb.com</h3>
-					 		<div class="img-wrap">
-					 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/auth.png" class="img-responsive">
-					 		</div>
+				 		<h3><span>John R. Lehman</span>, Owner of coadb.com</h3>
+				 		<div class="img-wrap">
+				 			<img src="<?php echo get_stylesheet_directory_uri();?>/images/auth.png" class="img-responsive">
+				 		</div>
 			 	    </div>
 				  </div>
 				</div>
@@ -82,19 +82,19 @@
 							    <div id="find-tab" class="tab-pane fade in active">
 							     <p>Our database contains 4000+ surnames and 30,000+ coats of arms – with new surnames, coats of arms and family histories being added daily. All you need to do is enter your surname in the search box at the top of this page to begin your journey of discovery. It’s free of charge. What’s unique about COADB is that instead of listing only ‘the most popular’ coats of arms for your surname, our team of international researchers and artists ensures that every listing is complete and accurate.</p>
 							     <div class="tab-bottom">
-							     	 <button class="btn primary-btn">Find Your Coat of Arms</button>
+							     	 	<a class="btn primary-btn" href="<?php echo get_home_url();?>/surname-listing">Find Your Coat of Arms</a>
 							     </div>
 							    </div>
 							    <div id="merchandise-tab" class="tab-pane fade">
 							      <p>Our database contains 4000+ surnames and 30,000+ coats of arms – with new surnames, coats of arms and family histories being added daily. All you need to do is enter your surname in the search box at the top of this page to begin your journey of discovery. It’s free of charge. What’s unique about COADB is that instead of listing only ‘the most popular’ coats of arms for your surname, our team of international researchers and artists ensures that every listing is complete and accurate.</p>
 							      <div class="tab-bottom">
-							     	 <button class="btn primary-btn">Find Your Coat of Arms</button>
+							     		<a class="btn primary-btn" href="<?php echo get_home_url();?>/surname-listing">Find Your Coat of Arms</a>
 							     </div>
 							    </div>
 							    <div id="genealogy-tab" class="tab-pane fade">
 							      <p>Our database contains 4000+ surnames and 30,000+ coats of arms – with new surnames, coats of arms and family histories being added daily. All you need to do is enter your surname in the search box at the top of this page to begin your journey of discovery. It’s free of charge. What’s unique about COADB is that instead of listing only ‘the most popular’ coats of arms for your surname, our team of international researchers and artists ensures that every listing is complete and accurate.</p>
 							      <div class="tab-bottom">
-							     	 <button class="btn primary-btn">Find Your Coat of Arms</button>
+							     	 	<a class="btn primary-btn" href="<?php echo get_home_url();?>/surname-listing">Find Your Coat of Arms</a>
 							     </div>
 							    </div>
 							</div>
@@ -106,5 +106,4 @@
 			<!-- three section End Here -->
 	  </div>
 	  <!-- Main content End Here -->
-
 <?php get_footer(); ?>

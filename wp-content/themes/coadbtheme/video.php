@@ -6,24 +6,28 @@
 	<div class="page-wrap">
 		<?php get_header('search');?>
     	<!-- tab Starts Here -->
-		<section class="tab-section">
-		  <div class="container">
-		   		<ul>
-	    			<?php 
-		    			$args = array(
-		    				'theme_location' => 'other',
-		    				'container' => 'div',
-		    				'container_class' => 'tab-wrap',
-		    				'items_wrap' => '%3$s', // removes ul
-		    			);
-		    		?>
-		    		<?php wp_nav_menu( $args ); ?>
-				</ul>
-		  </div>
+		<section class="tab-section hidden-xs">
+	  		<div class="container">
+		    	<div class="row">
+			    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			    		<ul>
+			    			<?php 
+				    			$args = array(
+				    				'theme_location' => 'other',
+				    				'container' => 'div',
+				    				'container_class' => 'tab-wrap',
+				    				'items_wrap' => '%3$s', // removes ul
+				    			);
+				    		?>
+				    		<?php wp_nav_menu( $args ); ?>
+						</ul>
+			    	</div>
+		   	 	</div>
+	  		</div>
 		</section>
 		<!-- tab end Here -->
 		<!-- Video section Starts Here --> 
-		<section class="video-section-wrap bg-sky">
+		<section class="space same-box-wrap information-section video-section-wrap bg-sky">
 		    <div class="container">
 		        <div class="row">
 		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">

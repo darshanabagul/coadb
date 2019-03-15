@@ -5,9 +5,9 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="ftr-soc">
-				    		<a href="#"><i class="fa fa-facebook-f"></i></a>
+				    		<a href="https://www.facebook.com/COADB-915440015218550" target="_blank" rel="nofollow" title="Facebook"><i class="fa fa-facebook-f"></i></a>
 							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-google-plus"></i></a>
+							<a href="https://plus.google.com/109578789296952154822/" target="_blank"><i class="fa fa-google-plus"></i></a>
 							<a href="#"><i class="fa fa-instagram"></i></a>
 						</div>
 						<div class="ftr-link">
