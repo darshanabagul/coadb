@@ -5,25 +5,25 @@
 <div class="page-wrap">
     <?php get_header('search');?>
     <section class="tab-section hidden-xs">
-              <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <ul>
-                            <?php 
-                                $args = array(
-                                    'theme_location' => 'other',
-                                    'container' => 'div',
-                                    'container_class' => 'tab-wrap',
-                                    'items_wrap' => '%3$s', // removes ul
-                                );
-                            ?>
-                            <?php wp_nav_menu( $args ); ?>
-                        </ul>
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul>
+                        <?php 
+                            $args = array(
+                                'theme_location' => 'other',
+                                'container' => 'div',
+                                'container_class' => 'tab-wrap',
+                                'items_wrap' => '%3$s', // removes ul
+                            );
+                        ?>
+                        <?php wp_nav_menu( $args ); ?>
+                    </ul>
                 </div>
-              </div>
-            </section>
-    <section class="space faq-section">
+            </div>
+        </div>
+    </section>
+    <section class="space same-box-wrap information-section faq-section">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -61,5 +61,4 @@
         </div>
     </section>
 <!-- Leave A Comment section End Here -->
-
 <?php get_footer();?>

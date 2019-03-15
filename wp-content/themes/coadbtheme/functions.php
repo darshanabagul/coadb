@@ -201,6 +201,21 @@ function find_coat_of_arms() {
     return $coat_of_arms;
 }
 
+function get_all_surnames() {
+	$surnames= query_posts(array(
+	   'post_type' => 'surnames',
+	   'orderby'=> 'title', 
+	   'order' => 'ASC'
+	));
+	$result = array();
+	foreach ($surnames as $item) {
+	    $firstLetter = substr($item->surname, 0, 1);
+	    $result[$firstLetter][] = $item;
+	}
+	//array_multisort($result, SORT_DESC, $surnames);  //sort array according to alphabetically
+	return $result;
+}
+
 function get_all_FAQ() {
 	$faqs= query_posts(array(
 	   'post_type' => 'faq',
@@ -228,7 +243,7 @@ add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
 
 class Description_Walker extends Walker_Nav_Menu
 {
-    function start_el(&$output, $item, $depth, $args)
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
     {
        $classes = empty($item->classes) ? array () : (array) $item->classes;
         $class_names = join(' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );

@@ -13,8 +13,8 @@
     			<div class="row">
     				<div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
     					<div class="home-logo">
-    						<a href="./index.html" class="logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png"></a>
-    					  <p class="home-logo-text">database & shop</p>
+    						<a href="<?php echo get_home_url();?>" class="logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png"></a>
+    					  	<p class="home-logo-text">database & shop</p>
     					</div>
     				</div>
     				<div class="col-xs-4 col-sm-8 col-md-8 col-lg-10">
