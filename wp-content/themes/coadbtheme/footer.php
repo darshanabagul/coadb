@@ -111,18 +111,18 @@
 					$([sidebar, sidebarTrigger]).toggleClass('nav-is-visible');
 				});
 
-				$(".filter-items").on("change", ".btn-radio", function(e){
+			$("input[name='select-option-radio']",$('.check-option')).change(
+		    function(e)
+		    {
 		    	e.preventDefault();
-		    	var elems = document.querySelectorAll(".btn-radio");
+		    	var elems = document.querySelectorAll(".check-option");
 				  [].forEach.call(elems, function(el) {
-				    el.classList.remove("active");
+				    el.classList.remove("option-active");
 				  });
-		    	$(this).closest('.btn-radio').toggleClass("active");
+		    	$(this).closest('.check-option').toggleClass("option-active");
 		    	return false;
 		    });
-
-
-			})
+			});
 	$(document).ready(function(){
         wh = $(window).width();
         if (wh >= 767)
