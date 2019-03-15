@@ -4,23 +4,25 @@
 ?>
 <div class="page-wrap">
     <?php get_header('search');?>
-    <section class="tab-section">
-	    <div class="container">
-	        <div class="row">
-                <?php 
-                    $args = array(
-                            'theme_location' => 'other',
-                            'container' => 'div', // parent container 
-                            'container_class' => 'row', //parent container ID
-                            'depth' => 2,
-                            'items_wrap' => '%3$s', // removes ul
-                            //'walker' => new Learning_Description_Walker // custom walker to replace li with div
-                    );
-                ?>
-                <?php wp_nav_menu( $args ); ?>
-            </div>
-	    </div>
-	</section>
+    <section class="tab-section hidden-xs">
+              <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul>
+                            <?php 
+                                $args = array(
+                                    'theme_location' => 'other',
+                                    'container' => 'div',
+                                    'container_class' => 'tab-wrap',
+                                    'items_wrap' => '%3$s', // removes ul
+                                );
+                            ?>
+                            <?php wp_nav_menu( $args ); ?>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+            </section>
     <section class="space faq-section">
         <div class="container">
             <div class="row">

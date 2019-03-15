@@ -19,7 +19,7 @@
 							        'container_id' => 'my_nav', //parent container ID
 							        'depth' => 1,
 							        'items_wrap' => '%3$s', // removes ul
-							    	//'walker' => new Description_Walker // custom walker to replace li with div
+							    	'walker' => new Description_Walker // custom walker to replace li with div
 					    		);
 					    	?>
 				    		<?php wp_nav_menu( $args ); ?>
@@ -65,6 +65,44 @@
 		});
 		$(".navbar-nav li").first().addClass("active");
 	</script>
+	<script>
+			$(document).ready(function(){
+			  // Nav
+			  var sidebar = $('.cd-side-nav'),
+				sidebarTrigger = $('.cd-nav-trigger');
+				sidebarTrigger.on('click', function(event){
+					event.preventDefault();
+					$([sidebar, sidebarTrigger]).toggleClass('nav-is-visible');
+				});
+        
+        	$('.popup-video').magnificPopup({
+					delegate: 'a',
+				  type: 'iframe',
+				  gallery:{
+				    enabled:true
+				  }
+				});
+
+			$('.popup-modal').magnificPopup({
+			    type: 'inline',
+			    preloader: false,
+			    focus: '#username',
+			    modal: true
+			}); 
+
+			$("input[name='select-option-radio']",$('.check-option')).change(
+		    function(e)
+		    {
+		    	e.preventDefault();
+		    	var elems = document.querySelectorAll(".check-option");
+				  [].forEach.call(elems, function(el) {
+				    el.classList.remove("option-active");
+				  });
+		    	$(this).closest('.check-option').toggleClass("option-active");
+		    	return false;
+		    });
+			})
+		</script>
 </footer>
 </body>
 </html>

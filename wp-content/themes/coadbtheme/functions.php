@@ -4,15 +4,17 @@ function coadb_script_enquire()
 {
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array());
 	wp_enqueue_style('font', get_template_directory_uri() . '/css/font.css', array(),'all');
-	wp_enqueue_style('customestyle', get_template_directory_uri() . '/css/home.css', array());
+	wp_enqueue_style('customestyle', get_template_directory_uri() . '/css/home.css', array(),'all');
+	wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/style.css', array(),'all');
 	wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array());
 	wp_enqueue_style('inner-layout', get_template_directory_uri() . '/css/inner-layout.css', array());
-	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array());
 	wp_enqueue_style('load-fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array());
-	
-	wp_enqueue_script('customjs', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.3.1', true);	
-	wp_enqueue_script('bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.7', true);	
-	wp_enqueue_script('wowjs', get_template_directory_uri() . '/js/wow.min.js', array(), '1.1.3', true);
+	wp_enqueue_style('magnific', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css', array());
+
+	wp_enqueue_script('customjs', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.0.0', true);	
+	wp_enqueue_script('bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true);	
+	wp_enqueue_script('wowjs', get_template_directory_uri() . '/js/wow.min.js', array(), '1.0.0', true);	
+	wp_enqueue_script('magnific-popup', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js', array());	
 }
 add_action('wp_enqueue_scripts', 'coadb_script_enquire');
 
@@ -194,24 +196,9 @@ function find_coat_of_arms() {
 	}
 
 	if (!empty($images)) {
-    	$coat_of_arms['images'] = array_chunk($images, 12);
+    	$coat_of_arms['images'] = array_chunk($images, 6);
 	}
-	return $coat_of_arms;
-}
-
-function get_all_surnames() {
-	$surnames= query_posts(array(
-	   'post_type' => 'surnames',
-	   'orderby'=> 'title', 
-	   'order' => 'ASC'
-	));
-	$result = array();
-	foreach ($surnames as $item) {
-	    $firstLetter = substr($item->surname, 0, 1);
-	    $result[$firstLetter][] = $item;
-	}
-	//array_multisort($result, SORT_DESC, $surnames);  //sort array according to alphabetically
-	return $result;
+    return $coat_of_arms;
 }
 
 function get_all_FAQ() {
@@ -231,21 +218,22 @@ function wpb_move_comment_field_to_bottom( $fields ) {
 }
  
 add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
+
 /*
 ===========================================
 			Include Walker File
 ===========================================
 */
 //require get_template_directory() . '/inc/walker.php';
-/*
+
 class Description_Walker extends Walker_Nav_Menu
 {
     function start_el(&$output, $item, $depth, $args)
     {
-        $classes = empty($item->classes) ? array () : (array) $item->classes;
+       $classes = empty($item->classes) ? array () : (array) $item->classes;
         $class_names = join(' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
         !empty ( $class_names ) and $class_names = ' class="'. esc_attr( $class_names ) . '"';
-        $output .= "<div id='menu-item-$item->ID' $class_names>";
+        $output .= "<a id='menu-item-$item->ID' $class_names>";
         $attributes  = '';
         !empty( $item->attr_title ) and $attributes .= ' title="'  . esc_attr( $item->attr_title ) .'"';
         !empty( $item->target ) and $attributes .= ' target="' . esc_attr( $item->target     ) .'"';
@@ -254,12 +242,20 @@ class Description_Walker extends Walker_Nav_Menu
         $title = apply_filters( 'the_title', $item->title, $item->ID );
         $item_output = $args->before
         . "<a $attributes>"
-        . $args->link_before
+        . $args->has_children->link_before
         . $title
-        . '</a></div>'
+        . '</a></a>'
         . $args->link_after
         . $args->after;
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
-}*/
+}
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function special_nav_class ($classes, $item) {
+    if (in_array('current-page-ancestor', $classes) || in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
 ?>
