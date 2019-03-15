@@ -5,6 +5,25 @@ get_header('sub');
 <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet" />
 <div class="page-wrap">
 	<?php get_header('search');?>
+	<section class="tab-section hidden-xs">
+	  <div class="container">
+	    <div class="row">
+	    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	    		<ul>
+	    			<?php 
+		    			$args = array(
+		    				'theme_location' => 'surname',
+		    				'container' => 'div',
+		    				'container_class' => 'tab-wrap',
+		    				'items_wrap' => '%3$s', // removes ul
+		    			);
+		    		?>
+		    		<?php wp_nav_menu( $args ); ?>
+				</ul>
+	    	</div>
+	    </div>
+	  </div>
+	</section>
 	<section class="space gallery-info-section">
 		<div class="container">
 			<?php

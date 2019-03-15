@@ -213,6 +213,9 @@ function get_all_surnames() {
 	    $result[$firstLetter][] = $item;
 	}
 	//array_multisort($result, SORT_DESC, $surnames);  //sort array according to alphabetically
+	//echo '<pre>';
+	//print_r($result);
+	//echo '</pre>';
 	return $result;
 }
 
