@@ -16,46 +16,10 @@ get_header('sub');
                                         <h3>How can we help?</h3>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <form>
-                                                    <div class="row">
-                                                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                                                <div class="custom-input">
-                                                                    <div class="group">      
-                                                                      <input type="text" id="Name" name="Name" required>
-                                                                      <label>Full Name</label>
-                                                                      <!-- <p class="error">Full Name is required</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                                                <div class="custom-input">
-                                                                    <div class="group">      
-                                                                      <input id="custom-check" type="text" required>
-                                                                      <label>Email Address</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                                                <div class="custom-input">
-                                                                    <div class="group">      
-                                                                      <input type="text" required>
-                                                                      <label>Subject</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                                <div class="custom-input">
-                                                                    <div class="group">      
-                                                                      <textarea required></textarea>
-                                                                      <label>Comment</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-box text-center">
-                                                                <button class="btn secondary-btn">SEND</button>
-                                                            </div>
-                                            </div>
-                                                </form>
+                                        
+                                            <?php echo do_shortcode( '[contact-form-7 id="235" title="Contact Us"]' ); ?>
+                                                                                               
+                                                
                                 </div>
                                 </div>		
                             </div>
