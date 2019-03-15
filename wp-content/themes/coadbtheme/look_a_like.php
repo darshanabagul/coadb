@@ -8,17 +8,17 @@
 		<!-- tab Starts Here -->
 		<section class="tab-section">
 		  <div class="container">
-			<?php 
-		    		$args = array(
-		    				'theme_location' => 'other',
-		    				'container' => 'div', // parent container 
-		    				'container_class' => 'row', //parent container ID
-					        'depth' => 2,
-					        'items_wrap' => '%3$s', // removes ul
-					    	//'walker' => new Learning_Description_Walker // custom walker to replace li with div
-		    		);
-			    ?>
-			<?php wp_nav_menu( $args ); ?>
+			<ul>
+    			<?php 
+	    			$args = array(
+	    				'theme_location' => 'other',
+	    				'container' => 'div',
+	    				'container_class' => 'tab-wrap',
+	    				'items_wrap' => '%3$s', // removes ul
+	    			);
+	    		?>
+	    		<?php wp_nav_menu( $args ); ?>
+			</ul>
 		  </div>
 		</section>
 		<!-- tab end Here -->
