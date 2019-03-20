@@ -9,17 +9,13 @@ get_header('sub');
 	  <div class="container">
 	    <div class="row">
 	    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	    		<ul>
-	    			<?php 
-		    			$args = array(
-		    				'theme_location' => 'surname',
-		    				'container' => 'div',
-		    				'container_class' => 'tab-wrap',
-		    				'items_wrap' => '%3$s', // removes ul
-		    			);
-		    		?>
-		    		<?php wp_nav_menu( $args ); ?>
-				</ul>
+	    		<?php $page = find_coat_of_arms();?>
+	    		<ul class="tab-wrap">
+                    <li class="active"><a href="">Gallery & Info</a></li>
+                    <li><a href="<?php echo esc_url( add_query_arg( 'surname', $page['page_slug'] , site_url( '/index.php/purchase-jpg/' ) ) )?>">Purchase jpg</a></li>
+                    <li ><a href="<?php echo esc_url( add_query_arg( 'surname', $page['page_slug'] , site_url( '/index.php/buy-clothing-merch/' ) ) )?>">buy clothing & merch</a></li>
+                    <li ><a href="<?php echo esc_url( add_query_arg( 'surname', $page['page_slug'] , site_url( '/index.php/which-coat-of-mine/' ) ) )?>">Which one is mine?</a></li>
+                </ul>
 	    	</div>
 	    </div>
 	  </div>
@@ -31,22 +27,24 @@ get_header('sub');
 			<div class="row">
             	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             		<div id="demo" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
-					    <div class="gallery row carousel-inner"> 
+					    <div class="gallery row carousel-inner">
+					    	<?php if(!empty($coat_of_arms['images'])) { ?>
+					    	<?php $i=1;?>
 					    	<?php foreach($coat_of_arms['images'] as $key=>$img) { ?>
 					    		<div class="item <?php if($key==0) echo 'active' ?>">
 						    		<?php foreach ($img as $k=>$v) { ?>
 								        <div class="col-xs-12  col-sm-4 col-md-3 col-lg-2">
-								         	<div class="img-container popup-gallery">
+								         	<div class="img-container">
 								         		<img src="<?php echo get_site_url()?>/wp-content/uploads/processed_images/<?php echo $v ?>" class="img-responsive image">
 								         		<div class="img-controls">
-								         			<a href="<?php echo get_site_url()?>/wp-content/uploads/processed_images/<?php echo $v ?>" href="javascript:;" class="img-select">
-								              		<i class="fa fa-3x fa-arrows-alt" aria-hidden="true"></i></a>
+								         			<i class="fa fa-3x fa-arrows-alt" aria-hidden="true" onclick="openModal();currentSlide(<?php echo $i?>)"></i>
 								         		</div> 
 								         	</div>
 								        </div>
+								        <?php $i=$i+1;?>
 								    <?php } ?>
 								</div>
-					        <?php } ?>
+					        <?php } }?>
 					    </div>
 					</div>
 				</div>
@@ -153,15 +151,53 @@ get_header('sub');
 <?php endwhile; ?>
 </div>
 <?php get_footer();?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.popup-gallery').magnificPopup({
-			delegate: 'a',
-		  	type: 'image',
-		  	gallery:{
-		    enabled:true
+<div id="myModal" class="my-modal modal">
+	<div class="modal-content">
+        	<span class="close cursor" onclick="closeModal()" title="Close">&times;</span>
+		    <?php if (!empty($coat_of_arms = find_coat_of_arms(5))) {?>
+				<?php if(!empty($coat_of_arms['images'])) { ?>
+				 	<?php foreach($coat_of_arms['images'] as $key=>$img) { ?>
+						<?php foreach ($img as $k=>$v) { ?>
+							<div class="mySlides">
+								<img src="<?php echo get_site_url()?>/wp-content/uploads/processed_images/<?php echo $v ?>" class="img-responsive" alt="" title="">
+							</div>
+						<?php } ?>
+				   	<?php } ?>
+	   		<?php } } ?>
+		    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+</div>
+<script>
+	function openModal() {
+		document.getElementById('myModal').style.display = "block";
+	}
+
+	function closeModal() {
+		document.getElementById('myModal').style.display = "none";
+	}
+
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";
 		  }
-		});
-	});
+		 
+		  slides[slideIndex-1].style.display = "block";
+		  
+	}
 </script>
