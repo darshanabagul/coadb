@@ -107,3 +107,32 @@
 	  </div>
 	  <!-- Main content End Here -->
 <?php get_footer(); ?>
+<script>
+	wh = $(window).width();
+    ht= $('.main-banner').height()-36;
+
+    if (wh > 767)
+        {
+            $(window).scroll(function() {
+                if ($(window).scrollTop() >= ht) {
+                    $('#myHeader').addClass('sticky');
+                    $(".lp-first-section").css("padding-top","110px");
+                }
+                else {
+                 	$('#myHeader').removeClass('sticky');
+                 	$(".lp-first-section").css("padding-top","50px");
+                }
+            });
+        }
+    else
+        {
+            var $window = $(window), previousScrollTop = 0, scrollLock = false;
+            $window.scroll(function(event) {
+                if(scrollLock) {
+                    $window.scrollTop(previousScrollTop);
+                }
+                previousScrollTop = $window.scrollTop();
+            });
+        }
+	$('.carousel1').carousel();
+</script>

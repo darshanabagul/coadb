@@ -27,54 +27,63 @@
 		</section>
 		<!-- tab end Here -->
 		<!-- Video section Starts Here --> 
-		<section class="space same-box-wrap information-section video-section-wrap bg-sky">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-		            	<div class="popup-video">
-		            		<a href="https://www.youtube.com/watch?v=urS_sIZWIws" href="javascript:;" title="Click Here To Play Video" class="img-select">
-						        <img src="https://img.youtube.com/vi/zXuMp_35u4I/maxresdefault.jpg" title="Play Video" class="img-responsive image">
-						    </a>
-		            	</div>
-		            </div>
-		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-		            	<div class="popup-video">
-		            		<a href="https://www.youtube.com/watch?v=Ik4Mr4s3JLM&t" href="javascript:;" title="Click Here To Play Video" class="img-select">
-						        <img src="https://img.youtube.com/vi/zXuMp_35u4I/maxresdefault.jpg" title="Play Video" class="img-responsive image">
-						    </a>
-		            	</div>
-		            </div>
-		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-		            	<div class="popup-video">
-		            		<a href="https://www.youtube.com/watch?v=e-Mo_83-axY&t" href="javascript:;" title="Click Here To Play Video" class="img-select">
-						        <img src="https://img.youtube.com/vi/zXuMp_35u4I/maxresdefault.jpg" title="Play Video" class="img-responsive image">
-						    </a>
-		            	</div>
-		            </div>
-		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-		            	<div class="popup-video">
-		            		<a href="https://www.youtube.com/watch?v=7Wk7lVpxBtQ&t" href="javascript:;" title="Click Here To Play Video" class="img-select">
-						        <img src="https://img.youtube.com/vi/zXuMp_35u4I/maxresdefault.jpg" title="Play Video" class="img-responsive image">
-						    </a>
-		            	</div>
-		            </div>
-		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-		            	<div class="popup-video">
-		            		<a href="https://www.youtube.com/watch?v=I2Qy_FD2BHM" href="javascript:;" title="Click Here To Play Video" class="img-select">
-						        <img src="https://img.youtube.com/vi/zXuMp_35u4I/maxresdefault.jpg" title="Play Video" class="img-responsive image">
-						    </a>
-		            	</div>
-		            </div>
-		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-		            	<div class="popup-video">
-		            		<a href="https://www.youtube.com/watch?v=FQB3r1KUa_A&t=15s" href="javascript:;" title="Click Here To Play Video" class="img-select">
-						        <img src="https://img.youtube.com/vi/zXuMp_35u4I/maxresdefault.jpg" title="Play Video" class="img-responsive image">
-						    </a>
-		            	</div>
-		            </div>
-		        </div>
-		    </div>
+		<section class="space same-box-wrap information-section  video-section-wrap bg-sky">
+		   	<div class="container">
+		       <div class="row video-wrap">
+		           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		           		<div class="popup-video">
+		    				<div class="embed-responsive embed-responsive-16by9">
+		 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/urS_sIZWIws" allowfullscreen></iframe>
+							</div>
+		    			</div>
+		           </div>
+		           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		           		<div class="popup-video">
+		   					<div class="embed-responsive embed-responsive-16by9">
+		 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ik4Mr4s3JLM&t" allowfullscreen></iframe>
+							</div>
+		           		</div>
+		           </div>
+		           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		           		<div class="popup-video">
+		   					<div class="embed-responsive embed-responsive-16by9">
+		 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/e-Mo_83-axY&t" allowfullscreen></iframe>
+							</div>
+		           		</div>
+		           </div>
+		           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		           		<div class="popup-video">
+		   					<div class="embed-responsive embed-responsive-16by9">
+		 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7Wk7lVpxBtQ&t" allowfullscreen></iframe>
+							</div>
+		           		</div>
+		           </div>
+		           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		           		<div class="popup-video">
+		   					<div class="embed-responsive embed-responsive-16by9">
+		 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/I2Qy_FD2BHM" allowfullscreen></iframe>
+							</div>
+		           		</div>
+		           </div>
+		           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		           		<div class="popup-video">
+		   					<div class="embed-responsive embed-responsive-16by9">
+		 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FQB3r1KUa_A" allowfullscreen></iframe>
+							</div>
+		           		</div>
+		           </div>
+		       </div>
+		   </div>
 		</section>
 		<!-- Video section End Here -->
 	</div>
 <?php get_footer(); ?>
+<script type="text/javascript">
+	$('.popup-video').magnificPopup({
+		delegate: 'a',
+	    type: 'iframe',
+	    gallery: {
+	    	enabled:true
+	  	}
+	});
+</script>

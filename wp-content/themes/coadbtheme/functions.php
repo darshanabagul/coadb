@@ -169,12 +169,20 @@ function cptui_register_my_cpts_faq() {
 
 add_action( 'init', 'cptui_register_my_cpts_faq' );
 
-function find_coat_of_arms() {
+function find_coat_of_arms($items = 6) {
 	global $wp;
-	$current_slug = add_query_arg( array(), $wp->request );
-    $link_array = explode('/',$current_slug);
-    $page = end($link_array);
-    //$path = get_template_directory_uri() .'/processed_images/dolan/';
+	//$path = get_template_directory_uri() .'/processed_images/dolan/';
+    if (!empty($_GET['surname'])) {
+    	$page = $_GET['surname'];
+    	$coat_of_arms['page_slug'] = $page;
+    	$page = str_replace("-family-crest-coat-of-arms-and-name-history", "", $page);
+    } else {
+    	$current_slug = add_query_arg( array(), $wp->request );
+    	$link_array = explode('/',$current_slug);
+    	$page = end($link_array);
+    	$coat_of_arms['page_slug'] = $page;
+    	$page = str_replace("-family-crest-coat-of-arms-and-name-history", "", $page);
+    }
     
     $uploads = wp_upload_dir();
     if ($dir = opendir($uploads['basedir'].'/processed_images')) {
@@ -200,10 +208,10 @@ function find_coat_of_arms() {
 			}
 		}
 	}
-
 	if (!empty($images)) {
-    	$coat_of_arms['images'] = array_chunk($images, 6);
+    	$coat_of_arms['images'] = array_chunk($images, $items);
 	}
+	
     return $coat_of_arms;
 }
 
@@ -211,7 +219,8 @@ function get_all_surnames() {
 	$surnames= query_posts(array(
 	   'post_type' => 'surnames',
 	   'orderby'=> 'title', 
-	   'order' => 'ASC'
+	   'order' => 'ASC',
+	   'posts_per_page' => 1000
 	));
 	$result = array();
 	foreach ($surnames as $item) {

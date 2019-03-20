@@ -5,328 +5,254 @@
 <!--Page Main content Start Here -->
 <div class="page-wrap which_one_is_mine_page">
 	<?php get_header('search');?>
-	<!-- tab Starts Here -->
 	<section class="tab-section hidden-xs">
 	  <div class="container">
 	    <div class="row">
 	    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	    		<ul>
-	    			<?php 
-		    			$args = array(
-		    				'theme_location' => 'surname',
-		    				'container' => 'div',
-		    				'container_class' => 'tab-wrap',
-		    				'items_wrap' => '%3$s', // removes ul
-		    			);
-		    		?>
-		    		<?php wp_nav_menu( $args ); ?>
-				</ul>
+                <ul class="tab-wrap">
+                	<?php $page = find_coat_of_arms();?>
+                    <li><a href="<?php echo get_home_url();?>/index.php/surnames/<?php echo $page['page_slug']?>">Gallery & Info</a></li>
+                    <li><a href="<?php echo esc_url( add_query_arg( 'surname', $page['page_slug'] , site_url( '/index.php/purchase-jpg/' ) ) )?>">Purchase jpg</a></li>
+                    <li class="active"><a href="">buy clothing & merch</a></li>
+                    <li ><a href="<?php echo esc_url( add_query_arg( 'surname', $page['page_slug'] , site_url( '/index.php/which-coat-of-mine/' ) ) )?>">Which one is mine?</a></li>
+                </ul>
 	    	</div>
 	    </div>
 	  </div>
 	</section>
-	<!-- tab end Here -->
 	<!-- Banner Ends Here -->
 	<section class="space same-box-wrap clothing-items-section bg-sky">
 		<div class="container">
 			<div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-            	<div class="vertical-filter bg-white">
-            	  <p class="filter-head"> Select Your Coat of Arms </p>
-            	  <section class="my-vertical-filter slider filter-items">
-					<div>
-						<div class="list">
-            	  			<label class="btn btn-radio btn-block active">
-								<input type="radio" id="1" name="select-option-img" value="1" />
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s1.png" alt="" title="" class="img-responsive">
-								<div class="top-right">01</div>
-							</label>
-            	  		</div>
-					</div>
-					<div>
-						<div class="list">
-            	  			<label class="btn btn-radio btn-block">
-								<input type="radio" id="1" name="select-option-img" value="1" />
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s1.png" alt="" title="" class="img-responsive">
-								<div class="top-right">02</div>
-							</label>
-            	  		</div>
-					</div>
-				    <div>
-					    <div class="list">
-  	  						<label class="btn btn-radio btn-block">
-									<input type="radio" id="3" name="select-option-img" value="1" />
-									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s1.png" alt="" title="" class="img-responsive">
-									<div class="top-right">03</div>
-							</label>
-			  	  		</div>
-					</div>
-					<div>
-						<div class="list">
-            	  			<label class="btn btn-radio btn-block">
-								<input type="radio" id="1" name="select-option-img" value="1" />
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s3.png" alt="" title="" class="img-responsive">
-								<div class="top-right">04</div>
-							</label>
-            	  		</div>
-					</div>
-					<div>
-						<div class="list">
-            	  			<label class="btn btn-radio btn-block">
-								<input type="radio" id="1" name="select-option-img" value="1" />
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s3.png" alt="" title="" class="img-responsive">
-								<div class="top-right">05</div>
-							</label>
-            	  		</div>
-								  </div>
-								  <div>
-							      <div class="list">
-            	  			<label class="btn btn-radio btn-block">
-												<input type="radio" id="1" name="select-option-img" value="1" />
-												<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s3.png" alt="" title="" class="img-responsive">
-												<div class="top-right">06</div>
-											</label>
-            	  		</div>
-							    </div>
-							    <div>
-							      <div class="list">
-            	  			<label class="btn btn-radio btn-block">
-												<input type="radio" id="1" name="select-option-img" value="1" />
-												<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s3.png" alt="" title="" class="img-responsive">
-												<div class="top-right">07</div>
-											</label>
-            	  		</div>
-							    </div>
-							    <div>
-							      <div class="list">
-            	  			<label class="btn btn-radio btn-block">
-												<input type="radio" id="1" name="select-option-img" value="1" />
-												<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s3.png" alt="" title="" class="img-responsive">
-												<div class="top-right">08</div>
-											</label>
-            	  		</div>
-							    </div>
-							    <div>
-							      <div class="list">
-            	  			<label class="btn btn-radio btn-block">
-												<input type="radio" id="1" name="select-option-img" value="1" />
-												<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s3.png" alt="" title="" class="img-responsive">
-												<div class="top-right">09</div>
-											</label>
-            	  		</div>
-							    </div>
-							    <div>
-							      <div class="list">
-            	  			<label class="btn btn-radio btn-block">
-												<input type="radio" id="1" name="select-option-img" value="1" />
-												<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s3.png" alt="" title="" class="img-responsive">
-												<div class="top-right">10</div>
-											</label>
-            	  		</div>
-							    </div>
-								</section>
-            	</div>
-            </div>
-            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-            	<div class="row card-wrap">
-					 		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					      <div class="card-stamp">
-					      	<div class="image-box">
-					      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy1.png" class="img-responsive">
-					      	</div>
-					      	<div class="rating-box m-0">
-					      		<p class="m-0">
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star-o" aria-hidden="true"></i>
-					      		</p>
-					      	</div>
-					      	<div class="detail-box text-center">
-					      		<p class="price">$33.99</p>
-					      		<p class="info">Coat of Arms T-Shirt</p>
-					      		<button class="btn primary-btn">Buy Now</button>
-					      	</div>
-					      </div>
-					    </div>
+	            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+	            	<div class="vertical-filter bg-white">
+	            	  <p class="filter-head"> Select Your Coat of Arms </p>
+	            	  	<section class="my-vertical-filter slider filter-items">
+	            	  		<?php
+							if (!empty($coat_of_arms = find_coat_of_arms(5))) {?>
+								<?php if(!empty($coat_of_arms['images'])) { ?>
+									<?php $i=1;?>
+									<?php foreach($coat_of_arms['images'] as $key=>$img) { ?>
+										<?php foreach ($img as $k=>$v) { ?>
+											<div>
+												<div class="list">
+						            	  			<label class="btn btn-radio btn-block <?php if($i==1) echo 'active' ?>">
+														<input type="radio" id="<?php echo $i;?>" name="select-option-img" value="<?php echo $i;?>" />
+														<img src="<?php echo get_site_url()?>/wp-content/uploads/processed_images/<?php echo $v ?>" alt="" title="" class="img-responsive">
+														<div class="top-right"><?php echo $i;?></div>
+													</label>
+						            	  		</div>
+											</div>
+											<?php $i=$i+1;?>
+										<?php } ?>
+				   					<?php } ?>
+	   						<?php } } ?>
+						</section>
+	            	</div>
+	            </div>
+	            <!-- products -->
+	            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+	            	<div class="row card-wrap">
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						    <div class="card-stamp">
+						      	<div class="image-box">
+						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy1.png" class="img-responsive">
+						      	</div>
+						      	<div class="rating-box m-0">
+						      		<p class="m-0">
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star-o" aria-hidden="true"></i>
+						      		</p>
+						      	</div>
+						      	<div class="detail-box text-center">
+						      		<p class="price">$33.99</p>
+						      		<p class="info">Coat of Arms T-Shirt</p>
+						      		<button class="btn primary-btn">Buy Now</button>
+						      	</div>
+						    </div>
+						</div>
 
-					    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					      <div class="card-stamp">
-					      	<div class="image-box">
-					      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy2.png" class="img-responsive clothing-img">
-					      	</div>
-					      	<div class="rating-box m-0">
-					      		<p class="m-0">
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star-o" aria-hidden="true"></i>
-					      		</p>
-					      	</div>
-					      	<div class="detail-box text-center">
-					      		<p class="price">$24.99</p>
-					      		<p class="info">Coat of Arms Mug</p>
-					      		<button class="btn primary-btn">Buy Now</button>
-					      	</div>
-					      </div>
-					    </div>
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						    <div class="card-stamp">
+						      	<div class="image-box">
+						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy2.png" class="img-responsive clothing-img">
+						      	</div>
+						      	<div class="rating-box m-0">
+						      		<p class="m-0">
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star-o" aria-hidden="true"></i>
+						      		</p>
+						      	</div>
+						      	<div class="detail-box text-center">
+						      		<p class="price">$24.99</p>
+						      		<p class="info">Coat of Arms Mug</p>
+						      		<button class="btn primary-btn">Buy Now</button>
+						      	</div>
+						    </div>
+						</div>
 
-	            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					      <div class="card-stamp">
-					      	<div class="image-box">
-					      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy3.png" class="img-responsive clothing-img">
-					      	</div>
-					      	<div class="rating-box m-0">
-					      		<p class="m-0">
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star-o" aria-hidden="true"></i>
-					      		</p>
-					      	</div>
-					      	<div class="detail-box text-center">
-					      		<p class="price">$12.99</p>
-					      		<p class="info">Coat of Arms Cap</p>
-					      		<button class="btn primary-btn">Buy Now</button>
-					      	</div>
-					      </div>
-					    </div>
-					    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					      <div class="card-stamp">
-					      	<div class="image-box">
-					      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy1.png" class="img-responsive">
-					      	</div>
-					      	<div class="rating-box m-0">
-					      		<p class="m-0">
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star-o" aria-hidden="true"></i>
-					      		</p>
-					      	</div>
-					      	<div class="detail-box text-center">
-					      		<p class="price">$22.99</p>
-					      		<p class="info">Coat of Arms T-Shirt</p>
-					      		<button class="btn primary-btn">Buy Now</button>
-					      	</div>
-					      </div>
-					    </div>
+		            	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						    <div class="card-stamp">
+						      	<div class="image-box">
+						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy3.png" class="img-responsive clothing-img">
+						      	</div>
+						      	<div class="rating-box m-0">
+						      		<p class="m-0">
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star-o" aria-hidden="true"></i>
+						      		</p>
+						      	</div>
+						      	<div class="detail-box text-center">
+						      		<p class="price">$12.99</p>
+						      		<p class="info">Coat of Arms Cap</p>
+						      		<button class="btn primary-btn">Buy Now</button>
+						      	</div>
+						    </div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						    <div class="card-stamp">
+						      	<div class="image-box">
+						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy1.png" class="img-responsive">
+						      	</div>
+						      	<div class="rating-box m-0">
+						      		<p class="m-0">
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star-o" aria-hidden="true"></i>
+						      		</p>
+						      	</div>
+						      	<div class="detail-box text-center">
+						      		<p class="price">$22.99</p>
+						      		<p class="info">Coat of Arms T-Shirt</p>
+						      		<button class="btn primary-btn">Buy Now</button>
+						      	</div>
+						    </div>
+						</div>
 
-					    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					      <div class="card-stamp">
-					      	<div class="image-box">
-					      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy2.png" class="img-responsive clothing-img">
-					      	</div>
-					      	<div class="rating-box m-0">
-					      		<p class="m-0">
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star-o" aria-hidden="true"></i>
-					      		</p>
-					      	</div>
-					      	<div class="detail-box text-center">
-					      		<p class="price">$24.99</p>
-					      		<p class="info">Coat of Arms Mug</p>
-					      		<button class="btn primary-btn">Buy Now</button>
-					      	</div>
-					      </div>
-					    </div>
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						    <div class="card-stamp">
+						      	<div class="image-box">
+						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy2.png" class="img-responsive clothing-img">
+						      	</div>
+						      	<div class="rating-box m-0">
+						      		<p class="m-0">
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star-o" aria-hidden="true"></i>
+						      		</p>
+						      	</div>
+						      	<div class="detail-box text-center">
+						      		<p class="price">$24.99</p>
+						      		<p class="info">Coat of Arms Mug</p>
+						      		<button class="btn primary-btn">Buy Now</button>
+						      	</div>
+						    </div>
+						</div>
 
-	            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					      <div class="card-stamp">
-					      	<div class="image-box">
-					      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy3.png" class="img-responsive clothing-img">
-					      	</div>
-					      	<div class="rating-box m-0">
-					      		<p class="m-0">
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star-o" aria-hidden="true"></i>
-					      		</p>
-					      	</div>
-					      	<div class="detail-box text-center">
-					      		<p class="price">$42.99</p>
-					      		<p class="info">Coat of Arms Cap</p>
-					      		<button class="btn primary-btn">Buy Now</button>
-					      	</div>
-					      </div>
-					    </div>
-					    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					      <div class="card-stamp">
-					      	<div class="image-box">
-					      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy1.png" class="img-responsive">
-					      	</div>
-					      	<div class="rating-box m-0">
-					      		<p class="m-0">
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star-o" aria-hidden="true"></i>
-					      		</p>
-					      	</div>
-					      	<div class="detail-box text-center">
-					      		<p class="price">$54.99</p>
-					      		<p class="info">Coat of Arms T-Shirt</p>
-					      		<button class="btn primary-btn">Buy Now</button>
-					      	</div>
-					      </div>
-					    </div>
-					    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					      <div class="card-stamp">
-					      	<div class="image-box">
-					      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy2.png" class="img-responsive clothing-img">
-					      	</div>
-					      	<div class="rating-box m-0">
-					      		<p class="m-0">
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star-o" aria-hidden="true"></i>
-					      		</p>
-					      	</div>
-					      	<div class="detail-box text-center">
-					      		<p class="price">$33.99</p>
-					      		<p class="info">Coat of Arms Mug</p>
-					      		<button class="btn primary-btn">Buy Now</button>
-					      	</div>
-					      </div>
-					    </div>
+		            	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						    <div class="card-stamp">
+						      	<div class="image-box">
+						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy3.png" class="img-responsive clothing-img">
+						      	</div>
+						      	<div class="rating-box m-0">
+						      		<p class="m-0">
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star-o" aria-hidden="true"></i>
+						      		</p>
+						      	</div>
+						      	<div class="detail-box text-center">
+						      		<p class="price">$42.99</p>
+						      		<p class="info">Coat of Arms Cap</p>
+						      		<button class="btn primary-btn">Buy Now</button>
+						      	</div>
+						    </div>
+						</div>
+						
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						    <div class="card-stamp">
+						      	<div class="image-box">
+						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy1.png" class="img-responsive">
+						      	</div>
+						      	<div class="rating-box m-0">
+						      		<p class="m-0">
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star-o" aria-hidden="true"></i>
+						      		</p>
+						      	</div>
+						      	<div class="detail-box text-center">
+						      		<p class="price">$54.99</p>
+						      		<p class="info">Coat of Arms T-Shirt</p>
+						      		<button class="btn primary-btn">Buy Now</button>
+						      	</div>
+						    </div>
+						</div>
+						
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						    <div class="card-stamp">
+						      	<div class="image-box">
+						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy2.png" class="img-responsive clothing-img">
+						      	</div>
+						      	<div class="rating-box m-0">
+						      		<p class="m-0">
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star-o" aria-hidden="true"></i>
+						      		</p>
+						      	</div>
+						      	<div class="detail-box text-center">
+						      		<p class="price">$33.99</p>
+						      		<p class="info">Coat of Arms Mug</p>
+						      		<button class="btn primary-btn">Buy Now</button>
+						      	</div>
+						    </div>
+						</div>
 
-	            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					      <div class="card-stamp">
-					      	<div class="image-box">
-					      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy3.png" class="img-responsive clothing-img">
-					      	</div>
-					      	<div class="rating-box m-0">
-					      		<p class="m-0">
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star" aria-hidden="true"></i>
-					      			<i class="fa fa-star-o" aria-hidden="true"></i>
-					      		</p>
-					      	</div>
-					      	<div class="detail-box text-center">
-					      		<p class="price">$23.99</p>
-					      		<p class="info">Coat of Arms Cap</p>
-					      		<button class="btn primary-btn">Buy Now</button>
-					      	</div>
-					      </div>
-					    </div>
-              </div>
-              <div class="row">
-						  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						  		<div class="pagination-main text-center clearfix">
+		            	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						    <div class="card-stamp">
+						      	<div class="image-box">
+						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy3.png" class="img-responsive clothing-img">
+						      	</div>
+						      	<div class="rating-box m-0">
+						      		<p class="m-0">
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star" aria-hidden="true"></i>
+						      			<i class="fa fa-star-o" aria-hidden="true"></i>
+						      		</p>
+						      	</div>
+						      	<div class="detail-box text-center">
+						      		<p class="price">$23.99</p>
+						      		<p class="info">Coat of Arms Cap</p>
+						      		<button class="btn primary-btn">Buy Now</button>
+						      	</div>
+						    </div>
+						</div>
+	              	</div>
+	              	<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="pagination-main text-center clearfix">
 								<ul class="pagination">
 								   <li><a href ="#" class="color">Prev</a></li>
 								   <li class="active"><a href="#">1</a></li>
@@ -335,15 +261,83 @@
 								   <li><a href="#" class="color">Next</a></li>
 								</ul>
 							</div>
-						  	</div>
-						  </div>
-					  </div>
-				   
-				    
-
-				  </div>
-				  
+						</div>
+					</div>
 				</div>
-			</section>
-
+			</div>
+		</div>
+	</section>
+</div>
 <?php get_footer(); ?>
+<script type="text/javascript">
+    $(document).ready(function(){
+	  	// Nav
+	  	$(".filter-items").on("change", ".btn-radio", function(e){
+    	e.preventDefault();
+    	var elems = document.querySelectorAll(".btn-radio");
+		  [].forEach.call(elems, function(el) {
+		    el.classList.remove("active");
+		  });
+    	$(this).closest('.btn-radio').toggleClass("active");
+    	return false;
+    });
+	});
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        wh = $(window).width();
+        if (wh >= 767)
+        {
+          $(".my-vertical-filter").slick({
+					  dots: false,
+					  infinite: false,
+					  speed: 300,
+					  slidesToShow: 5,
+					  slidesToScroll: 5,
+					  vertical:true,
+					  responsive: [
+					    {
+					      breakpoint: 1024,
+					      settings: {
+					        slidesToShow: 5,
+					        slidesToScroll: 5,
+					        infinite: false,
+					        dots: false
+					      }
+					    }
+					  ]
+				  });
+        }
+        else
+        {
+         	$(".my-vertical-filter").slick({
+            dots: false,
+					  infinite: false,
+					  speed: 300,
+					  slidesToShow: 2,
+					  slidesToScroll: 2,
+					  swipe:true,
+					  touchMove:true,
+					  vertical:false,
+					  responsive: [
+					    {
+					      breakpoint: 600,
+					      settings: {
+					        slidesToShow: 2,
+					        slidesToScroll: 2,
+					        infinite: false
+					      }
+					    },
+					    {
+					      breakpoint: 480,
+					      settings: {
+					        slidesToShow: 1,
+					        slidesToScroll: 1,
+					        infinite: false
+					      }
+					    }
+					  ]
+			});
+		}
+    });			
+</script>

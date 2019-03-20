@@ -10,17 +10,13 @@
 	  <div class="container">
 	    <div class="row">
 	    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	    		<ul>
-	    			<?php 
-		    			$args = array(
-		    				'theme_location' => 'surname',
-		    				'container' => 'div',
-		    				'container_class' => 'tab-wrap',
-		    				'items_wrap' => '%3$s', // removes ul
-		    			);
-		    		?>
-		    		<?php wp_nav_menu( $args ); ?>
-				</ul>
+	    		<ul class="tab-wrap">
+	    			<?php $page = find_coat_of_arms();?>
+                    <li><a href="<?php echo get_home_url();?>/index.php/surnames/<?php echo $page['page_slug']?>">Gallery & Info</a></li>
+                    <li class="active"><a href="">Purchase jpg</a></li>
+                    <li ><a href="<?php echo esc_url( add_query_arg( 'surname', $page['page_slug'] , site_url( '/index.php/buy-clothing-merch/' ) ) )?>">buy clothing & merch</a></li>
+                    <li ><a href="<?php echo esc_url( add_query_arg( 'surname', $page['page_slug'] , site_url( '/index.php/which-coat-of-mine/' ) ) )?>">Which one is mine?</a></li>
+                </ul>
 	    	</div>
 	    </div>
 	  </div>
@@ -29,188 +25,51 @@
 	<section class="space same-box-wrap bg-white purchase-jpg-section">
 	<div class="container">
 	 	<div class="row purchase-jpg">
-			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-		      <div class="card-stamp">
-		      	<div class="image-box">
-		      		<img src="https://coadb.com/wp-content/processed_images/farmer/gallery/farmer-coat-of-arms-family-crest-1.jpg" class="img-responsive">
-		      	</div>
-		      	<div class="rating-box">
-		      		<p class="m-0">
-		      			<i class="fa fa-star" aria-hidden="true"></i>
-		      			<i class="fa fa-star" aria-hidden="true"></i>
-		      			<i class="fa fa-star" aria-hidden="true"></i>
-		      			<i class="fa fa-star" aria-hidden="true"></i>
-		      			<i class="fa fa-star-o" aria-hidden="true"></i>
-		      		</p>
-		      	</div>
-		      	<div class="detail-box text-center">
-		      		<p class="price">$12.99</p>
-		      		<p class="info">Not Watermarked</p>
-		      		<button class="btn primary-btn">Buy Now</button>
-		      	</div>
-		      </div>
-	   		</div>
-	    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-	      <div class="card-stamp">
-	      	<div class="image-box">
-	      		<img src="https://coadb.com/wp-content/processed_images/farmer/gallery/farmer-coat-of-arms-family-crest-2.jpg" class="img-responsive">
-	      	</div>
-	      	<div class="rating-box">
-	      		<p class="m-0">
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star-o" aria-hidden="true"></i>
-	      		</p>
-	      	</div>
-	      	<div class="detail-box text-center">
-	      		<p class="price">$12.99</p>
-	      		<p class="info">Not Watermarked</p>
-	      		<button class="btn primary-btn">Buy Now</button>
-	      	</div>
-	      </div>
-	    </div>
-		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-	      <div class="card-stamp">
-	      	<div class="image-box">
-	      		<img src="https://coadb.com/wp-content/processed_images/farmer/gallery/farmer-coat-of-arms-family-crest-3.jpg" class="img-responsive">
-	      	</div>
-	      	<div class="rating-box">
-	      		<p class="m-0">
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star-o" aria-hidden="true"></i>
-	      		</p>
-	      	</div>
-	      	<div class="detail-box text-center">
-	      		<p class="price">$12.99</p>
-	      		<p class="info">Not Watermarked</p>
-	      		<button class="btn primary-btn">Buy Now</button>
-	      	</div>
-	      </div>
-	    </div>
-	    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-	      <div class="card-stamp">
-	      	<div class="image-box">
-	      		<img src="https://coadb.com/wp-content/processed_images/farmer/gallery/farmer-coat-of-arms-family-crest-5.jpg" class="img-responsive">
-	      	</div>
-	      	<div class="rating-box">
-	      		<p class="m-0">
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star-o" aria-hidden="true"></i>
-	      		</p>
-	      	</div>
-	      	<div class="detail-box text-center">
-	      		<p class="price">$12.99</p>
-	      		<p class="info">Not Watermarked</p>
-	      		<button class="btn primary-btn">Buy Now</button>
-	      	</div>
-	      </div>
-	    </div>
-	    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-	      <div class="card-stamp">
-	      	<div class="image-box">
-	      		<img src="https://coadb.com/wp-content/processed_images/farmer/gallery/farmer-coat-of-arms-family-crest-6.jpg" class="img-responsive">
-	      	</div>
-	      	<div class="rating-box">
-	      		<p class="m-0">
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star-o" aria-hidden="true"></i>
-	      		</p>
-	      	</div>
-	      	<div class="detail-box text-center">
-	      		<p class="price">$12.99</p>
-	      		<p class="info">Not Watermarked</p>
-	      		<button class="btn primary-btn">Buy Now</button>
-	      	</div>
-	      </div>
-	    </div>
-	    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-	      <div class="card-stamp">
-	      	<div class="image-box">
-	      		<img src="https://coadb.com/wp-content/processed_images/farmer/gallery/farmer-coat-of-arms-family-crest-7.jpg" class="img-responsive">
-	      	</div>
-	      	<div class="rating-box">
-	      		<p class="m-0">
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star-o" aria-hidden="true"></i>
-	      		</p>
-	      	</div>
-	      	<div class="detail-box text-center">
-	      		<p class="price">$12.99</p>
-	      		<p class="info">Not Watermarked</p>
-	      		<button class="btn primary-btn">Buy Now</button>
-	      	</div>
-	      </div>
-	    </div>
-	    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-	      <div class="card-stamp">
-	      	<div class="image-box">
-	      		<img src="https://coadb.com/wp-content/processed_images/farmer/gallery/farmer-coat-of-arms-family-crest-8.jpg" class="img-responsive">
-	      	</div>
-	      	<div class="rating-box">
-	      		<p class="m-0">
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star-o" aria-hidden="true"></i>
-	      		</p>
-	      	</div>
-	      	<div class="detail-box text-center">
-	      		<p class="price">$12.99</p>
-	      		<p class="info">Not Watermarked</p>
-	      		<button class="btn primary-btn">Buy Now</button>
-	      	</div>
-	      </div>
-	    </div>
-	    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-	      <div class="card-stamp">
-	      	<div class="image-box">
-	      		<img src="https://coadb.com/wp-content/processed_images/farmer/gallery/farmer-coat-of-arms-family-crest-5.jpg" class="img-responsive">
-	      	</div>
-	      	<div class="rating-box">
-	      		<p class="m-0">
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star" aria-hidden="true"></i>
-	      			<i class="fa fa-star-o" aria-hidden="true"></i>
-	      		</p>
-	      	</div>
-	      	<div class="detail-box text-center">
-	      		<p class="price">$12.99</p>
-	      		<p class="info">Not Watermarked</p>
-	      		<button class="btn primary-btn">Buy Now</button>
-	      	</div>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="row">
-	  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	  		<div class="pagination-main text-center clearfix">
-				<ul class="pagination">
-				   <li><a href ="#" class="color">Prev</a></li>
-				   <li class="active"><a href="#">1</a></li>
-				   <li><a href="#">2</a></li>
-				   <li><a href="#">3</a></li>
-				   <li><a href="#" class="color">Next</a></li>
-				</ul>
-			</div>
+	 		<?php
+			if (!empty($coat_of_arms = find_coat_of_arms(8))) {?>
+				<?php if(!empty($coat_of_arms['images'])) { ?>
+					<?php foreach($coat_of_arms['images'] as $key=>$img) { ?>
+						<?php foreach ($img as $k=>$v) { ?>
+							<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+						      	<div class="card-stamp">
+							      	<div class="image-box">
+							      		<img src="<?php echo get_site_url()?>/wp-content/uploads/processed_images/<?php echo $v ?>" class="img-responsive">
+							      	</div>
+							      	<div class="rating-box">
+							      		<p class="m-0">
+							      			<i class="fa fa-star" aria-hidden="true"></i>
+							      			<i class="fa fa-star" aria-hidden="true"></i>
+							      			<i class="fa fa-star" aria-hidden="true"></i>
+							      			<i class="fa fa-star" aria-hidden="true"></i>
+							      			<i class="fa fa-star-o" aria-hidden="true"></i>
+							      		</p>
+							      	</div>
+							      	<div class="detail-box text-center">
+							      		<p class="price">$12.99</p>
+							      		<p class="info">Not Watermarked</p>
+							      		<button class="btn primary-btn">Buy Now</button>
+							      	</div>
+						      	</div>
+					   		</div>
+					   	<?php } ?>
+				   	<?php } ?>
+	   		<?php } } ?>
 	  	</div>
-	  </div>
+	  	<?php if(count($coat_of_arms['images']) > 1) { ?>
+		  	<div class="row">
+		  		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		  			<div class="pagination-main text-center clearfix">
+					<ul class="pagination">
+					   <li><a href ="#" class="color">Prev</a></li>
+					   <?php for($i=1;$i<=count($coat_of_arms['images']);$i++) {?>						   
+						    <li><a data-target="#demo" data-slide-to="<?php echo $i-1?>" class="active"><?php echo $i; ?></a></li>
+						<?php } ?>
+					   <li><a href="#" class="color">Next</a></li>
+					</ul>
+					</div>
+		  		</div>
+		  	</div>
+		<?php } ?>
 	</div>
 </section>
 

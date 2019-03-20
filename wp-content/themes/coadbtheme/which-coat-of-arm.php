@@ -10,17 +10,13 @@
 	  <div class="container">
 	    <div class="row">
 	    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	    		<ul>
-	    			<?php 
-		    			$args = array(
-		    				'theme_location' => 'surname',
-		    				'container' => 'div',
-		    				'container_class' => 'tab-wrap',
-		    				'items_wrap' => '%3$s', // removes ul
-		    			);
-		    		?>
-		    		<?php wp_nav_menu( $args ); ?>
-				</ul>
+	    		<ul class="tab-wrap">
+	    			<?php $page = find_coat_of_arms();?>
+                    <li><a href="<?php echo get_home_url();?>/index.php/surnames/<?php echo $page['page_slug']?>">Gallery & Info</a></li>
+                    <li><a href="<?php echo esc_url( add_query_arg( 'surname', $page['page_slug'] , site_url( '/index.php/purchase-jpg/' ) ) )?>">Purchase jpg</a></li>
+                     <li ><a href="<?php echo esc_url( add_query_arg( 'surname', $page['page_slug'] , site_url( '/index.php/buy-clothing-merch/' ) ) )?>">buy clothing & merch</a></li>
+                    <li class="active"><a href="">Which one is mine?</a></li>
+                </ul>
 	    	</div>
 	    </div>
 	  </div>
