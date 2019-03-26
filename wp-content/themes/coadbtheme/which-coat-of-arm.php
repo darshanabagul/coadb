@@ -1,7 +1,188 @@
- <?php
+<?php session_start();
+      //Put session start at the beginning of the file
 	/*Template Name: which-coat-of-arm*/
+	$name = $_POST['username'];
+	$family = $_GET['surname'];
+	$website = $_POST['website'];
+	$surname_interested = $_POST['surname'];
+	$family_info = $_POST['message'];
+	$to = $_POST['email'];
+	$from = 'monika.bagadkar@codaemonsoftwares.com';
+	$subject = $_POST["sub"];
+	$_SESSION['post-data'] = $_POST;
+	$_SESSION['get-data'] = $_GET['surname'];
+	// Additional headers
+	$headers = "From: " . strip_tags($_POST['email']) . "\r\n";
+
+	$htmlContent1 = '<html>
+	    <body>
+	    <div marginwidth="0" marginheight="0">
+	    <div style="background-color:#f7f7f7;margin:0;padding:70px 0 70px 0;width:100%">
+		    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+		    	<tbody>
+		    		<tr>
+              			<td align="center" valign="top">
+						<table border="0" cellpadding="0" cellspacing="0" width="600" style="background-color:#ffffff;border-radius:3px!important" >
+						  	<tbody> 
+						  	<tr>
+						      	<td align="center" valign="top">
+										<table border="0" cellpadding="0" cellspacing="0" width="600" style="background-color:
+										#ddd; border-radius:3px 3px 0 0!important; color:#ffffff; border-bottom:0; font-weight:bold; line-height:100%; vertical-align:middle;">
+											<tbody>
+												<tr>
+								          			<td align="center" style="padding: 10px 0 0;display: block;">
+														<img src="./image/logo.png" alt="Coadb" title="Coadb">
+													</td>
+												</tr>
+												<tr>
+													<td align="center">
+														<h1 style="color: #444;font-size: 14px;">DATABASE & SHOP</h1>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+			            		</td>
+							</tr>
+						    <tr>
+							    <td align="center" valign="top">
+									<span><font color="#888888"></font></span>
+									<table border="0" cellpadding="0" cellspacing="0" width="600">
+										<tbody>
+											<tr>
+						            			<td valign="top" style="background-color:#ffffff" bgcolor="dodgerblue" background="./image/home-bg.png">
+												<span><font color="#888888"></font></span>
+												<table border="0" cellpadding="20" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+					                    					<td valign="top" style="padding: 20px 20px 40px;">
+																<div style="color:#636363; font-size:14px;line-height:150%;text-align:left;line-height: 24px;">
+																	<h2>Hello <span style="color: #c49634;"> ' . strip_tags($name) .',</span></h2>
+																	<p style="margin:0 0 16px; font-weight: 400;">Thank you for your interest in the coadb.com research service. We would be honored to assist you in finding which, if any, coat of arms was owned by your branch of the <strong style="font-size: 16px; color: #c49634;">' . strip_tags($family) . '</strong> family. </p>
+																	<p style="margin:0 0 16px;font-weight: 400;">The cost for identifying a coat of arms in an existing family tree you provide to us is $69 USD. If we are unable to find a coat of arms in your tree, we will fully refund your money within 14 calendar days. No risk for you.</p>	
+																</div>
+																<span><font color="#888888"></font></span>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<span><font color="#888888"></font></span>
+												</td>
+											</tr>
+										</tbody>
+										</table>
+									<span><font color="#888888"></font></span>
+								</td>
+							</tr>
+							<tr align="center" valign="top" style="background-color: #d4d4d4;">
+								<td align="center" valign="top">
+									<table border="0" cellpadding="10" cellspacing="0" width="600">
+										<tbody>
+											<tr>
+									        <td valign="top" style="padding:0">
+												<table border="0" cellpadding="10" cellspacing="0" width="100%">
+													<tbody>
+														<tr align="center">
+										                <td width="200">
+									                		<a href="" style="text-decoration: none;color: #2f5bad;">Home</a>
+														</td>
+														<td width="200">
+									                		<a href="" style="text-decoration: none;color: #2f5bad;">Purchase Jpg</a>
+														</td>
+														<td width="200">
+									                		<a href="" style="text-decoration: none;color: #2f5bad;">Contact Us</a>
+														</td>
+														</tr>
+								                   </tbody>
+												</table>
+									        </td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr style="background-color: #2c3848;color: #fff;">
+									<td align="center" valign="top">
+										<table border="0" cellpadding="10" cellspacing="0" width="600">
+											<tbody>
+											<tr>
+									        <td valign="top" style="padding:0">
+												<table border="0" cellpadding="10" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+										                <td colspan="2" align="center" style="padding: 20px;border:0;font-family:Arial;font-size:14px;line-height:125%;">
+										                	<div>
+										                		<p style="margin: 0;">
+										                			<a href="" title="Like us on Facebook"><img src="./image/facebook1.png" style="width: 6%;"></a>
+										                			<a href="" title="Follow us on Twitter"><img src="./image/twitter1.png" style="width: 6%;"></a>
+										                			<a href="" title="Follow us on Instagram"><img src="./image/insta1.png" style="width: 6%;"></a>
+										                		</p>
+										                	</div>
+														</td>
+														</tr>
+								                  </tbody>
+												</table>
+									        </td>
+											</tr>
+											<tr>
+									        <td valign="top" style="padding:0">
+												<table border="0" cellpadding="10" cellspacing="0" width="100%">
+													<tbody>
+								                    <tr>
+														<td colspan="2" align="center" style="border:0;font-family:Arial;font-size:14px;line-height:125%; padding: 0 0 20px 0;">
+														<p style="margin: 0;">© 2019 Copyright Joy Empire Inc. | All Rights Reserved</p>
+														</td>
+													</tr>
+													</tbody>
+												</table>
+									        </td>
+											</tr>
+											</tbody>
+										</table>
+									</td>
+					      	</tr>
+						    </tbody>
+					    	</table>
+						</td>
+					  </tr>
+				  </tbody>
+			  </table>
+		  </div>
+	  	</div>
+	    </body>
+	    </html>';
+	$htmlContent2 = "<html>
+							<body>
+								<h1>Subject: " . $subject . "</h1>
+								<h3>Username: " . strip_tags($name) . "</h3>
+								<h3>Surname: " . $family . "</h3>
+								<h3>Email Address: " . strip_tags($_POST['email']) . "</h3>
+								<h3>Website: " . strip_tags($website) . "</h3>
+								<h3>Surname Interested In: " . $surname_interested . "</h3>
+								<h3>Family Info: " . $family_info . "</h3>
+							</body>
+					</html>";
+	$message1 = $htmlContent1;
+	$message2 = $htmlContent2;
+	// Set content-type header for sending HTML email
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+	if (isset($_POST['submit'])) {
+
+				if (mail($to, $subject, $message1, $headers) && mail($from, $subject, $message2, $headers)) {
+					//echo "Thanks For Email";
+					$url = 'http://localhost/coadb/index.php/family_tree';
+					//redirect_to( $url );
+					Header("Location: $url");
+				}
+				else 
+				{
+					echo "Unable to send Email";
+				}
+			}
+
 	get_header('sub');
 ?>
+
 <!--Page Main content Start Here -->
 <div class="page-wrap which_one_is_mine_page">
 	<?php get_header('search');?>
@@ -121,12 +302,12 @@
 							<h2>To get started, all you need to do is populate the below fields and hit the submit button :</h2>
 			            </div>
 			            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		            		<form>
+		            		<form method="post">
 		            			<div class="row">
 									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 										<div class="check-option option-active">
 											<label class="custom-radio-container">I have my family tree done already</p>
-										    	<input type="radio" checked="checked" name="select-option-radio">
+										    	<input onclick="tempOn(this);" type="radio" checked="checked" name="select-option-radio" value="I have my family tree done already">
 										    	<span class="checkmark"></span>
 										  	</label>
 										</div>
@@ -134,17 +315,18 @@
 									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 										<div class="check-option">
 											<label class="custom-radio-container">I do not have my family tree done already</p>
-										    <input type="radio" name="select-option-radio">
+										    <input onclick="tempOn(this);" type="radio" name="select-option-radio" value="I do not have my family tree done">
 										    <span class="checkmark"></span>
 										  </label>
 										</div>
 									</div>
+									<input type="hidden" id="transferInput" name="sub">
 								</div>
 					    		<div class="row">
 									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 										<div class="custom-input">
 											<div class="group">      
-											  <input type="text" id="Name" name="Name" required>
+											  <input type="text" id="Name" name="username" required>
 											  <label>Name</label>
 											  <!-- <p class="error">Full Name is required</p> -->
 											</div>
@@ -153,7 +335,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 										<div class="custom-input">
 											<div class="group">      
-											  <input id="custom-check" type="text" required>
+											  <input type="text" name="email" required>
 											  <label>Email Address</label>
 											</div>
 										</div>
@@ -163,15 +345,15 @@
 									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 										<div class="custom-input">
 											<div class="group">      
-											  <input type="text" required>
+											  <input type="text" name="website" required>
 											  <label>Website</label>
 											</div>
 										</div>
 									</div>
-									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="surname">
 										<div class="custom-input">
 											<div class="group">      
-											  <input type="text" required>
+											  <input type="text" name="surname"  required>
 											  <label>What surname are you interested in tracing the coat of arms for</label>
 											</div>
 										</div>
@@ -181,14 +363,14 @@
 									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 										<div class="custom-input">
 											<div class="group">      
-											  <textarea required></textarea>
+											  <textarea name="message" required></textarea>
 											  <label>Please provide information about your family.</label>
 											</div>
 											<p class="hint">(ex. full names, birth years, birth locations, death years etc. of parent & grandparent) as well as any stories you have heard about your family’s history, or other information that would be useful to our research. If you are missing pieces of info, just send us what you have.</p>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-box text-center">
-										<button class="btn secondary-btn">Send</button>
+										<button class="btn secondary-btn" name="submit" type="submit">Send</button>
 									</div>
 								</div>
 							</form>
@@ -202,4 +384,21 @@
     <!-- form section End Here -->
 </div>
 
+ <script type="text/javascript">
+	function tempOn(radio){
+    if(radio.checked)
+        {
+            var radioValue = $("input[name='select-option-radio']:checked").val();
+            if (radioValue == "I have my family tree done already") 
+            {
+            	$("#surname").hide();
+            }
+            else
+            {
+            	$("#surname").show();
+            }
+            //$("#transferInput").val(radioValue);
+        }
+}
+</script>
  <?php get_footer();?>

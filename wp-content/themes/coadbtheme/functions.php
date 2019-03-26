@@ -291,4 +291,15 @@ function special_nav_class ($classes, $item) {
     }
     return $classes;
 }
+
+function my_upload_dir($upload) {
+
+
+  $upload['path']   = $upload['basedir'] . $upload['subdir'];
+
+  $upload['url']    = $upload['baseurl'] . $upload['subdir'];
+
+  return $upload;
+
+}
 ?>
