@@ -22,14 +22,20 @@
 	  </div>
 	</section>
 	<!-- tab end Here -->
+	
 	<section class="space same-box-wrap bg-white purchase-jpg-section">
 	<div class="container">
 	 	<div class="row purchase-jpg">
 	 		<?php
-			if (!empty($coat_of_arms = find_coat_of_arms(8))) {?>
+    			$args = array( 'post_type' => 'product', 'posts_per_page' => 10, 'product_cat' => 'JPG');
+        		$loop = new WP_Query( $args );
+
+				if (!empty($coat_of_arms = find_coat_of_arms(8))) {?>
 				<?php if(!empty($coat_of_arms['images'])) { ?>
 					<?php foreach($coat_of_arms['images'] as $key=>$img) { ?>
 						<?php foreach ($img as $k=>$v) { ?>
+							<?php
+	 						while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
 							<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
 						      	<div class="card-stamp">
 							      	<div class="image-box">
@@ -45,16 +51,22 @@
 							      		</p>
 							      	</div>
 							      	<div class="detail-box text-center">
-							      		<p class="price">$12.99</p>
+							      		<p class="price"><?php echo $product->get_price_html(); ?></p>
 							      		<p class="info">Not Watermarked</p>
-							      		<button class="btn primary-btn">Buy Now</button>
+							      		<?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
 							      	</div>
 						      	</div>
 					   		</div>
+					   		<?php endwhile; ?>
 					   	<?php } ?>
 				   	<?php } ?>
-	   		<?php } } ?>
+	   			<?php } 
+	   			else { ?>
+	   				<h3 class="text-center">Sorry!! Digital Images are not available.</h3>
+	   			<?php } } ?>
+    		<?php wp_reset_query(); ?>
 	  	</div>
+
 	  	<?php if(count($coat_of_arms['images']) > 1) { ?>
 		  	<div class="row">
 		  		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

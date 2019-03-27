@@ -1,0 +1,19 @@
+2019-03-26T10:06:01+00:00 CRITICAL Uncaught Exception: Invalid product. in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php:152
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): WC_Product_Data_Store_CPT->read(Object(WC_Product))
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-product.php(134): WC_Data_Store->read(Object(WC_Product))
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/purchase-jpg.php(60): WC_Product->__construct('14')
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#6 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php on line 152
+
+2019-03-26T10:38:37+00:00 CRITICAL syntax error, unexpected '<', expecting end of file in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/purchase-jpg.php on line 50
+
+2019-03-26T11:06:18+00:00 CRITICAL syntax error, unexpected 'else' (T_ELSE) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/purchase-jpg.php on line 41
+
+2019-03-26T11:06:33+00:00 CRITICAL syntax error, unexpected 'else' (T_ELSE) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/purchase-jpg.php on line 41
+
+2019-03-26T11:56:42+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ',' or ')' in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/buy-clothing-merch.php on line 77
+

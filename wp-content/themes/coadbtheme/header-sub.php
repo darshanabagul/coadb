@@ -18,7 +18,18 @@
 			</div>
 			<div class="col-xs-4 col-sm-8 col-md-8 col-lg-10">
 				<div class="hidden-xs  text-right header-call-to-action-btn">
-					<a href="" class="m-lr-15"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/shopping-cart.png" alt="shopping cart" title="shopping cart"></a>
+					<?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+					    	$count = WC()->cart->cart_contents_count;
+					    ?>
+					    <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php 
+					    	if ( $count > 0 ) {
+					        ?>
+					        <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+					        <?php
+					    	}
+					        ?>
+					    </a>
+					<?php } ?>
 					<a href="" class="primary-btn">Log In</a>
 				</div>
 				<a href="javascript:void(0);" class="cd-nav-trigger backoverlay"><span></span></a>

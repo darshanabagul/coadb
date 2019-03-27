@@ -57,6 +57,23 @@ a:focus, a:hover{
     border: none;
     margin-left: 10px;
 }
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+    background-color: #c49634;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    margin-left: 10px;
+    font-weight: 400;
+    line-height: 1.42857143;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{
+    color: #23527c;
+    background-color: #c49634;
+}
+.woocommerce div.product {
+    margin-bottom: 26px;
+}
 .secondary-btn{
      background-color: #345a9c;
      color: #fff;
@@ -98,9 +115,31 @@ Home page
  .header-call-to-action-btn{
      margin-top: 20px 
 }
-
- 
-
+/*cart-icon */
+.cart-contents:before {
+    font-family:WooCommerce;
+    content: "\e01d";
+    font-size:28px;
+    margin-top:10px;
+    font-style:normal;
+    font-weight:400;
+    padding-right:1px;
+    vertical-align: middle;
+    color: #444;
+}
+.cart-contents:hover {
+    text-decoration: none;
+}
+.cart-contents-count {
+    color: #fff;
+    background-color: #2ecc71;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 1px 6px;
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: top;
+}
 .main-banner .banner-search-inner{
     padding: 100px 0;
 }
@@ -1012,7 +1051,7 @@ color: #444;
 .card-stamp .detail-box{
     padding: 15px;
 }
-.card-stamp .detail-box .price{
+.card-stamp .detail-box .price, .woocommerce div.product p.price, .woocommerce div.product span.price{
     font-family: "Vidaloka-Regular";
     font-size: 30px;
     color: #345a9c;
@@ -1029,6 +1068,7 @@ color: #444;
 
 .clothing-items-section .card-stamp .image-box img{
     height: 200px;
+    max-width: 100%;
 }
 .clothing-items-section .card-stamp .rating-box{
      margin: 0;
