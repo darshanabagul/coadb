@@ -53,204 +53,39 @@
 	            <!-- products -->
 	            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 	            	<div class="row card-wrap">
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						    <div class="card-stamp">
-						      	<div class="image-box">
-						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy1.png" class="img-responsive">
-						      	</div>
-						      	<div class="rating-box m-0">
-						      		<p class="m-0">
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star-o" aria-hidden="true"></i>
-						      		</p>
-						      	</div>
-						      	<div class="detail-box text-center">
-						      		<p class="price">$33.99</p>
-						      		<p class="info">Coat of Arms T-Shirt</p>
-						      		<button class="btn primary-btn">Buy Now</button>
-						      	</div>
-						    </div>
-						</div>
-
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						    <div class="card-stamp">
-						      	<div class="image-box">
-						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy2.png" class="img-responsive clothing-img">
-						      	</div>
-						      	<div class="rating-box m-0">
-						      		<p class="m-0">
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star-o" aria-hidden="true"></i>
-						      		</p>
-						      	</div>
-						      	<div class="detail-box text-center">
-						      		<p class="price">$24.99</p>
-						      		<p class="info">Coat of Arms Mug</p>
-						      		<button class="btn primary-btn">Buy Now</button>
-						      	</div>
-						    </div>
-						</div>
-
-		            	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						    <div class="card-stamp">
-						      	<div class="image-box">
-						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy3.png" class="img-responsive clothing-img">
-						      	</div>
-						      	<div class="rating-box m-0">
-						      		<p class="m-0">
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star-o" aria-hidden="true"></i>
-						      		</p>
-						      	</div>
-						      	<div class="detail-box text-center">
-						      		<p class="price">$12.99</p>
-						      		<p class="info">Coat of Arms Cap</p>
-						      		<button class="btn primary-btn">Buy Now</button>
-						      	</div>
-						    </div>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						    <div class="card-stamp">
-						      	<div class="image-box">
-						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy1.png" class="img-responsive">
-						      	</div>
-						      	<div class="rating-box m-0">
-						      		<p class="m-0">
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star-o" aria-hidden="true"></i>
-						      		</p>
-						      	</div>
-						      	<div class="detail-box text-center">
-						      		<p class="price">$22.99</p>
-						      		<p class="info">Coat of Arms T-Shirt</p>
-						      		<button class="btn primary-btn">Buy Now</button>
-						      	</div>
-						    </div>
-						</div>
-
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						    <div class="card-stamp">
-						      	<div class="image-box">
-						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy2.png" class="img-responsive clothing-img">
-						      	</div>
-						      	<div class="rating-box m-0">
-						      		<p class="m-0">
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star-o" aria-hidden="true"></i>
-						      		</p>
-						      	</div>
-						      	<div class="detail-box text-center">
-						      		<p class="price">$24.99</p>
-						      		<p class="info">Coat of Arms Mug</p>
-						      		<button class="btn primary-btn">Buy Now</button>
-						      	</div>
-						    </div>
-						</div>
-
-		            	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						    <div class="card-stamp">
-						      	<div class="image-box">
-						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy3.png" class="img-responsive clothing-img">
-						      	</div>
-						      	<div class="rating-box m-0">
-						      		<p class="m-0">
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star-o" aria-hidden="true"></i>
-						      		</p>
-						      	</div>
-						      	<div class="detail-box text-center">
-						      		<p class="price">$42.99</p>
-						      		<p class="info">Coat of Arms Cap</p>
-						      		<button class="btn primary-btn">Buy Now</button>
-						      	</div>
-						    </div>
-						</div>
-						
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						    <div class="card-stamp">
-						      	<div class="image-box">
-						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy1.png" class="img-responsive">
-						      	</div>
-						      	<div class="rating-box m-0">
-						      		<p class="m-0">
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star-o" aria-hidden="true"></i>
-						      		</p>
-						      	</div>
-						      	<div class="detail-box text-center">
-						      		<p class="price">$54.99</p>
-						      		<p class="info">Coat of Arms T-Shirt</p>
-						      		<button class="btn primary-btn">Buy Now</button>
-						      	</div>
-						    </div>
-						</div>
-						
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						    <div class="card-stamp">
-						      	<div class="image-box">
-						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy2.png" class="img-responsive clothing-img">
-						      	</div>
-						      	<div class="rating-box m-0">
-						      		<p class="m-0">
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star-o" aria-hidden="true"></i>
-						      		</p>
-						      	</div>
-						      	<div class="detail-box text-center">
-						      		<p class="price">$33.99</p>
-						      		<p class="info">Coat of Arms Mug</p>
-						      		<button class="btn primary-btn">Buy Now</button>
-						      	</div>
-						    </div>
-						</div>
-
-		            	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						    <div class="card-stamp">
-						      	<div class="image-box">
-						      		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy3.png" class="img-responsive clothing-img">
-						      	</div>
-						      	<div class="rating-box m-0">
-						      		<p class="m-0">
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star" aria-hidden="true"></i>
-						      			<i class="fa fa-star-o" aria-hidden="true"></i>
-						      		</p>
-						      	</div>
-						      	<div class="detail-box text-center">
-						      		<p class="price">$23.99</p>
-						      		<p class="info">Coat of Arms Cap</p>
-						      		<button class="btn primary-btn">Buy Now</button>
-						      	</div>
-						    </div>
-						</div>
-	              	</div>
-	              	<div class="row">
+	            		<?php 
+	            			$args = array( 'post_type' => 'product', 'posts_per_page' => 20, 'product_cat' => 'Merch');
+        					$loop = new WP_Query( $args );
+							if (  $loop->have_posts() ) : 
+								while ( $loop->have_posts() ) : $loop->the_post(); global $product;?>
+								<div class="col-xs-12 col-sm-4 col-md-3 col-lg-4">
+									<?php/*<?php echo get_permalink( $loop->post->ID ) ?>*/ ?>
+							      	<div <?php wc_product_class('card-stamp'); ?>>
+							      		<div class="image-box">
+									  		<?php echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog') ?>
+									  	</div>
+								      	<div class="rating-box">
+								      		<p class="m-0">
+								      			<i class="fa fa-star" aria-hidden="true"></i>
+								      			<i class="fa fa-star" aria-hidden="true"></i>
+								      			<i class="fa fa-star" aria-hidden="true"></i>
+								      			<i class="fa fa-star" aria-hidden="true"></i>
+								      			<i class="fa fa-star-o" aria-hidden="true"></i>
+								      		</p>
+								      	</div>
+								      	<div class="detail-box text-center">
+								      		<p class="price"><?php echo $product->get_price_html(); ?></p>
+								      		<p class="info"><?php the_title(); ?></p>
+								      		<?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
+								      	</div>
+								    </div>
+						   		</div>	
+							<?php endwhile; 
+							else: ?>
+								<p>Sorry, no posts matched your criteria.</p>
+						<?php endif; ?>
+	            	</div>
+	            	<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="pagination-main text-center clearfix">
 								<ul class="pagination">
@@ -263,7 +98,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+	            </div>
 			</div>
 		</div>
 	</section>

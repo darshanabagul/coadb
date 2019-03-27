@@ -1,0 +1,122 @@
+2019-03-22T08:13:02+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:11
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single-surnames.php(7): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 11
+
+2019-03-22T08:13:08+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:11
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single-surnames.php(7): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 11
+
+2019-03-22T08:14:52+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:12
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single-surnames.php(7): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 12
+
+2019-03-22T08:14:55+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:12
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single-surnames.php(7): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 12
+
+2019-03-22T08:14:56+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:12
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single-surnames.php(7): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 12
+
+2019-03-22T08:14:57+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:12
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/surnames.php(6): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 12
+
+2019-03-22T08:15:00+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:12
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/about.php(6): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 12
+
+2019-03-22T08:15:01+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:12
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/contact_us.php(6): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 12
+
+2019-03-22T08:16:05+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:12
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single-surnames.php(7): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 12
+
+2019-03-22T08:17:26+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_template() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php:12
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(704): require_once()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(653): load_template('/Users/arpitasi...', true)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/general-template.php(42): locate_template(Array, true)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single-surnames.php(7): get_header('search')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#7 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/header-search.php on line 12
+
+2019-03-22T11:42:13+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/templates/loop/add-to-cart.php on line 25
+

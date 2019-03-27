@@ -174,16 +174,14 @@ function find_coat_of_arms($items = 6) {
 	//$path = get_template_directory_uri() .'/processed_images/dolan/';
     if (!empty($_GET['surname'])) {
     	$page = $_GET['surname'];
-    	$coat_of_arms['page_slug'] = $page;
-    	$page = str_replace("-family-crest-coat-of-arms-and-name-history", "", $page);
     } else {
     	$current_slug = add_query_arg( array(), $wp->request );
     	$link_array = explode('/',$current_slug);
     	$page = end($link_array);
-    	$coat_of_arms['page_slug'] = $page;
-    	$page = str_replace("-family-crest-coat-of-arms-and-name-history", "", $page);
     }
-    
+    $page = str_replace("-family-crest-coat-of-arms-and-name-history", "", $page);
+    $coat_of_arms['page_slug'] = $page;
+
     $uploads = wp_upload_dir();
     if ($dir = opendir($uploads['basedir'].'/processed_images')) {
 		$folders = array();
@@ -284,22 +282,64 @@ class Description_Walker extends Walker_Nav_Menu
     }
 }
 
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-function special_nav_class ($classes, $item) {
-    if (in_array('current-page-ancestor', $classes) || in_array('current-menu-item', $classes) ){
-        $classes[] = 'active ';
+/*
+//add product title on shop page of woocommerce
+add_action('woocommerce_shop_loop_item_title', 'coadb_wc_loop_product_title',10);
+function coadb_wc_loop_product_title() {
+	echo '<p class="info">'. get_the_title() .'</p>';
+}
+
+//add image to product on shop page of woocommerce
+add_action('woocommerce_before_shop_loop_item_title', 'coadb_wc_loop_product_thumbnail', 10);
+function coadb_wc_loop_product_thumbnail() { ?>
+	<div class="image-box">
+  		<?php woocommerce_template_loop_product_thumbnail(); ?>
+  	</div>
+<?php }
+
+//add price to product on shop page of woocommerce
+add_action('woocommerce_after_shop_loop_item_title', 'coadb_wc_loop_price', 10);
+function coadb_wc_loop_price() { 
+	woocommerce_template_loop_price();
+}
+
+//add to cart button to product on shop page of woocommerce
+add_action('woocommerce_after_shop_loop_item', 'coadb_wc_loop_add_to_cart');
+function coadb_wc_loop_add_to_cart() {
+	woocommerce_template_loop_add_to_cart();
+}
+
+//add rating to product on shop page of woocommerce
+add_action('woocommerce_after_shop_loop_item_title', 'coadb_wc_loop_rating');
+function coadb_wc_loop_rating() {
+	woocommerce_template_loop_rating();
+}
+
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+*/
+
+/**
+ * Ensure cart contents update when products are added to the cart via AJAX
+ */
+function my_header_add_to_cart_fragment( $fragments ) {
+    ob_start();
+    $count = WC()->cart->cart_contents_count;
+    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
+    if ( $count > 0 ) {
+        ?>
+        <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+        <?php            
     }
-    return $classes;
+        ?></a><?php
+ 
+    $fragments['a.cart-contents'] = ob_get_clean();
+     
+    return $fragments;
 }
+add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
 
-function my_upload_dir($upload) {
-
-
-  $upload['path']   = $upload['basedir'] . $upload['subdir'];
-
-  $upload['url']    = $upload['baseurl'] . $upload['subdir'];
-
-  return $upload;
-
-}
 ?>

@@ -1,0 +1,98 @@
+2019-03-25T07:38:30+00:00 CRITICAL syntax error, unexpected '.' in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/functions.php on line 298
+
+2019-03-25T08:00:46+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on null in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/functions.php:312
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/class-wp-hook.php(286): coadb_wc_loop_price('')
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/plugin.php(465): WP_Hook->do_action(Array)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/templates/content-product.php(58): do_action('woocommerce_aft...')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(706): require('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/includes/wc-core-functions.php(181): load_template('/Users/arpitasi...', false)
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/includes/shortcod in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/functions.php on line 312
+
+2019-03-25T08:00:56+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on null in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/functions.php:312
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/class-wp-hook.php(286): coadb_wc_loop_price('')
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/plugin.php(465): WP_Hook->do_action(Array)
+#3 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/templates/content-product.php(58): do_action('woocommerce_aft...')
+#4 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template.php(706): require('/Users/arpitasi...')
+#5 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/includes/wc-core-functions.php(181): load_template('/Users/arpitasi...', false)
+#6 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/includes/shortcod in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/functions.php on line 312
+
+2019-03-25T09:33:14+00:00 CRITICAL syntax error, unexpected 'function' (T_FUNCTION) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/functions.php on line 317
+
+2019-03-25T09:58:45+00:00 CRITICAL syntax error, unexpected '}' in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/templates/loop/rating.php on line 28
+
+2019-03-25T13:51:19+00:00 CRITICAL Uncaught Error: Call to undefined function twentyseventeen_get_svg() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php:33
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#3 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php on line 33
+
+2019-03-25T13:54:16+00:00 CRITICAL Uncaught Error: Call to undefined function twentyseventeen_get_svg() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php:33
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#3 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php on line 33
+
+2019-03-25T14:01:20+00:00 CRITICAL Uncaught Error: Call to undefined function twentyseventeen_get_svg() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php:33
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#3 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php on line 33
+
+2019-03-25T14:04:25+00:00 CRITICAL Uncaught Error: Call to undefined function twentyseventeen_get_svg() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php:33
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#3 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php on line 33
+
+2019-03-25T14:35:53+00:00 CRITICAL Uncaught Error: Call to undefined function twentyseventeen_get_svg() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php:33
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#3 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php on line 33
+
+2019-03-25T14:36:54+00:00 CRITICAL Uncaught Error: Call to undefined function twentyseventeen_get_svg() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php:33
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#3 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php on line 33
+
+2019-03-25T14:36:57+00:00 CRITICAL Uncaught Error: Call to undefined function twentyseventeen_get_svg() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php:33
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#3 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php on line 33
+
+2019-03-25T14:36:58+00:00 CRITICAL Uncaught Error: Call to undefined function twentyseventeen_get_svg() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php:33
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#3 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php on line 33
+
+2019-03-25T14:36:58+00:00 CRITICAL Uncaught Error: Call to undefined function twentyseventeen_get_svg() in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php:33
+Stack trace:
+#0 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/template-loader.php(77): include()
+#1 /Users/arpitasingh/Documents/Work/Sites/coadb/wp-blog-header.php(19): require_once('/Users/arpitasi...')
+#2 /Users/arpitasingh/Documents/Work/Sites/coadb/index.php(17): require('/Users/arpitasi...')
+#3 {main}
+  thrown in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/single.php on line 33
+
