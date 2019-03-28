@@ -15,8 +15,11 @@
 	get_header('sub');
 
 	if(isset($_POST['submit']))
-	{
-		if ( ! function_exists( 'wp_handle_upload' ) ) require_once( ABSPATH . 'wp-admin/includes/file.php' );
+	{	
+		if ( ! function_exists( 'wp_handle_upload' ) ) 
+			{
+			    require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			}
 		$uploadedfile = $_FILES['uploadfile'];
 		$upload_overrides = array( 'test_form' => false );
 		add_filter('upload_dir', 'my_upload_dir');
@@ -49,9 +52,10 @@
 			$header .= "Content-Disposition: attachment"; 
 
 		    if (mail($to, $subject, $message, $headers)) {
-		    	session_destroy();
+		    	//session_destroy();
 		    	echo "<script type='text/javascript'>
 			                swal('Thankyou for you interest, we will get back to you soon');
+			                window.location = 'http://localhost/coadb/index.php/which-coat-of-mine/?surname=".$family."';
 			            </script>";
 		    }
 		    else {
@@ -82,79 +86,89 @@
 	  </div>
 	</section>
 	<!-- tab end Here -->
-   <!-- form section Starts Here --> 
-	<section class="space bg-sky">
-		<div class="container">
-			<div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            	<div class="comment-wrap">
-            		<div class="row">
-            			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<h2>To get started, all you need to do is populate the below fields and hit the submit button :</h2>
-			            </div>
-			            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		            		<form enctype="multipart/form-data" method="POST">
-					    		<div class="row">
-									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-										<div class="custom-input">
-											<div class="group">      
-											  <input type="text" readonly="" id="Name" name="Name" value="<?php echo $name; ?>" required>
-											  <!-- <p class="error">Full Name is required</p> -->
+		<!-- form section Starts Here --> 
+			<section class="space bg-sky">
+				<div class="container">
+				 	<div class="row">
+			        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			        	<div class="comment-wrap">
+			        		<div class="row">
+			        			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<h2>To get started, all you need to do is populate the below fields and hit the submit button :</h2>
+					            </div>
+					            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-3 col-lg-6">
+				            		<form enctype="multipart/form-data" method="POST">
+						    			<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+													<div class="custom-input custom-display">
+														<label>Your First Name And Last Name :</label>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+													<div class="custom-input custom-display">
+														<div class="group">     
+														 <input type="text" id="Name" name="username" value="<?php echo $name; ?>" readonly="">
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-										<div class="custom-input">
-											<div class="group">      
-											  <input id="custom-check" type="text" value="<?php echo $family;?>" readonly="">
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+													<div class="custom-input custom-display">
+														<label>Your Email Address :</label>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+													<div class="custom-input custom-display">
+														<div class="group">     
+														 <input type="text" id="Name" name="username" value="<?php echo $email;?>" readonly="">
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-										<div class="custom-input">
-											<div class="group">      
-											  <input type="text"  value="<?php echo $website;?>" readonly="">
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+													<div class="custom-input custom-display">
+														<label>What surname are you interested in tracing the coat of arms for? :</label>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+													<div class="custom-input custom-display">
+														<div class="group">     
+														 <input type="text" name="surname" value="<?php echo $surname_interested;?>" readonly="">
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-										<div class="custom-input">
-											<div class="group">      
-											  <input type="text" value="<?php echo $email;?>" readonly="" >
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+												<div class="custom-input custom-display">
+													<div class="group">      
+													 <input type='file' name="uploadfile" value="" class="upload" required="" />
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-										<div class="custom-input">
-											<div class="group">      
-											  <textarea  readonly=""><?php echo $family_info;?></textarea>
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-box text-center">
+												<button class="btn btn-lg primary-btn" name="submit" type="submit">Proceed</button>
 											</div>
 										</div>
-									</div>
-									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-										
-											<div class="group">      
-											<!--<img id="blah" width="10%" class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/download.jpeg" alt="your image" name="username" required/>-->
-											<input type='file' onchange="readURL(this);" name="uploadfile" value="" />
-											</div>
-									</div>
-									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-box text-center">
-										<button class="btn secondary-btn" name="submit" type="submit">Send</button>
-									</div>
-								</div>
-							</form>
-            	    	</div>
-            		</div>		
-            	</div>
-            </div>
-			</div>
-		</div>
-	</section>
-    <!-- form section End Here -->
+									</form>
+			        	    	</div>
+			        		</div>		
+			        	</div>
+			        </div>
+					</div>
+				</div>
+			</section>
+      	<!-- form section End Here -->
 </div>
 
  <script type="text/javascript">

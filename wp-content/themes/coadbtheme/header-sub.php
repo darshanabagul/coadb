@@ -66,18 +66,18 @@
 						            </li>-->
 						            <li><a href="<?php echo get_home_url();?>/surname-listing/">Merch</a></li>
 									<li><a href="<?php echo get_home_url();?>/about/">About</a></li>
-									<li><a href="<?php echo get_home_url();?>/contact_us">Contact Us</a></li>
-									<li class="hidden-xs"><a href="<?php echo get_home_url();?>/glossary.php">Learning center</a></li>
+									<li><a href="<?php echo get_home_url();?>/contact">Contact Us</a></li>
+									<li class="hidden-xs"><a href="<?php echo get_home_url();?>/glossary">Learning center</a></li>
 									<li class="visible-xs dropdown">
 							            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
 							               Learning center
 							               <b class = "caret"></b>
 							            </a>
 							            <ul class = "dropdown-menu">
-							              <li><a href="<?php echo get_home_url();?>/glossary.php">Glossary</a></li>
-							              <li><a href="<?php echo get_home_url();?>/faq.php">Faq</a></li>
-							              <li><a href="<?php echo get_home_url();?>/video.php">Videos</a></li>
-							              <li ><a href="<?php echo get_home_url();?>/look_a_like.php">Look-a-like</a></li>
+							              <li><a href="<?php echo get_home_url();?>/glossary">Glossary</a></li>
+							              <li><a href="<?php echo get_home_url();?>/faq">Faq</a></li>
+							              <li><a href="<?php echo get_home_url();?>/video">Videos</a></li>
+							              <li ><a href="<?php echo get_home_url();?>/look_a_like">Noble Twin Game</a></li>
 							            </ul>
 						       		</li>
 									<li class="visible-xs"><a href="" class="m-lr-15"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/shopping-cart.png" alt="shopping cart" title="shopping cart"></a></li>

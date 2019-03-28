@@ -29,8 +29,8 @@
 		    <div class="container">
 		        <div class="row">
 		            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-		            	<h2 class="heading">Which noble person from history do you look like?</h2>
-		                <button class="btn secondary-btn facebook-btn"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i> Continue with Facebook</button>
+		            	<h2 class="heading">To see who your royal or noble twin is, click the below button to play our game.</h2>
+		                 <button class="btn secondary-btn facebook-btn"><i class="fa fa-facebook fa-1x" aria-hidden="true"></i> Continue with Facebook</button>
 		            </div>
 		        </div>
 		    </div>

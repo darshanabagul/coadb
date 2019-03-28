@@ -50,8 +50,34 @@
 					event.preventDefault();
 					$([sidebar, sidebarTrigger]).toggleClass('nav-is-visible');
 				});
-			})		
+			$("input[name='select-option-radio']",$('.check-option')).change(
+		    function(e)
+		    {
+		    	e.preventDefault();
+		    	var elems = document.querySelectorAll(".check-option");
+				  [].forEach.call(elems, function(el) {
+				    el.classList.remove("option-active");
+				  });
+		    	$(this).closest('.check-option').toggleClass("option-active");
+		    	return false;
+		    });
+			$('.popup-video').magnificPopup({
+				delegate: 'a',
+				type: 'iframe',
+				gallery:{
+				enabled:true
+				  }
+				});
+
+			$('.popup-modal').magnificPopup({
+			    type: 'inline',
+			    preloader: false,
+			    focus: '#username',
+			    modal: true
+			}); 
+			})
 	</script>
+
 </footer>
 </body>
 </html>
