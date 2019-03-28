@@ -105,6 +105,7 @@
 			</section>
 			<!-- three section End Here -->
 	  </div>
+	  <?php woocommerce_content(); ?>
 	  <!-- Main content End Here -->
 <?php get_footer(); ?>
 <script>

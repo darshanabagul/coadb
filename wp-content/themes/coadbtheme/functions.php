@@ -282,6 +282,62 @@ class Description_Walker extends Walker_Nav_Menu
     }
 }
 
+
+add_action('wp_ajax_save_custom_data', 'save_custom_data');
+add_action('wp_ajax_nopriv_save_custom_data', 'save_custom_data');
+
+function save_custom_data()
+{
+    session_start();
+    $coat_of_arm_img = $_POST['coat_of_arm_img']; //coat of arm img 
+    $product_id = $_POST['product_id']; //Product ID    
+    $_SESSION['user_custom_datas'] = $coat_of_arm_img;
+    //print_r($_SESSION["user_custom_datas"]);
+    wp_die();
+}
+
+
+add_filter('woocommerce_add_cart_item_data','wdm_add_item_data',1,10);
+function wdm_add_item_data($cart_item_data, $product_id) {
+	session_start();
+    global $woocommerce;
+    $new_value = array();
+    $new_value['_custom_options'] =  $_SESSION['user_custom_datas'];
+    
+    if(empty($cart_item_data)) {
+        return $new_value;
+    } else {
+        return array_merge($cart_item_data, $new_value);
+    }
+}
+
+add_filter('woocommerce_get_cart_item_from_session', 'wdm_get_cart_items_from_session', 1, 3 );
+function wdm_get_cart_items_from_session($item,$values,$key) {
+    if (array_key_exists( '_custom_options', $values ) ) {
+        $item['_custom_options'] = $values['_custom_options'];
+    }
+    return $item;
+}
+
+add_filter('woocommerce_cart_item_name','add_usr_custom_session',1,3);
+function add_usr_custom_session($product_name, $values, $cart_item_key ) {
+	$return_string = $product_name;
+	if($values['data']->get_name() == 'Digital JPG Image') {
+		$return_string = $product_name . "<br />" . $values['_custom_options'];
+	}
+	return $return_string;
+}
+
+function custom_new_product_image( $_product_img, $cart_item, $cart_item_key ) {
+	$a = $cart_item['data']->get_image();
+	if($cart_item['data']->get_name() == 'Digital JPG Image') {
+    	$a = '<img src="'.get_site_url().'/wp-content/uploads/processed_images/'.$cart_item['_custom_options'].'" />';
+    }
+    return $a;
+}
+
+add_filter( 'woocommerce_cart_item_thumbnail', 'custom_new_product_image', 10, 3 );
+
 /*
 //add product title on shop page of woocommerce
 add_action('woocommerce_shop_loop_item_title', 'coadb_wc_loop_product_title',10);
@@ -350,10 +406,7 @@ function special_nav_class ($classes, $item) {
     return $classes;
 }
 
-
 function my_upload_dir($upload) {
-
-
   $upload['path']   =  $upload['basedir'] . $upload['subdir'];
 
   $upload['url']    =  $upload['baseurl'] . $upload['subdir'];
@@ -362,4 +415,4 @@ function my_upload_dir($upload) {
 
 }
 
-?>
+
