@@ -30,6 +30,7 @@
 							        ?>
 							    </a>
 							<?php } ?>
+						<a href="" class="m-lr-15"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/shopping-cart.png" alt="Shopping Cart" title="Shopping Cart"></a>
 						<a href="" class="primary-btn">Log In</a>
 					</div>
 					<a href="javascript:void(0);" class="cd-nav-trigger backoverlay"><span></span></a>
@@ -51,20 +52,20 @@
 						              <li ><a href="./surname_detail_which_one_is_mine.html">Which one is mine?</a></li>
 						            </ul>
 					            </li>-->
-					            <li><a href="<?php echo get_home_url();?>/surname-listing/">Merch</a></li>
-								<li><a href="<?php echo get_home_url();?>/about/">About</a></li>
-								<li><a href="<?php echo get_home_url();?>/contact_us">Contact Us</a></li>
-								<li class="hidden-xs"><a href="<?php echo get_home_url();?>/glossary.php">Learning center</a></li>
+					            <li><a href="<?php echo get_home_url();?>/surname-listing">Merch</a></li>
+								<li><a href="<?php echo get_home_url();?>/about">About</a></li>
+								<li><a href="<?php echo get_home_url();?>/contact">Contact</a></li>
+								<li class="hidden-xs"><a href="<?php echo get_home_url();?>/glossary">Learning center</a></li>
 								<li class="visible-xs dropdown">
 						            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
 						               Learning center
 						               <b class = "caret"></b>
 						            </a>
 						            <ul class = "dropdown-menu">
-						              <li><a href="<?php echo get_home_url();?>/glossary.php">Glossary</a></li>
-						              <li><a href="<?php echo get_home_url();?>/faq.php">Faq</a></li>
-						              <li><a href="<?php echo get_home_url();?>/video.php">Videos</a></li>
-						              <li ><a href="<?php echo get_home_url();?>/look_a_like.php">Look-a-like</a></li>
+						              <li><a href="<?php echo get_home_url();?>/glossary">Glossary</a></li>
+						              <li><a href="<?php echo get_home_url();?>/faq">Faq</a></li>
+						              <li><a href="<?php echo get_home_url();?>/video">Videos</a></li>
+						              <li ><a href="<?php echo get_home_url();?>/look_a_like">Noble Twin Game</a></li>
 						            </ul>
 					       		</li>
 								<li class="visible-xs">
@@ -110,15 +111,15 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-5 col-md-5 col-sm-6	col-xs-12">
+				<div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
 					<div id="carousel" class="banner-carousel-inner carousel slide carousel-fade" data-ride="carousel" data-interval="2500">
-				     	<div class="carousel-inner">
-				        	<div class="active item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b1.png" alt="1 slide" title="1 slide" class="img-responsive"></div>
-				        	<div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b2.png" alt="2 slide" title="2 slide" class="img-responsive"></div>
-				        	<div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b3.png" alt="3 slide"  title="3 slide" class="img-responsive"></div>
-				        	<div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b4.png" alt="4 slide"  title="4 slide" class="img-responsive"></div>
-				      	</div>
-				    </div>
+				      <div class="carousel-inner">
+				        <div class="active item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b1.png" alt="T-shirt"  class="img-responsive"></div>
+				        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b2.png" alt="Coat of Arms JPG" class="img-responsive"></div>
+				        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b3.png" alt="Coat of Arms Merch"  class="img-responsive"></div>
+				        <div class="item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/infographic.gif" alt="How It Works" class="img-responsive"></div>
+				      </div>
+			    	</div>
 				</div>
 			</div>
 		</div>

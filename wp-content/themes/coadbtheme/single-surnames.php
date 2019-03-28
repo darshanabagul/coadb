@@ -166,6 +166,13 @@ get_header('sub');
 	   		<?php } } ?>
 		    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+		    <div class="row social-share">
+		      	<div class="col-lg-12">
+		      		<a href="#" class="fb"> <i class="fa fa-facebook"></i><span>Share on Facebook</span></a>
+		      		<a href="#" class="tw"> <i class="fa fa-twitter"></i><span>Tweet this</span></a>
+		      		<a href="#" class="pin"> <i class="fa fa-pinterest"></i><span>Save on pinterest</span></a>
+		      	</div>
+		     </div>
 	</div>
 </div>
 <script>
