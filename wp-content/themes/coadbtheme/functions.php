@@ -414,5 +414,12 @@ function my_upload_dir($upload) {
   return $upload;
 
 }
+function redirect_to_home() {
+  if(!is_admin() && is_page('2')) {
+    wp_redirect(get_home_url());
+    exit();
+  }
+}
+add_action('template_redirect', 'redirect_to_home');
 
 

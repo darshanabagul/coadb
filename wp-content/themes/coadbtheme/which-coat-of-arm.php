@@ -157,9 +157,7 @@
 								<h3>Username: " . strip_tags($name) . "</h3>
 								<h3>Surname: " . $family . "</h3>
 								<h3>Email Address: " . strip_tags($_POST['email']) . "</h3>
-								<h3>Website: " . strip_tags($website) . "</h3>
 								<h3>Surname Interested In: " . $surname_interested . "</h3>
-								<h3>Family Info: " . $family_info . "</h3>
 							</body>
 					</html>";
 	$message1 = $htmlContent1;
@@ -170,13 +168,15 @@
 	if (isset($_POST['submit'])) {
 
 				if (mail($to, $subject, $message1, $headers) && mail($from, $subject, $message2, $headers)) {
-					$url = 'http://localhost/coadb/index.php/family_tree';
+					$url = 'get_home_url()/family_tree';
 					//redirect_to( $url );
-					Header("Location: $url");
+					wp_safe_redirect( $url );
 				}
 				else 
 				{
-					echo "Unable to send Email";
+					$url = 'get_home_url()/which-coat-of-mine';
+					//redirect_to( $url );
+					wp_safe_redirect( $url );
 				}
 			}
 
