@@ -1938,4 +1938,26 @@ Filter
   background: #cb2027;
   color: white;
 }
+.custom-input .error label{
+ color:#787878; 
+ font-size:12px;
+ font-weight:normal;
+ position:absolute;
+ pointer-events:none;
+ left: 16px;
+ right: 16px;
+ top: 18px;
+ transition:0.2s ease all; 
+ -moz-transition:0.2s ease all; 
+ -webkit-transition:0.2s ease all;
+}
+.custom-input .gotop label{
+   top: 6px;
+   font-size: 13px;
+   font-weight: 600;
+   color: #345a9c;
+   left: 16px;
+ right: 16px;
+  position: absolute;
+}
     

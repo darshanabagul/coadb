@@ -34,9 +34,7 @@
 								<h3>Username: " . strip_tags($name) . "</h3>
 								<h3>Surname: " . $family . "</h3>
 								<h3>Email Address: " . strip_tags($email) . "</h3>
-								<h3>Website: " . strip_tags($website) . "</h3>
 								<h3>Surname Interested In: " . $surname_interested . "</h3>
-								<h3>Family Info: " . $family_info . "</h3>
 							</body>
 					</html>";
 
@@ -55,11 +53,13 @@
 		    	//session_destroy();
 		    	echo "<script type='text/javascript'>
 			                swal('Thankyou for you interest, we will get back to you soon');
-			                window.location = 'http://localhost/coadb/index.php/which-coat-of-mine/?surname=".$family."';
+			                window.location = 'get_home_url()/family_tree/which-coat-of-mine/?surname=".$family."';
 			            </script>";
 		    }
 		    else {
-		    	echo "mail not send";
+		    	echo "<script type='text/javascript'>
+			                swal('Problem in sending mail');
+			            </script>";
 		    }
 		} 
 		else {
@@ -100,12 +100,12 @@
 				            		<form enctype="multipart/form-data" method="POST">
 						    			<div class="row">
 											<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
-												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+												<div class="col-xs-6 col-sm-6 col-md-12 col-lg-6">
 													<div class="custom-input custom-display">
 														<label>Your First Name And Last Name :</label>
 													</div>
 												</div>
-												<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 													<div class="custom-input custom-display">
 														<div class="group">     
 														 <input type="text" id="Name" name="username" value="<?php echo $name; ?>" readonly="">
@@ -116,12 +116,12 @@
 										</div>
 										<div class="row">
 											<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
-												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+												<div class="col-xs-6 col-sm-6 col-md-12 col-lg-6">
 													<div class="custom-input custom-display">
 														<label>Your Email Address :</label>
 													</div>
 												</div>
-												<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 													<div class="custom-input custom-display">
 														<div class="group">     
 														 <input type="text" id="Name" name="username" value="<?php echo $email;?>" readonly="">
@@ -132,12 +132,12 @@
 										</div>
 										<div class="row">
 											<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
-												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+												<div class="col-xs-6 col-sm-6 col-md-12 col-lg-6">
 													<div class="custom-input custom-display">
 														<label>What surname are you interested in tracing the coat of arms for? :</label>
 													</div>
 												</div>
-												<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 													<div class="custom-input custom-display">
 														<div class="group">     
 														 <input type="text" name="surname" value="<?php echo $surname_interested;?>" readonly="">

@@ -44,12 +44,12 @@
 	<script>
 		$(document).ready(function(){
 			  // Nav
-			  var sidebar = $('.cd-side-nav'),
-				sidebarTrigger = $('.cd-nav-trigger');
-				sidebarTrigger.on('click', function(event){
-					event.preventDefault();
-					$([sidebar, sidebarTrigger]).toggleClass('nav-is-visible');
-				});
+		  var sidebar = $('.cd-side-nav'),
+			sidebarTrigger = $('.cd-nav-trigger');
+			sidebarTrigger.on('click', function(event){
+				event.preventDefault();
+				$([sidebar, sidebarTrigger]).toggleClass('nav-is-visible');
+			});
 			$("input[name='select-option-radio']",$('.check-option')).change(
 		    function(e)
 		    {
@@ -76,6 +76,58 @@
 			    modal: true
 			}); 
 			})
+    	$('input').blur(function(){
+	        if ($(this).attr( "type" )==='email') {
+	        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+	        if (testEmail.test($(this).val())){
+	                $(this).parent().parent().removeClass('error');
+	                      
+	        }
+	        else{
+	                 $(this).parent().parent().removeClass('gotop');
+	                 $(this).parent().parent().addClass('error');
+	        }
+	        }
+
+	        else if ($(this).attr( "type" )==='text') {
+	        if ($(this).val()){
+	                $(this).parent().parent().removeClass('error');
+	        }
+	        else{
+	        		$(this).parent().parent().removeClass('gotop');
+	                $(this).parent().parent().addClass('error');
+	        }
+	        }
+	        
+	        });
+	        $('input').focus(function(){
+	        $(this).parent().parent().addClass('gotop');
+	        });
+
+	    $('textarea').blur(function(){
+	        if ($(this).attr( "name" )==='your-message') {
+	        if ($(this).val()){
+	                      $(this).parent().parent().removeClass('error');
+	                      
+	        }
+	        else{
+	                 $(this).parent().parent().removeClass('gotop');
+	                 $(this).parent().parent().addClass('error');
+	        }
+	        }
+	        else if ($(this).attr( "name" )==='your-message') {
+	        if ($(this).val()){
+	                $(this).parent().parent().removeClass('error');
+	        }
+	        else{
+	        $(this).parent().parent().removeClass('gotop');
+	                 $(this).parent().parent().addClass('error');
+	        }
+	        }
+	        });
+	        $('textarea').focus(function(){
+	        $(this).parent().parent().addClass('gotop');
+	        });
 	</script>
 
 </footer>

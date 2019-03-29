@@ -64,8 +64,8 @@
 							              <li ><a href="./surname_detail_which_one_is_mine.html">Which one is mine?</a></li>
 							            </ul>
 						            </li>-->
-						            <li><a href="<?php echo get_home_url();?>/surname-listing/">Merch</a></li>
-									<li><a href="<?php echo get_home_url();?>/about/">About</a></li>
+						            <li><a href="<?php echo get_home_url();?>/surname-listing">Merch</a></li>
+									<li><a href="<?php echo get_home_url();?>/about">About</a></li>
 									<li><a href="<?php echo get_home_url();?>/contact">Contact Us</a></li>
 									<li class="hidden-xs"><a href="<?php echo get_home_url();?>/glossary">Learning center</a></li>
 									<li class="visible-xs dropdown">

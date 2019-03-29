@@ -18,7 +18,7 @@
 				 	    	<div class="wrap-table">
 						 	<div class="box-cell">
 						 		<h2 >Coats of Arms, Surname History, Genealogy. Find your family’s surname today.</h2>
-				 	    		<a class="btn secondary-btn" href="<?php echo get_home_url();?>/index.php/surname-listing">View Surname Database</a>
+				 	    		<a class="btn secondary-btn" href="<?php echo get_home_url();?>/surname-listing">View Surname Database</a>
 						 	</div>
 						 	</div>
 				 	    </div>
