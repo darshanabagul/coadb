@@ -350,12 +350,26 @@ add_filter( 'woocommerce_cart_item_thumbnail', 'custom_new_product_image', 10, 3
 add_action('woocommerce_add_order_item_meta','wdm_add_values_to_order_item_meta',1,2);
 function wdm_add_values_to_order_item_meta($item_id, $values) {
     global $woocommerce,$wpdb;
+    define('TOKEN_DIR', 'tokens');
     //wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/wp-content/uploads/processed_images/'.$values['_custom_options'].'"> Download </a>'.$values['_custom_options']);
+    $fid = base64_encode($values['_custom_options']);
+    $key = uniqid(time().'-key',TRUE);
+    if(!is_dir(TOKEN_DIR)) {
+        mkdir(TOKEN_DIR);
+        $file = fopen(TOKEN_DIR.'/.htaccess','w');
+        fwrite($file,"Order allow,deny\nDeny from all");
+        fclose($file);
+    }
+    
+    // Write the key to the keys list
+    $file = fopen(TOKEN_DIR.'/keys','a');
+    fwrite($file, "{$key}\n");
+    fclose($file);
 
-    wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/download?file='.urlencode($values['_custom_options']).'"> Download </a>'.$values['_custom_options']);
-
+    if(!empty($values['_custom_options'])) {
+    	wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/download?fid='.$fid.'&key='.$key.'"> Download </a>'.$values['_custom_options']);
+    }
     //wc_add_order_item_meta($item_id,'customer_image',$values['_custom_options']['another_example_field']);
-    //wc_add_order_item_meta($item_id,'_hidden_field',$values['_custom_options']['hidden_info']);
 }
 
 function clean($string) {

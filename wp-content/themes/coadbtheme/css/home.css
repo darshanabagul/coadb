@@ -2001,4 +2001,25 @@ Filter
     color: #23527c;
     background-color: #c49634;
 }
-
+.woocommerce .woocommerce-customer-details address {
+    background: #fff;
+    padding: 10px 15px 30px; 
+}
+.woocommerce .woocommerce-customer-details .woocommerce-customer-details--email, .woocommerce .woocommerce-customer-details .woocommerce-customer-details--phone {
+    line-height: 1.7;
+}
+.woocommerce .wc-item-meta p {
+    font-size: 15px !important;
+    line-height: unset !important;
+}
+.woocommerce .wc-item-meta li p a {
+    display: none;
+}
+.woocommerce ul.order_details {
+    background-color: #fff;
+    padding: 20px 20px;
+}
+.woocommerce-notice, .woocommerce-notice--success, .woocommerce-thankyou-order-received {
+    color: #c49634 !important;
+    font-weight: bold;
+}
