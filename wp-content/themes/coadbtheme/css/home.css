@@ -1938,6 +1938,7 @@ Filter
   background: #cb2027;
   color: white;
 }
+
 .custom-input .error label{
  color:#787878; 
  font-size:12px;
@@ -1960,4 +1961,44 @@ Filter
  right: 16px;
   position: absolute;
 }
-    
+
+/* cart page */
+.woocommerce table.shop_table {
+    background: white;
+}
+.woocommerce table.shop_table thead, .woocommerce table.shop_table tfoot {
+    font-size: 18px;
+    color: #345a9c;
+    font-family: "Vidaloka-Regular";
+}
+.woocommerce table.shop_table td.product-thumbnail img {
+    width: 100px;
+    height: 100px;
+}
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+    background-color: #fff;
+}
+.woocommerce table.cart td.actions .input-text {
+    width: 60%;
+}
+.woocommerce input.input-text, .woocommerce textarea {
+    font-size: 18px;
+    padding: 10px 15px 10px;
+    border-radius: 10px;
+    border: none;
+    border: 1px solid #ddd;
+    width: 100%;
+    resize: none;
+}
+.woocommerce a.remove {
+    color: #fff!important;
+    background: red;
+}
+.woocommerce a.button.alt, .woocommerce button.button.alt {
+    background-color: #c49634;
+}
+.woocommerce a.button.alt:hover,.woocommerce button.button.alt:hover {
+    color: #23527c;
+    background-color: #c49634;
+}
+

@@ -292,18 +292,26 @@ function save_custom_data()
     $coat_of_arm_img = $_POST['coat_of_arm_img']; //coat of arm img 
     $product_id = $_POST['product_id']; //Product ID    
     $_SESSION['user_custom_datas'] = $coat_of_arm_img;
-    //print_r($_SESSION["user_custom_datas"]);
-    wp_die();
+    
+    $quantity = 1; //Or it can be some userinputted quantity
+    if( WC()->cart->add_to_cart( $product_id, $quantity )) {
+        global $woocommerce;
+        $cart_url = $woocommerce->cart->get_cart_url();
+        $output = array('success' => 1, 'msg' =>'Added the product to your cart', 'cart_url' => $cart_url );
+    } else {
+        $output = array('success' => 0, 'msg' => 'Something went wrong, please try again');
+    }
+    $output = array('success' => 1, 'msg' =>'Added the product to your cart', 'cart_url' => $cart_url );
+    wp_die(json_encode($output));
 }
-
 
 add_filter('woocommerce_add_cart_item_data','wdm_add_item_data',1,10);
 function wdm_add_item_data($cart_item_data, $product_id) {
-	session_start();
-    global $woocommerce;
+	global $woocommerce;
+	session_start();	
     $new_value = array();
-    $new_value['_custom_options'] =  $_SESSION['user_custom_datas'];
-    
+    $new_value['_custom_options'] = $_SESSION['user_custom_datas'];//$_POST['custom_options'];
+    unset($_SESSION['user_custom_datas']);
     if(empty($cart_item_data)) {
         return $new_value;
     } else {
@@ -323,7 +331,8 @@ add_filter('woocommerce_cart_item_name','add_usr_custom_session',1,3);
 function add_usr_custom_session($product_name, $values, $cart_item_key ) {
 	$return_string = $product_name;
 	if($values['data']->get_name() == 'Digital JPG Image') {
-		$return_string = $product_name . "<br />" . $values['_custom_options'];
+		$description = clean($values['_custom_options']);
+		$return_string = $product_name . "<br />" . ucfirst($description);
 	}
 	return $return_string;
 }
@@ -335,8 +344,25 @@ function custom_new_product_image( $_product_img, $cart_item, $cart_item_key ) {
     }
     return $a;
 }
-
 add_filter( 'woocommerce_cart_item_thumbnail', 'custom_new_product_image', 10, 3 );
+
+
+add_action('woocommerce_add_order_item_meta','wdm_add_values_to_order_item_meta',1,2);
+function wdm_add_values_to_order_item_meta($item_id, $values) {
+    global $woocommerce,$wpdb;
+    //wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/wp-content/uploads/processed_images/'.$values['_custom_options'].'"> Download </a>'.$values['_custom_options']);
+
+    wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/download?file='.urlencode($values['_custom_options']).'"> Download </a>'.$values['_custom_options']);
+
+    //wc_add_order_item_meta($item_id,'customer_image',$values['_custom_options']['another_example_field']);
+    //wc_add_order_item_meta($item_id,'_hidden_field',$values['_custom_options']['hidden_info']);
+}
+
+function clean($string) {
+   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+   return preg_replace('/[^A-Za-z0-9\-]/', ' - ', $string); // Removes special chars.
+}
 
 /*
 //add product title on shop page of woocommerce
@@ -381,6 +407,7 @@ remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_lo
 /**
  * Ensure cart contents update when products are added to the cart via AJAX
  */
+add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
 function my_header_add_to_cart_fragment( $fragments ) {
     ob_start();
     $count = WC()->cart->cart_contents_count;
@@ -396,7 +423,6 @@ function my_header_add_to_cart_fragment( $fragments ) {
      
     return $fragments;
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
 
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 function special_nav_class ($classes, $item) {
@@ -408,11 +434,8 @@ function special_nav_class ($classes, $item) {
 
 function my_upload_dir($upload) {
   $upload['path']   =  $upload['basedir'] . $upload['subdir'];
-
   $upload['url']    =  $upload['baseurl'] . $upload['subdir'];
-
   return $upload;
-
 }
 function redirect_to_home() {
   if(!is_admin() && is_page('2')) {

@@ -8,7 +8,7 @@
 	$surname_interested = $_POST['surname'];
 	$family_info = $_POST['message'];
 	$to = $_POST['email'];
-	$from = 'monika.bagadkar@codaemonsoftwares.com';
+	$from = 'darshana.bagul@codaemonsoftwares.com';
 	$subject = $_POST["sub"];
 	$_SESSION['post-data'] = $_POST;
 	$_SESSION['get-data'] = $_GET['surname'];
@@ -375,4 +375,4 @@
         }
 }
 </script>
- <?php get_footer();?>
+<?php get_footer();?>

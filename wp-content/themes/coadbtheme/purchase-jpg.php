@@ -53,7 +53,7 @@
 							      	<div class="detail-box text-center">
 							      		<p class="price"><?php echo $product->get_price_html(); ?></p>
 							      		<p class="info">Not Watermarked</p>
-							      		<div class="add_to_cart_div" coat_of_arm_img="<?php echo $v ?>" product_id="<?php echo $loop->post->ID ?>"><?php woocommerce_template_loop_add_to_cart( $loop->post, $product); ?></div>
+							      		<div class="add_to_cart_div" coat_of_arm_img="<?php echo $v ?>" product_id="<?php echo $loop->post->ID ?>"><button class="btn primary-btn">Add to cart</button><?php //woocommerce_template_loop_add_to_cart( $loop->post, $product); ?></div>
 							      	</div>
 						      	</div>
 					   		</div>
@@ -90,7 +90,7 @@
 	var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
     $( document ).on( 'click', '.add_to_cart_div', function(e) {
     	var coat_of_arm_img = $(this).attr('coat_of_arm_img');
-    	var product_id = $(this).attr('product_id')
+    	var product_id = $(this).attr('product_id');
     	$.ajax({
                 url: ajaxurl,
                 type : 'post',
@@ -100,7 +100,7 @@
                   'product_id': product_id
                 },
                 success: function(result){
-                // alert(result)
+               	//$("#cart_count").load(location.href + " #cart_count");
             }
         });
 	});
