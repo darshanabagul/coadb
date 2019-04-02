@@ -30,7 +30,6 @@
 							        ?>
 							    </a>
 							<?php } ?>
-						<a href="" class="m-lr-15"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/shopping-cart.png" alt="Shopping Cart" title="Shopping Cart"></a>
 						<a href="" class="primary-btn">Log In</a>
 					</div>
 					<a href="javascript:void(0);" class="cd-nav-trigger backoverlay"><span></span></a>

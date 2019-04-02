@@ -30,7 +30,17 @@
 					        ?>
 					    </a>
 					<?php } ?>
-					<a href="" class="primary-btn">Log In</a>
+					
+					<?php global $current_user; wp_get_current_user(); ?>
+					<?php 
+						if ( is_user_logged_in() ) { 
+ 							echo 'Welcome ' . $current_user->display_name . "!!"; ?>
+ 							<a href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a>
+ 						<?php } 
+						else { //wp_loginout(); } ?>
+						<a href="" class="primary-btn">Log In</a>
+					<?php }	
+					?>
 				</div>
 				<a href="javascript:void(0);" class="cd-nav-trigger backoverlay"><span></span></a>
 				<!--<div class="cd-side-nav">

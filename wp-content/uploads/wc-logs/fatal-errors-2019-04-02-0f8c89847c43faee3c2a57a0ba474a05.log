@@ -1,0 +1,8 @@
+2019-04-02T06:25:25+00:00 CRITICAL Allowed memory size of 15728640 bytes exhausted (tried to allocate 131072 bytes) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/ajax-search-lite/includes/views/asl.shortcode.php on line 388
+
+2019-04-02T06:45:48+00:00 CRITICAL Allowed memory size of 15728640 bytes exhausted (tried to allocate 32768 bytes) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/plugins/woocommerce/templates/order/order-details-item.php on line 1
+
+2019-04-02T06:51:45+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/functions.php on line 359
+
+2019-04-02T10:44:18+00:00 CRITICAL syntax error, unexpected '$one' (T_VARIABLE) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/download.php on line 29
+
