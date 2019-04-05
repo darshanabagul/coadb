@@ -183,6 +183,9 @@ function find_coat_of_arms($items = 6) {
     $coat_of_arms['page_slug'] = $page;
 
     $uploads = wp_upload_dir();
+
+    //s3_url = https://s3.us-east-2.amazonaws.com/bucket.coadb/; 
+
     if ($dir = opendir($uploads['basedir'].'/processed_images')) {
 		$folders = array();
 		while (false !== ($file = readdir($dir))) {
