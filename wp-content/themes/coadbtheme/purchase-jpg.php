@@ -22,29 +22,26 @@
 	  </div>
 	</section>
 	<!-- tab end Here -->
-	
 	<section class="space same-box-wrap bg-white purchase-jpg-section">
 	<div class="container">
 	 	<div class="row purchase-jpg">
 	 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             	<div id="demo" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
 					<div class="gallery row carousel-inner">
-				 		<?php
-			    			$args = array( 'post_type' => 'product', 'posts_per_page' => 10, 'product_cat' => 'JPG');
-			        		$loop = new WP_Query( $args );
+				 		<?php 
+			    			$args = array( 'post_type' => 'product', 'posts_per_page' => 30, 'product_cat' => $page['page_slug']);
+			    			
+							$loop = new WP_Query( $args );
 
-							if (!empty($coat_of_arms = find_coat_of_arms(8))) { ?>
-							<?php if(!empty($coat_of_arms['images'])) { ?>
-								<?php foreach($coat_of_arms['images'] as $key=>$img) { ?>
+							if ($loop->have_posts()) : 
+								while ( $loop->have_posts() ) : $loop->the_post(); global $product; $key=0;?>
 									<div class="item <?php if($key==0) echo 'active' ?>">
-									<?php foreach ($img as $k=>$v) { ?>
-										<?php
-				 						while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-				 						<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-									      	<div class="card-stamp">
-										      	<div class="image-box">
-										      		<img src="<?php echo get_site_url()?>/wp-content/uploads/processed_images/<?php echo $v ?>" class="img-responsive">
-										      	</div>
+										<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+											<?php/*<?php echo get_permalink( $loop->post->ID ) ?>*/ ?>
+									      	<div <?php wc_product_class('card-stamp'); ?>>
+									      		<div class="image-box">
+									      			<img src="https://s3.us-east-2.amazonaws.com/bucket.coadb/<?php echo $page['page_slug']?>/shop-images/<?php echo $product->name ?>.png" class="img-responsive">
+											  	</div>
 										      	<div class="rating-box">
 										      		<p class="m-0">
 										      			<i class="fa fa-star" aria-hidden="true"></i>
@@ -57,24 +54,18 @@
 										      	<div class="detail-box text-center">
 										      		<p class="price"><?php echo $product->get_price_html(); ?></p>
 										      		<p class="info">Not Watermarked</p>
-										      		<div class="add_to_cart_div" coat_of_arm_img="<?php echo $v ?>" product_id="<?php echo $loop->post->ID ?>"><button class="btn primary-btn" data-product_id="<?php echo $loop->post->ID ?>" data-quantity="1">Add to cart</button>
-										      			<?php //woocommerce_template_loop_add_to_cart( $loop->post, $product); ?></div>
+										      		<?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
 										      	</div>
-									      	</div>
+										    </div>
 								   		</div>
-								   		<?php endwhile; ?>
-								   	<?php } ?>
-								   	</div>
-							   	<?php } ?>
-				   			<?php } 
-				   			else { ?>
-				   				<h3 class="text-center">Sorry!! Digital Images are not available.</h3>
-				   			<?php } 
-				   			} ?>
-			    		<?php wp_reset_query(); ?>
-	    		</div>
-	    	</div>
-		</div>
+							   		</div>	
+								<?php endwhile; 
+							else: ?>
+								<p>Sorry, no posts matched your criteria.</p>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
 	  	</div>
 
 	  	<?php if(count($coat_of_arms['images']) > 1) { ?>
