@@ -30,9 +30,7 @@
 					<div class="gallery row carousel-inner">
 				 		<?php 
 			    			$args = array( 'post_type' => 'product', 'posts_per_page' => 30, 'product_cat' => $page['page_slug']);
-			    			
-							$loop = new WP_Query( $args );
-
+			    			$loop = new WP_Query( $args );
 							if ($loop->have_posts()) : 
 								while ( $loop->have_posts() ) : $loop->the_post(); global $product; $key=0;?>
 									<div class="item <?php if($key==0) echo 'active' ?>">
@@ -40,6 +38,7 @@
 											<?php/*<?php echo get_permalink( $loop->post->ID ) ?>*/ ?>
 									      	<div <?php wc_product_class('card-stamp'); ?>>
 									      		<div class="image-box">
+									      			<?php $page = find_coat_of_arms();?>
 									      			<img src="https://s3.us-east-2.amazonaws.com/bucket.coadb/<?php echo $page['page_slug']?>/shop-images/<?php echo $product->name ?>.png" class="img-responsive">
 											  	</div>
 										      	<div class="rating-box">
