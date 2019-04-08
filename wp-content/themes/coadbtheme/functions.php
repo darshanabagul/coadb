@@ -339,7 +339,7 @@ function add_usr_custom_session($product_name, $values, $cart_item_key ) {
 	}
 	return $return_string;
 }
-
+/*
 function custom_new_product_image( $_product_img, $cart_item, $cart_item_key ) {
 	$a = $cart_item['data']->get_image();
 	if($cart_item['data']->get_name() == 'Digital JPG Image') {
@@ -348,14 +348,26 @@ function custom_new_product_image( $_product_img, $cart_item, $cart_item_key ) {
     return $a;
 }
 add_filter( 'woocommerce_cart_item_thumbnail', 'custom_new_product_image', 10, 3 );
+*/
 
+function custom_new_product_image( $_product_img, $cart_item, $cart_item_key ) {
+	if ($cart_item['data']->get_name()) {
+		$folderName = explode('-', $cart_item['data']->get_name());
+		$folderName = $folderName[0];
+		$imgName = $cart_item['data']->get_name().'.png';
+	}
+    $a      =   '<img src="https://s3.us-east-2.amazonaws.com/bucket.coadb/'.$folderName.'/shop-images/'.$imgName.'" />';
+    return $a;
+}
+
+add_filter( 'woocommerce_cart_item_thumbnail', 'custom_new_product_image', 10, 3 );
 
 add_action('woocommerce_add_order_item_meta','wdm_add_values_to_order_item_meta',1,2);
 function wdm_add_values_to_order_item_meta($item_id, $values) {
     global $woocommerce,$wpdb;
     define('TOKEN_DIR', 'tokens');
     //wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/wp-content/uploads/processed_images/'.$values['_custom_options'].'"> Download </a>'.$values['_custom_options']);
-    $fid = base64_encode($values['_custom_options']);
+    $fid = base64_encode($values['data']->get_name());
     $key = uniqid(time().'-key',TRUE);
     if(!is_dir(TOKEN_DIR)) {
         mkdir(TOKEN_DIR);
@@ -369,8 +381,8 @@ function wdm_add_values_to_order_item_meta($item_id, $values) {
     fwrite($file, "{$key}\n");
     fclose($file);
 
-    if(!empty($values['_custom_options'])) {
-    	wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/download?fid='.$fid.'&key='.$key.'"> Download </a>'.$values['_custom_options']);
+    if(!empty($values['data']->get_name())) {
+    	wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/download?fid='.$fid.'&key='.$key.'"> Download </a>'.$values['data']->get_name());
     }
     //wc_add_order_item_meta($item_id,'customer_image',$values['_custom_options']['another_example_field']);
 }
