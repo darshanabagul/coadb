@@ -18,6 +18,15 @@
  * @package WordPress
  */
 
+define( 'AS3CF_SETTINGS', serialize( array(
+    'provider' => 'aws',
+    'access-key-id' => 'AKIAXSHLW3R6WD5NE6WP',
+    'secret-access-key' => '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',
+) ) );
+
+define('AS3CF_AWS_ACCESS_KEY_ID', 'AKIAXSHLW3R6WD5NE6WP');
+define('AS3CF_AWS_SECRET_ACCESS_KEY', 'bCoZcAmp16YdFyxcHkFo0WMGIa6p3nPSkQ/N4IOP');
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'coadbDB' );
@@ -89,9 +98,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 /** Sets up WordPress vars and included files. */
 require_once( ABSPATH . 'wp-settings.php' );
 
-//** Set path for file upload
-
-define( 'UPLOADS', 'wp-content/uploads' );
-ini_set( 'upload_max_size' , '20M' );
-ini_set( 'post_max_size', '13M');
-ini_set( 'memory_limit', '15M' );

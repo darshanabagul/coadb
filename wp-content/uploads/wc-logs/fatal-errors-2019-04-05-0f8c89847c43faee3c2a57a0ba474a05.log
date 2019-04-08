@@ -1,0 +1,8 @@
+2019-04-05T13:13:15+00:00 CRITICAL Allowed memory size of 15728640 bytes exhausted (tried to allocate 36864 bytes) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-includes/wp-db.php on line 2610
+
+2019-04-05T13:15:56+00:00 CRITICAL syntax error, unexpected 'printf' (T_STRING) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/woocommerce/cart/cart.php on line 59
+
+2019-04-05T13:15:58+00:00 CRITICAL syntax error, unexpected 'printf' (T_STRING) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/woocommerce/cart/cart.php on line 59
+
+2019-04-05T14:47:17+00:00 CRITICAL syntax error, unexpected '$filename' (T_VARIABLE) in /Users/arpitasingh/Documents/Work/Sites/coadb/wp-content/themes/coadbtheme/download.php on line 15
+
