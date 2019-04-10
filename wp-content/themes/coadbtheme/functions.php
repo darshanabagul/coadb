@@ -388,10 +388,12 @@ add_filter( 'woocommerce_cart_item_thumbnail', 'custom_new_product_image', 10, 3
 add_action('woocommerce_add_order_item_meta','wdm_add_values_to_order_item_meta',1,2);
 function wdm_add_values_to_order_item_meta($item_id, $values) {
     global $woocommerce,$wpdb;
-    define('TOKEN_DIR', 'tokens');
-    //wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/wp-content/uploads/processed_images/'.$values['_custom_options'].'"> Download </a>'.$values['_custom_options']);
+    
+    //define('TOKEN_DIR', 'tokens');
+   
     $fid = base64_encode($values['data']->get_name());
     $key = uniqid(time().'-key',TRUE);
+    /*
     if(!is_dir(TOKEN_DIR)) {
         mkdir(TOKEN_DIR);
         $file = fopen(TOKEN_DIR.'/.htaccess','w');
@@ -403,7 +405,7 @@ function wdm_add_values_to_order_item_meta($item_id, $values) {
     $file = fopen(TOKEN_DIR.'/keys','a');
     fwrite($file, "{$key}\n");
     fclose($file);
-
+	*/
     if(!empty($values['data']->get_name())) {
     	wc_add_order_item_meta($item_id,'JPG Details','<a href="'.get_site_url().'/download?fid='.$fid.'&key='.$key.'"> Download </a>'.$values['data']->get_name());
     }

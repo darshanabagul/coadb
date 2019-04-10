@@ -71,9 +71,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 										                <td colspan="2" align="center" style="padding: 20px;border:0;font-family:Arial;font-size:14px;line-height:125%;">
 										                	<div>
 										                		<p style="margin: 0;">
-										                			<a href="" title="Like us on Facebook"><img src="./image/facebook1.png" style="width: 6%;"></a>
-										                			<a href="" title="Follow us on Twitter"><img src="./image/twitter1.png" style="width: 6%;"></a>
-										                			<a href="" title="Follow us on Instagram"><img src="./image/insta1.png" style="width: 6%;"></a>
+										                			<a href="" title="Like us on Facebook"><img src="http://ec2-3-16-187-143.us-east-2.compute.amazonaws.com/coadb/wp-content/uploads/2019/04/facebook1.png" style="width: 6%;"></a>
+										                			<a href="" title="Follow us on Twitter"><img src="http://ec2-3-16-187-143.us-east-2.compute.amazonaws.com/coadb/wp-content/uploads/2019/04/twitter1.png" style="width: 6%;"></a>
+										                			<a href="" title="Follow us on Instagram"><img src="http://ec2-3-16-187-143.us-east-2.compute.amazonaws.com/coadb/wp-content/uploads/2019/04/insta1.png" style="width: 6%;"></a>
 										                		</p>
 										                	</div>
 														</td>

@@ -38,7 +38,7 @@ get_header('sub');
 								         		<img src="<?php echo get_the_post_thumbnail_url($v); ?>" class="img-responsive image">
 								         		<div class="img-controls">
 								         			<i class="fa fa-3x fa-arrows-alt" aria-hidden="true" onclick="openModal();currentSlide(<?php echo $i?>)"></i>
-								         		</div> 
+								         		</div>
 								         	</div>
 								        </div>
 								        <?php $i=$i+1;?>
@@ -121,14 +121,9 @@ get_header('sub');
 	<section class="space share-with-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12 col-sm-3 col-md-4 col-lg-offset-3 col-lg-2">
-					<h3>Share with:</h3>
-            	</div>
-            	<div class="col-xs-12 col-sm-8  col-md-8 col-lg-7">
+				<div class="col-xs-12 col-sm-3 col-md-4 col-lg-offset-3 col-lg-9">
             		<div class="share-btn-wrap">
-            			<button class="btn primary-btn"><i class="fa fa-facebook"></i> Facebook</button>
-            			<button class="btn primary-btn"><i class="fa fa-twitter"></i> Twitter</button>
-            			<button class="btn primary-btn"><i class="fa fa-instagram"></i> Instagram</button>
+            			<?php echo do_shortcode( '[ssba-buttons]' ); ?>
             		</div>
             	</div>
             </div>
