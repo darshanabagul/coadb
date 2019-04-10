@@ -168,7 +168,7 @@ function cptui_register_my_cpts_faq() {
 }
 
 add_action( 'init', 'cptui_register_my_cpts_faq' );
-
+/*
 function find_coat_of_arms($items = 6) {
 	global $wp;
 	//$path = get_template_directory_uri() .'/processed_images/dolan/';
@@ -212,9 +212,32 @@ function find_coat_of_arms($items = 6) {
 	if (!empty($images)) {
     	$coat_of_arms['images'] = array_chunk($images, $items);
 	}
-	
     return $coat_of_arms;
 }
+*/
+
+function find_coat_of_arms($items = 6) {
+	global $wp;
+	//$path = get_template_directory_uri() .'/processed_images/dolan/';
+    if (!empty($_GET['surname'])) {
+    	$page = $_GET['surname'];
+    } else {
+    	$current_slug = add_query_arg( array(), $wp->request );
+    	$link_array = explode('/',$current_slug);
+    	$page = end($link_array);
+    }
+    $page = str_replace("-family-crest-coat-of-arms-and-name-history", "", $page);
+    $coat_of_arms['page_slug'] = $page;
+    
+    global $post;
+	$args = array('posts_per_page' => 50,'product_cat' => $page, 'post_type' => 'product' );
+	$myposts = get_posts( $args );
+	
+	if (!empty($myposts)) {
+    	$coat_of_arms['images'] = array_chunk($myposts, $items);
+	}
+    return $coat_of_arms;
+} 
 
 function get_all_surnames() {
 	$surnames= query_posts(array(
@@ -348,7 +371,7 @@ function custom_new_product_image( $_product_img, $cart_item, $cart_item_key ) {
     return $a;
 }
 add_filter( 'woocommerce_cart_item_thumbnail', 'custom_new_product_image', 10, 3 );
-*/
+
 
 function custom_new_product_image( $_product_img, $cart_item, $cart_item_key ) {
 	if ($cart_item['data']->get_name()) {
@@ -359,8 +382,8 @@ function custom_new_product_image( $_product_img, $cart_item, $cart_item_key ) {
     $a      =   '<img src="https://s3.us-east-2.amazonaws.com/bucket.coadb/'.$folderName.'/shop-images/'.$imgName.'" />';
     return $a;
 }
-
 add_filter( 'woocommerce_cart_item_thumbnail', 'custom_new_product_image', 10, 3 );
+*/
 
 add_action('woocommerce_add_order_item_meta','wdm_add_values_to_order_item_meta',1,2);
 function wdm_add_values_to_order_item_meta($item_id, $values) {

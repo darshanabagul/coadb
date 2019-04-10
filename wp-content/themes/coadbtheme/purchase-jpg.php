@@ -38,18 +38,8 @@
 											<?php/*<?php echo get_permalink( $loop->post->ID ) ?>*/ ?>
 									      	<div <?php wc_product_class('card-stamp'); ?>>
 									      		<div class="image-box">
-									      			<?php $page = find_coat_of_arms();?>
-									      			<img src="https://s3.us-east-2.amazonaws.com/bucket.coadb/<?php echo $page['page_slug']?>/shop-images/<?php echo $product->name ?>.png" class="img-responsive">
+									      			<img src="<?php the_post_thumbnail_url('full');?>" class="img-responsive">
 											  	</div>
-										      	<div class="rating-box">
-										      		<p class="m-0">
-										      			<i class="fa fa-star" aria-hidden="true"></i>
-										      			<i class="fa fa-star" aria-hidden="true"></i>
-										      			<i class="fa fa-star" aria-hidden="true"></i>
-										      			<i class="fa fa-star" aria-hidden="true"></i>
-										      			<i class="fa fa-star-o" aria-hidden="true"></i>
-										      		</p>
-										      	</div>
 										      	<div class="detail-box text-center">
 										      		<p class="price"><?php echo $product->get_price_html(); ?></p>
 										      		<p class="info">Not Watermarked</p>
