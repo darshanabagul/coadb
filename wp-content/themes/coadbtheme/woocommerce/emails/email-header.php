@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 											<tbody>
 												<tr>
 								          			<td align="center" style="padding: 10px 0 0;display: block;">
-														<img src="./image/logo.png" alt="Coadb" title="Coadb">
+														<img src="http://ec2-3-16-187-143.us-east-2.compute.amazonaws.com/coadb/wp-content/themes/coadbtheme/images/logo.png" alt="Coadb" title="Coadb">
 													</td>
 												</tr>
 												<tr>

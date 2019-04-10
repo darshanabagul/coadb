@@ -2023,3 +2023,25 @@ Filter
     color: #c49634 !important;
     font-weight: bold;
 }
+
+/*share plugin - modified css*/
+.ssbp--theme-3 .ssbp-btn { 
+    display: inline !important;
+    border-radius: 4px;
+    background-color: #c49634 !important;
+    color: #fff !important;
+    font-size: 18px;
+    border: 2px solid transparent;
+    padding: 10px 40px !important;
+    margin: 0px 10px !important;
+    border-bottom: 1px !important;
+}
+.ssbp--theme-3 .ssbp-text {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    font-size: 18px !important;
+    margin-left: 5px !important;
+}
+.ssbp--theme-3 .ssbp-text:hover {
+    color: #23527c !important;
+}

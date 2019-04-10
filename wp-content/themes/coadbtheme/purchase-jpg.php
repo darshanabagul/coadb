@@ -29,7 +29,7 @@
             	<div id="demo" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
 					<div class="gallery row carousel-inner">
 				 		<?php 
-			    			$args = array( 'post_type' => 'product', 'posts_per_page' => 30, 'product_cat' => $page['page_slug']);
+			    			$args = array( 'post_type' => 'product', 'posts_per_page' => 50, 'product_cat' => $page['page_slug']);
 			    			$loop = new WP_Query( $args );
 							if ($loop->have_posts()) : 
 								while ( $loop->have_posts() ) : $loop->the_post(); global $product; $key=0;?>
@@ -77,7 +77,8 @@
 <?php get_footer(); ?>
 
 <script type="text/javascript">
-	var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+	/*
+	var ajaxurl = "<?php //echo admin_url('admin-ajax.php'); ?>";
     $( document ).on( 'click', '.add_to_cart_div', function(e) {
     	var coat_of_arm_img = $(this).attr('coat_of_arm_img');
     	var product_id = $(this).attr('product_id');
@@ -104,5 +105,5 @@
 				});
         	}
         });
-	});
+	});*/
 </script>
