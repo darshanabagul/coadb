@@ -1,7 +1,6 @@
 <?php
 /*Template Name: Download*/
-define('EXPIRATION_TIME', '+24 hours');
-define('TOKEN_DIR', 'tokens');
+define('EXPIRATION_TIME', '+1 days');
 
 if(isset($_GET["fid"])){
 	// Get parameters
@@ -18,46 +17,44 @@ if(isset($_GET["fid"])){
     $keyTime = explode('-',$key);
     $expTime = strtotime(EXPIRATION_TIME, $keyTime[0]);
 
-    $filepath = 'https://s3.us-east-2.amazonaws.com/bucket.coadb/' . $folderName.'/shop-images/'. $imgName;
+    //$filepath = 'https://s3.us-east-2.amazonaws.com/bucket.coadb/' . $folderName.'/full_size/'. $imgName;
 
-    // Retrieve the keys from the tokens file
-    $keys = file(TOKEN_DIR.'/keys');
-    $match = false;
-    // Loop through the keys to find a match
-    // When the match is found, remove it
+    //call curl
+    $handle = curl_init();
+    $url = "http://localhost/coadb/coadb_API/Welcome/getValidUrl";
+     
+    // Array with the fields names and values.
+    // The field names should match the field names in the form.
     
-    foreach($keys as &$one) {
-        if(rtrim($one)==$key){
-            $match = true;
-            $one = '';
+    $imgName = str_replace('coat-of-arms-family-crest', 'withcrest', $imgName);
+    
+    $postData = array(
+      'Key' => $folderName.'/full_size/'. $imgName
+    );
+     
+    curl_setopt_array($handle,
+      array(
+         CURLOPT_URL => $url,
+         // Enable the post response.
+        CURLOPT_POST       => true,
+        // The data to transfer with the response.
+        CURLOPT_POSTFIELDS => $postData,
+        CURLOPT_RETURNTRANSFER     => true,
+      )
+    );
+     
+    $data = curl_exec($handle);
+    if($currentTime <= $expTime) { 
+        if (headers_sent()){
+          die('<script type="text/javascript">window.location=\''.$data.'\';</script‌​>');
+        } else {
+          header('Location: ' . $data);
+          die();
         }
-    }
-
-    // Put the remaining keys back into the tokens file
-    file_put_contents(TOKEN_DIR.'/keys',$keys);
-
-    // If match found and the link is not expired
-    if($match !== false && $currentTime <= $expTime) {
-        if (headers_sent()) {
-            die("Redirect failed. Please click on this link: <a href=...>");
-        }
-        else {
-           if(file_exists($filepath)) {
-                $buffer = file_get_contents($filename);
-                header("Content-Type: application/force-download");
-                header("Content-Type: application/octet-stream");
-                header("Content-Type: application/download");
-                header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-                header("Content-Type: application/octet-stream");
-                header("Content-Transfer-Encoding: binary");
-                header("Content-Length: " . strlen($buffer));
-                header("Content-Disposition: attachment; filename=$filename");
-                echo $buffer; 
-            }
-        }
+        curl_close($handle);
     } else {
         echo '<h1>Download link is expired...</h1>';
         exit();
     }
-    
 }
+?>

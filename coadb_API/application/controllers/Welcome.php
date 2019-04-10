@@ -1,4 +1,6 @@
 <?php
+ini_set('max_execution_time', 0); 
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 use Aws\S3\S3Client;
@@ -6,13 +8,6 @@ use Aws\Exception\AwsException;
 //require __DIR__ . '/vendor/autoload.php';
 
 use Automattic\WooCommerce\Client;
-
-use Printful\Exceptions\PrintfulApiException;
-use Printful\Exceptions\PrintfulException;
-use Printful\Exceptions\PrintfulSdkException;
-use Printful\PrintfulApiClient;
-use Printful\PrintfulProducts;
-use Printful\Structures\Sync\SyncProductCreationParameters;
 
 class Welcome extends CI_Controller {
 
@@ -34,20 +29,25 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-
-    $credentials = new Aws\Credentials\Credentials('AKIAXSHLW3R6WD5NE6WP', 'bCoZcAmp16YdFyxcHkFo0WMGIa6p3nPSkQ/N4IOP');
     
-    $sharedConfig = [
-      'region' => 'us-east-2',
-      'version' => 'latest',
-      'credentials' => $credentials
-    ];
+    $credentials = new Aws\Credentials\Credentials('AKIAXSHLW3R6YYIYUYOT', 'KrEECjus211eVsiyuEFJYskkV2GmD34m2pHqqsjP');
+    $bucket = 'bucket.coadb';
+    //$bucket = 'test-coadb';
+    $s3Client = new Aws\S3\S3Client([
+         'version' => '2006-03-01',
+         'region'  => 'us-east-2',
+         'credentials' => $credentials
+     ]);
 
-    // Create an SDK class used to share configuration across clients.
-    $sdk = new Aws\Sdk($sharedConfig);
+    $cmd = $s3Client->getCommand('GetObject', [
+      'Bucket' => $bucket,
+      'Key' => 'a\'court/shop-images/a\'court-coat-of-arms-family-crest-1.png'
+    ]);
 
-    // Create an Amazon S3 client using the shared configuration data.
-    $client = $sdk->createS3();  
+    $request = $s3Client->createPresignedRequest($cmd, '+10 minutes');
+    $presignedUrl = (string)$request->getUri();
+
+
     $woocommerce = new Client(
       'http://localhost/coadb', // Your store URL
       'ck_17372d3e88c7c8c9e82466673640582350a88780', // Your consumer key
@@ -72,7 +72,7 @@ class Welcome extends CI_Controller {
 
       'images' => [
         [
-            'src' =>  $client->getObjectUrl('bucket.coadb','merrick/shop-images/merrick-coat-of-arms-family-crest-1.png')//'http://demo.woothemes.com/woocommerce/wp-content/uploads/sites/56/2013/06/T_2_front.jpg'
+            'src' =>  $presignedUrl
         ]
       ]
     ];
@@ -87,56 +87,90 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
+  public function getValidUrl() {
+    $post_data = $_POST['Key'];
+    $force_download = false;
+    $credentials = new Aws\Credentials\Credentials('AKIAXSHLW3R6YYIYUYOT', 'KrEECjus211eVsiyuEFJYskkV2GmD34m2pHqqsjP');
+    $bucket = 'bucket.coadb';
+      //$bucket = 'test-coadb';
+    $s3Client = new Aws\S3\S3Client([
+         'version' => '2006-03-01',
+         'region'  => 'us-east-2',
+         'credentials' => $credentials
+     ]);
+
+    $cmd = $s3Client->getCommand('GetObject', [
+      'Bucket' => $bucket,
+      'Key' => $post_data,
+      'ResponseContentType' => 'application/octet-stream',
+      'ResponseContentDisposition' => 'attachment; filename="'.$post_data.'"'
+    ]);
+
+    if($force_download){
+      $params['ResponseContentType'] = 'application/octet-stream';
+      $params['ResponseContentDisposition'] = 'attachment; filename="'.$post_data.'"';
+    }
+    $request = $s3Client->createPresignedRequest($cmd, '+1 days');
+    echo $presignedUrl = (string)$request->getUri();
+  }
 
 	public function addProduct() {
     $product_obj = array();
-    $credentials = new Aws\Credentials\Credentials('AKIAXSHLW3R6WD5NE6WP', 'bCoZcAmp16YdFyxcHkFo0WMGIa6p3nPSkQ/N4IOP');
-    
-    $sharedConfig = [
-      'region' => 'us-east-2',
-      'version' => 'latest',
-      'credentials' => $credentials
-    ];
+    $credentials = new Aws\Credentials\Credentials('AKIAXSHLW3R6YYIYUYOT', 'KrEECjus211eVsiyuEFJYskkV2GmD34m2pHqqsjP');
+    $bucket = 'bucket.coadb';
 
-    // Create an SDK class used to share configuration across clients.
-    $sdk = new Aws\Sdk($sharedConfig);
-
-    // Create an Amazon S3 client using the shared configuration data.
-    $client = $sdk->createS3();
+    $s3Client = new Aws\S3\S3Client([
+       'version' => '2006-03-01',
+       'region'  => 'us-east-2',
+       'credentials' => $credentials
+   ]);
     
-    $objects = $client->listObjects([
-        'Bucket' => 'bucket.coadb',
-        //"Delimiter" => "/"
+    $results = $s3Client->getPaginator('ListObjects', [
+      'Bucket' => $bucket
     ]);
+   
+    $whitelist = array(
+      '127.0.0.1',
+      '::1'
+    );
 
-    foreach ($objects['Contents']  as $object) {
-        $explode_path = explode('/', $object['Key']);
-        if (!empty($explode_path[1])) {
-              if ($explode_path[1]=='shop-images') {
-                $explode_path1 = explode('/', $object['Key']);
-                $value = end($explode_path1);
-                if (!empty($value)) {
-                  $product_obj[] = $value;
-                }
-              }
+    foreach ($results as $result) {
+        foreach ($result['Contents'] as $object) {
+            $explode_path = explode('/', $object['Key']);
+            if (!empty($explode_path[1])) {
+                  if ($explode_path[1]=='shop-images') {
+                    $explode_path1 = explode('/', $object['Key']);
+                    $value = end($explode_path1);
+                    if (!empty($value)) {
+                      $product_obj[] = $value;
+                    }
+                  }
+            }
         }
     }
 
     if (!empty($product_obj)) {
-        $woocommerce = new Client(
-          /*
-          'http://ec2-3-16-187-143.us-east-2.compute.amazonaws.com/coadb', // Your store URL
-          'ck_6a066ae8baa265294cdca8f06a5558f7951a56d3', // Your consumer key
-          'cs_658a1649288ce50999fb8f7867e5489904c7ab3a', // Your consumer secret
-          */
-          'http://localhost/coadb', // Your store URL
-          'ck_17372d3e88c7c8c9e82466673640582350a88780', // Your consumer key
-          'cs_276e9985c68244d7e3db685489a12c3fbf35dcf9', // Your consumer secret*/
-          [
-              'wp_api' => true, // Enable the WP REST API integration
-              'version' => 'wc/v3' // WooCommerce WP REST API version
-          ]
-        );
+        if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+            $woocommerce = new Client(
+              'http://ec2-3-16-187-143.us-east-2.compute.amazonaws.com/coadb', // Your store URL
+              'ck_6a066ae8baa265294cdca8f06a5558f7951a56d3', // Your consumer key
+              'cs_658a1649288ce50999fb8f7867e5489904c7ab3a', // Your consumer secret
+              [
+                'wp_api' => true, // Enable the WP REST API integration
+                'version' => 'wc/v3' // WooCommerce WP REST API version
+              ]
+            );
+        } else {
+            $woocommerce = new Client(
+              'http://localhost/coadb', // Your store URL
+              'ck_17372d3e88c7c8c9e82466673640582350a88780', // Your consumer key
+              'cs_276e9985c68244d7e3db685489a12c3fbf35dcf9', // Your consumer secret*/
+              [
+                  'wp_api' => true, // Enable the WP REST API integration
+                  'version' => 'wc/v3' // WooCommerce WP REST API version
+              ]
+          );
+        }
 
         foreach($product_obj as $key=>$val) {
             $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $val);
@@ -162,6 +196,15 @@ class Welcome extends CI_Controller {
                     $existCat = $woocommerce->get('products/categories',['search' => $catName[0]]);
                 }
 
+                //create authorised image url
+                $cmd = $s3Client->getCommand('GetObject', [
+                  'Bucket' => $bucket,
+                  'Key' => $catName[0].'/shop-images/'.$val
+                ]);
+
+                $request = $s3Client->createPresignedRequest($cmd, '+20 minutes');
+                $presignedUrl = (string)$request->getUri();
+
                 $data = [
                 'name' => $withoutExt,
                 'type' => 'simple',
@@ -178,11 +221,10 @@ class Welcome extends CI_Controller {
                 ],
                 'images' => [
                   [
-                      'src' =>  $client->getObjectUrl('bucket.coadb', $catName[0].'/shop-images/'.$val)//'https://s3.us-east-2.amazonaws.com/bucket.coadb/'.$catName[0].'/shop-images/'.$val
+                      'src' =>  $presignedUrl
                   ]
                 ]
               ];
-
               $woocommerce->post('products', $data);
             }
         }
@@ -190,88 +232,4 @@ class Welcome extends CI_Controller {
     }
     die();
 	}
-
-  public function test() {
-      $apiKey = '5ahnt8xq-3hml-hfy9:tefm-kqiu9sjacra8'; //live server api key
-      try {
-          // create ApiClient
-          $pf = new PrintfulApiClient($apiKey);
-
-          echo '<pre>';
-          print_r($pf);
-          echo '</pre>';
-
-          $products = $pf->get('products');
-          
-
-          // create Products Api object
-          $productsApi = new PrintfulProducts($pf);
-          
-          echo '<pre>';
-          print_r($productsApi);
-          echo '</pre>';
-
-          die();
-
-          $data = [
-              'sync_product' => [
-                  'external_id' => 1, // set id in my store for this product (optional)
-                  'name' => 'My new shirt',
-                  'thumbnail' => 'https://www.my-webshop.com/shirt.jpg', // set thumbnail url
-              ],
-              'sync_variants' => [ // add sync variants
-                  [
-                      'external_id' => 1, // set id in my store for this variant (optional)
-                      'retail_price' => 21.00, // set retail price that this item is sold for (optional)
-                      'variant_id' => 4011, // set variant in from Printful Catalog(https://www.printful.com/docs/catalog)
-                      'files' => [
-                          [
-                              'url' => 'https://www.my-webshop.com/shirt.jpg',
-                          ],
-                          [
-                              'type' => 'back', // set print file placement on item. If not set, default placement for this product will be used
-                              'id' => 1, // file id from my File library in Printful (https://www.printful.com/docs/files)
-                          ],
-                      ],
-                      'options' => [
-                          [
-                              'id' => 'embroidery_type',
-                              'value' => 'flat'
-                          ],
-                      ],
-                  ],
-                  [
-                      'external_id' => 2, // set id in my store for this variant (optional)
-                      'retail_price' => 21.00, // set retail price that this item is sold for (optional)
-                      'variant_id' => 4012, // set variant in from Printful Catalog(https://www.printful.com/docs/catalog)
-                      'files' => [
-                          [
-                              'url' => 'https://www.my-webshop.com/shirt.jpg',
-                          ],
-                          [
-                              'type' => 'back', // set print file placement on item. If not set, default placement for this product will be used
-                              'id' => 1, // file id from my File library in Printful (https://www.printful.com/docs/files)
-                          ],
-                      ],
-                      'options' => [
-                          [
-                              'id' => 'embroidery_type',
-                              'value' => 'flat'
-                          ],
-                      ],
-                  ],
-              ],
-          ];
-          $creationParams = SyncProductCreationParameters::fromArray($data);
-          $product = $productsApi->createProduct($creationParams);
-      } catch (PrintfulApiException $e) { // API response status code was not successful
-          echo 'Printful API Exception: ' . $e->getCode() . ' ' . $e->getMessage();
-      } catch (PrintfulSdkException $e) { // SDK did not call API
-          echo 'Printful SDK Exception: ' . $e->getMessage();
-      } catch (PrintfulException $e) { // API call failed
-          echo 'Printful Exception: ' . $e->getMessage();
-          var_export($pf->getLastResponseRaw());
-      }
-  }
-
 }

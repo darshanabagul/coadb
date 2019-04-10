@@ -23,34 +23,32 @@ get_header('sub');
 	<section class="space gallery-info-section">
 		<div class="container">
 			<?php
-			$args = array( 'post_type' => 'product', 'posts_per_page' => 50, 'product_cat' => $page['page_slug']);
-			$loop = new WP_Query( $args );
-			if ($loop->have_posts()) { ?>
+			if (!empty($coat_of_arms = find_coat_of_arms())) { ?>
 			<div class="row">
             	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             		<div id="demo" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
 					    <div class="gallery row carousel-inner">
+					    	<?php if(!empty($coat_of_arms['images'])) { ?>
 					    	<?php $i=1;?>
-					    	<?php while ( $loop->have_posts() ) : $loop->the_post(); global $product; $key=0;?>
+					    	<?php foreach($coat_of_arms['images'] as $key=>$img) { ?>
 					    		<div class="item <?php if($key==0) echo 'active' ?>">
-						    		<div class="col-xs-12  col-sm-4 col-md-3 col-lg-2">
-							         	<div class="img-container">
-							         		<?php $page = find_coat_of_arms();?>
-								      		<img src="https://s3.us-east-2.amazonaws.com/bucket.coadb/<?php echo $page['page_slug']?>/shop-images/<?php echo $product->name ?>.png" class="img-responsive image">
-
-							         		<div class="img-controls">
-							         			<i class="fa fa-3x fa-arrows-alt" aria-hidden="true" onclick="openModal();currentSlide(<?php echo $i?>)"></i>
-							         		</div> 
-							         	</div>
-							        </div>
-							        <?php $i=$i+1; $key=$key+1;?>
+						    		<?php foreach ($img as $v) { global $v;?>
+								        <div class="col-xs-12  col-sm-4 col-md-3 col-lg-2">
+								         	<div class="img-container">
+								         		<img src="<?php echo get_the_post_thumbnail_url($v); ?>" class="img-responsive image">
+								         		<div class="img-controls">
+								         			<i class="fa fa-3x fa-arrows-alt" aria-hidden="true" onclick="openModal();currentSlide(<?php echo $i?>)"></i>
+								         		</div> 
+								         	</div>
+								        </div>
+								        <?php $i=$i+1;?>
+								    <?php } ?>
 								</div>
-					        <?php endwhile; ?>
+					        <?php } }?>
 					    </div>
 					</div>
 				</div>
 			</div>
-
 			<?php if(count($coat_of_arms['images']) > 1) { ?>
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -66,10 +64,10 @@ get_header('sub');
 					</div>
 				</div>
 			<?php } ?>
-
 		<?php } ?>
 		</div>
 	</section>
+	
 
 	<!-- information section Starts Here --> 
 	<?php while (have_posts()) : the_post(); ?>
@@ -156,24 +154,26 @@ get_header('sub');
 <?php get_footer();?>
 <div id="myModal" class="my-modal modal">
 	<div class="modal-content">
-        	<span class="close cursor" onclick="closeModal()" title="Close">&times;</span>
-		    	<?php if ($loop->have_posts()) { ?>
-		    		<?php while ( $loop->have_posts() ) : $loop->the_post();?>
-						<div class="mySlides">
-							<?php $page = find_coat_of_arms();?>
-							<img src="https://s3.us-east-2.amazonaws.com/bucket.coadb/<?php echo $page['page_slug']?>/shop-images/<?php echo $product->name ?>.png" class="img-responsive">
-						</div>
-					<?php endwhile; ?>
-				<?php } ?>
-		    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-		    <div class="row social-share">
-		      	<div class="col-lg-12">
-		      		<a href="#" class="fb"> <i class="fa fa-facebook"></i><span>Share on Facebook</span></a>
-		      		<a href="#" class="tw"> <i class="fa fa-twitter"></i><span>Tweet this</span></a>
-		      		<a href="#" class="pin"> <i class="fa fa-pinterest"></i><span>Save on pinterest</span></a>
-		      	</div>
-		    </div>
+    	<span class="close cursor" onclick="closeModal()" title="Close">&times;</span>
+	    	<?php if (!empty($coat_of_arms = find_coat_of_arms(5))) {?>
+				<?php if(!empty($coat_of_arms['images'])) { ?>
+				 	<?php foreach($coat_of_arms['images'] as $key=>$img) { ?>
+						<?php foreach ($img as $k=>$v) { ?>
+							<div class="mySlides">
+								<img src="<?php echo get_the_post_thumbnail_url($v); ?>" class="img-responsive" alt="" title="">
+							</div>
+						<?php } ?>
+				   	<?php } ?>
+	   		<?php } } ?>
+	    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+	    <div class="row social-share">
+	      	<div class="col-lg-12">
+	      		<a href="#" class="fb"> <i class="fa fa-facebook"></i><span>Share on Facebook</span></a>
+	      		<a href="#" class="tw"> <i class="fa fa-twitter"></i><span>Tweet this</span></a>
+	      		<a href="#" class="pin"> <i class="fa fa-pinterest"></i><span>Save on pinterest</span></a>
+	      	</div>
+	    </div>
 	</div>
 </div>
 <script>
