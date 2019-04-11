@@ -33,12 +33,12 @@
 								<?php if(!empty($coat_of_arms['images'])) { ?>
 									<?php $i=1;?>
 									<?php foreach($coat_of_arms['images'] as $key=>$img) { ?>
-										<?php foreach ($img as $k=>$v) { ?>
+										<?php foreach ($img as $k=>$v) { global $v;?>
 											<div>
 												<div class="list">
 						            	  			<label class="btn btn-radio btn-block <?php if($i==1) echo 'active' ?>">
 														<input type="radio" id="<?php echo $i;?>" name="select-option-img" value="<?php echo $i;?>" />
-														<img src="<?php echo get_site_url()?>/wp-content/uploads/processed_images/<?php echo $v ?>" alt="" title="" class="img-responsive">
+														<img src="<?php echo get_the_post_thumbnail_url($v); ?>" alt="" title="" class="img-responsive">
 														<div class="top-right"><?php echo $i;?></div>
 													</label>
 						            	  		</div>
@@ -82,9 +82,10 @@
 						   		</div>	
 							<?php endwhile; 
 							else: ?>
-								<p>Sorry, no posts matched your criteria.</p>
+								<h3>Sorry, no products available for this family.</h3>
 						<?php endif; ?>
 	            	</div>
+	            	<?php if (  $loop->have_posts() ) : ?>
 	            	<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="pagination-main text-center clearfix">
@@ -98,6 +99,7 @@
 							</div>
 						</div>
 					</div>
+				<?php endif;?>
 	            </div>
 			</div>
 		</div>

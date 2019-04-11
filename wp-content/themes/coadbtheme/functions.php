@@ -390,7 +390,6 @@ function wdm_add_values_to_order_item_meta($item_id, $values) {
     global $woocommerce,$wpdb;
     
     //define('TOKEN_DIR', 'tokens');
-   
     $fid = base64_encode($values['data']->get_name());
     $key = uniqid(time().'-key',TRUE);
     /*
