@@ -44,14 +44,14 @@ class Welcome extends CI_Controller {
       'Key' => 'a\'court/shop-images/a\'court-coat-of-arms-family-crest-1.png'
     ]);
 
-    $request = $s3Client->createPresignedRequest($cmd, '+10 minutes');
+    $request = $s3Client->createPresignedRequest($cmd, '+1 days');
     $presignedUrl = (string)$request->getUri();
 
 
     $woocommerce = new Client(
-      'http://localhost/coadb', // Your store URL
-      'ck_17372d3e88c7c8c9e82466673640582350a88780', // Your consumer key
-      'cs_276e9985c68244d7e3db685489a12c3fbf35dcf9', // Your consumer secret
+      'http://ec2-3-16-187-143.us-east-2.compute.amazonaws.com/coadb', // Your store URL
+              'ck_6a066ae8baa265294cdca8f06a5558f7951a56d3', // Your consumer key
+              'cs_658a1649288ce50999fb8f7867e5489904c7ab3a',
       [
           'wp_api' => true, // Enable the WP REST API integration
           'version' => 'wc/v3' // WooCommerce WP REST API version
@@ -59,7 +59,7 @@ class Welcome extends CI_Controller {
     );
 
     $data = [
-      'name' => 'Premium',
+      'name' => 'Premium two',
       'type' => 'simple',
       'regular_price' => '13.99',
       'description' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
@@ -69,7 +69,14 @@ class Welcome extends CI_Controller {
               'id' => 42
           ]
       ],
-
+      'downloadable' => 1,
+      'downloads' => [
+          [
+            'id' => 'a\'court/shop-images/a\'court-coat-of-arms-family-crest-1.png',
+            'name' => 'a\'court/shop-images/a\'court-coat-of-arms-family-crest-1.png',
+            'file' => $presignedUrl
+          ]
+      ],
       'images' => [
         [
             'src' =>  $presignedUrl
@@ -219,6 +226,7 @@ class Welcome extends CI_Controller {
                         'id' => $existCat[0]->id
                     ]
                 ],
+                'downloadable' => 1,
                 'images' => [
                   [
                       'src' =>  $presignedUrl
@@ -226,10 +234,20 @@ class Welcome extends CI_Controller {
                 ]
               ];
               $woocommerce->post('products', $data);
+            } else {
+              //update product as downloadable
+              $product_id = $existProduct[0]->id;
+              $data = [
+                'downloadable' => 1
+              ];
+              $woocommerce->put('products/'.$product_id, $data);
             }
         }
         echo 'product added successfuly';
     }
     die();
 	}
+
+
+
 }
